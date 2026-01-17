@@ -84,21 +84,21 @@ const Navbar = () => {
         </a>
         <a
           onClick={() => setSidebarState(false)}
-          href="#"
+          href="#about"
           className="sm:hover:border-b transition-all"
         >
           About
         </a>
         <a
           onClick={() => setSidebarState(false)}
-          href="#"
+          href="#skills"
           className="sm:hover:border-b transition-all"
         >
           Skills
         </a>
         <a
           onClick={() => setSidebarState(false)}
-          href="#"
+          href="#projects"
           className="sm:hover:border-b transition-all"
         >
           Project

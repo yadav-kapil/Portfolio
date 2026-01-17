@@ -4,8 +4,9 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import { TimeLineDemo } from "./components/TimeLineDemo";
 import ThemeContextProvider from "./store/themeContext";
-import FlowingMenu from './components/FlowingMenu';
+import FlowingMenu from "./components/FlowingMenu";
 import Skills from "./components/Skills";
+import SkillsMaxMd from "./components/SkillsMaxMd";
 
 function App() {
 
@@ -16,8 +17,8 @@ function App() {
           <Navbar />
           <Hero />
           <AboutPage />
+          <SkillsMaxMd />
           <TimeLineDemo />
-          <Skills/>
         </div>
       </ThemeContextProvider>
     </>

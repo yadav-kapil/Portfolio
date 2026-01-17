@@ -94,7 +94,7 @@ const Hero = () => {
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center"
+                className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center cursor-pointer"
               >
                 <MdOutlineCloudDownload />
                 <span>Resume</span>
@@ -103,7 +103,7 @@ const Hero = () => {
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="px-3 py-1.5 font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 dark:hover:text-white transition-all"
+                className="px-3 py-1.5 font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-all"
               >
                 Hire Me
               </motion.button>
@@ -154,11 +154,13 @@ const Hero = () => {
         transition={{ duration: 1.5, delay: 0.1 }}
         className="loop max-sm:hidden"
       >
+         <div id="about" ></div>
         <CurvedLoop
           marqueeText=" Kapil Yadav ✦ Full Stack Developer ✦ "
           curveAmount={50}
         />
       </motion.div>
+     
     </>
   );
 };

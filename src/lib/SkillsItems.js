@@ -11,6 +11,14 @@ import CSSLogo from "@/assets/skills_icons/CSSLogo.png";
 import splineLogo from "@/assets/skills_icons/splineLogo.png";
 import viteLogo from "@/assets/skills_icons/viteLogo.png";
 import reduxLogo from "@/assets/skills_icons/reduxLogo.png";
+import mongoDBLogo from "@/assets/skills_icons/mongodblogo.png";
+import expressJsLogo from "@/assets/skills_icons/expressjslogo.png";
+import nodejsLogo from "@/assets/skills_icons/nodejslogo.png";
+import mysqlLogo from "@/assets/skills_icons/mysqllogo.png";
+import numpyLogo from "@/assets/skills_icons/numpylogo.png";
+import pandasLogo from "@/assets/skills_icons/pandaslogo.png";
+import ollamaLogo from "@/assets/skills_icons/ollamaLogo.png";
+import jupyterLabLogo from "@/assets/skills_icons/jupyterlablogo.png";
 
 
 export const SkillsItems = () => {
@@ -24,6 +32,7 @@ export const SkillsItems = () => {
         { name: 'Java', logo: javaLogo },
         { name: "C Lang", logo: CLogo },
       ],
+      tab : 'Language',
     },
     {
       link: "#",
@@ -39,26 +48,29 @@ export const SkillsItems = () => {
         { name: 'Spline', logo: splineLogo },
         { name: "Framer Motion", logo: FramerLogo },
       ],
+      tab : 'Frontend'
     },
     {
       link: "#",
       text: "Backend Skills",
       image: [
-        { name: "MongoDB", logo: pythonLogo },
-        { name: "Express Js", logo: jsLogo },
-        { name: 'Node JS', logo: javaLogo },
-        { name: "MySQL", logo: CLogo },
+        { name: "MongoDB", logo: mongoDBLogo },
+        { name: "Express Js", logo: expressJsLogo },
+        { name: 'Node JS', logo: nodejsLogo },
+        { name: "MySQL", logo: mysqlLogo },
       ],
+      tab : 'Backend'
     },
     {
       link: "#",
       text: "Others",
       image: [
-        { name: "Jupyter Lab", logo: pythonLogo },
-        { name: "Numpy", logo: jsLogo },
-        { name: 'Pandas', logo: javaLogo },
-        { name: "Ollama", logo: CLogo },
+        { name: "Jupyter Lab", logo: jupyterLabLogo },
+        { name: "Numpy", logo: numpyLogo },
+        { name: 'Pandas', logo: pandasLogo },
+        { name: "Ollama", logo: ollamaLogo },
       ],
+      tab : 'Others'
     },
   ];
   return SkillItem;

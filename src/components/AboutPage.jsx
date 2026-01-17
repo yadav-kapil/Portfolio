@@ -60,20 +60,20 @@ const AboutPage = () => {
             </p>
           </motion.div>
           <div
-            className="connect my-6 flex max-md:flex-col gap-4 items-center"
+            className="connect mt-24 flex max-md:flex-col gap-4 items-center"
           >
             <motion.button 
             initial={{ x:-40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.2 }}
             className="relative bg-white text-primary group flex items-center gap-2 rounded-lg px-2 py-2 font-bold font-outfit hover:scale-90 hover:text-white  hover:bg-violet-500 transition-all duration-500 ease-in-out ">
-              <p className="md:translate-x-3 md:group-hover:translate-x-0 transition-all duration-500">Let's Connect</p>
+              <p className="md:translate-x-3 md:group-hover:translate-x-0 transition-all duration-500 cursor-pointer">Let's Connect</p>
               <FaArrowAltCircleRight className="max-md:hidden translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"/>
             </motion.button>
             <motion.div
             initial={{ x:40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.2 }}
             className="social flex items-center gap-1">
               <a
                 href="#"
@@ -154,6 +154,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+      <div id="skills"> </div>
     </div>
   );
 };
