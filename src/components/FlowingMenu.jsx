@@ -139,9 +139,8 @@ function MenuItem({
 
   return (
     <div
-      className="flex-1 relative overflow-hidden text-center"
+      className={`flex-1 relative overflow-hidden text-center ${isFirst ? "" : "border-t border-black dark:border-white"}`}
       ref={itemRef}
-      style={{ borderTop: isFirst ? "none" : `1px solid ${borderColor}` }}
     >
       <a
         className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-[4vh] text-black dark:text-white"
@@ -152,9 +151,8 @@ function MenuItem({
         {text}
       </a>
       <div
-        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none translate-y-[101%]"
+        className="absolute bg-gray-700 dark:bg-white top-0 left-0 w-full h-full overflow-hidden pointer-events-none translate-y-[101%]"
         ref={marqueeRef}
-        style={{ backgroundColor: marqueeBgColor }}
       >
         <div className="h-full w-fit flex" ref={marqueeInnerRef}>
           {[...Array(repetitions)].map((_, idx) => (
@@ -165,9 +163,15 @@ function MenuItem({
             >
               {image.map((skill) => {
                 return (
-                  <div key={text} className="w-[200px] py-6 flex flex-col gap-2 items-center justify-center rounded-[50px] bg-cover bg-center flex-shrink-0">
-                    <img src={`${skill.logo}`} className="object-contain h-18"></img>
-                    <p className="font-mono">{skill.name}</p>
+                  <div
+                    key={text}
+                    className="w-[200px] py-6 flex flex-col gap-2 items-center justify-center rounded-[50px] bg-cover bg-center flex-shrink-0"
+                  >
+                    <img
+                      src={`${skill.logo}`}
+                      className="object-contain h-18"
+                    ></img>
+                    <p className="font-mono text-white dark:text-black">{skill.name}</p>
                   </div>
                 );
               })}

@@ -37,7 +37,6 @@ export const SkillsItems = () => {
         { name: "Redux", logo: reduxLogo },
         { name: 'Vite', logo: viteLogo },
         { name: 'Spline', logo: splineLogo },
-
         { name: "Framer Motion", logo: FramerLogo },
       ],
     },
@@ -45,20 +44,20 @@ export const SkillsItems = () => {
       link: "#",
       text: "Backend Skills",
       image: [
-        { name: "Python", logo: pythonLogo },
-        { name: "Javscript", logo: jsLogo },
-        { name: 'Java', logo: javaLogo },
-        { name: "C Lang", logo: CLogo },
+        { name: "MongoDB", logo: pythonLogo },
+        { name: "Express Js", logo: jsLogo },
+        { name: 'Node JS', logo: javaLogo },
+        { name: "MySQL", logo: CLogo },
       ],
     },
     {
       link: "#",
       text: "Others",
       image: [
-        { name: "Python", logo: pythonLogo },
-        { name: "Javscript", logo: jsLogo },
-        { name: 'Java', logo: javaLogo },
-        { name: "C Lang", logo: CLogo },
+        { name: "Jupyter Lab", logo: pythonLogo },
+        { name: "Numpy", logo: jsLogo },
+        { name: 'Pandas', logo: javaLogo },
+        { name: "Ollama", logo: CLogo },
       ],
     },
   ];
