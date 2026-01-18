@@ -1,4 +1,4 @@
-import { motion, time } from "motion/react";
+import { motion } from "motion/react";
 import { SkillsItems } from "../lib/SkillsItems";
 import { useState } from "react";
 import SkillsMdItem from "./SkillsMdItem";
@@ -12,7 +12,9 @@ const SkillsMaxMd = () => {
     setTab(tab);
   };
   return (
-    <div className="border-t-primary py-12 border w-screen">
+<div className="w-screen py-12 
+bg-[#F4F6FF] dark:bg-[#121633]
+">
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

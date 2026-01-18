@@ -52,11 +52,10 @@ const Hero = () => {
             className="flex gap-3 items-center"
           >
             <span className="sm:text-lg md:text-2xl text-black dark:text-white lg:text-4xl font-bold">
-              My Name is{", "}
+              My Name is{","}
             </span>
             <span className="sm:text-lg md:text-2xl text-primary lg:text-4xl font-bold relative">
               Kapil Yadav
-             
             </span>
           </motion.div>
 
@@ -64,10 +63,11 @@ const Hero = () => {
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.6 }}
+            className="flex items-center max-md:flex-col"
           >
-            <span className="sm:text-xl md:text-3xl text-black dark:text-white lg:text-5xl font-bold">
+            <div className="sm:text-xl md:text-3xl text-black dark:text-white lg:text-5xl font-bold">
               I<span className="text-primary">'</span>m a
-            </span>
+            </div>
             <FlipWords
               words={flipWords}
               duration={2000}
@@ -93,7 +93,7 @@ const Hero = () => {
               <motion.button
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
+                transition={{ duration: 1, delay: 0.1 }}
                 className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center cursor-pointer"
               >
                 <MdOutlineCloudDownload />
@@ -102,7 +102,7 @@ const Hero = () => {
               <motion.button
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
+                transition={{ duration: 1, delay: 0.1 }}
                 className="px-3 py-1.5 font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-all"
               >
                 Hire Me

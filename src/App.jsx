@@ -4,21 +4,22 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import { TimeLineDemo } from "./components/TimeLineDemo";
 import ThemeContextProvider from "./store/themeContext";
-import FlowingMenu from "./components/FlowingMenu";
 import Skills from "./components/Skills";
 import SkillsMaxMd from "./components/SkillsMaxMd";
+import Projects from "./components/Projects";
+import "lenis/dist/lenis.css";
 
 function App() {
-
   return (
     <>
       <ThemeContextProvider>
-        <div className="relative dark:bg-black">
+        <div className="relative bg-[#F4F6FF] dark:bg-[#121633]">
           <Navbar />
           <Hero />
           <AboutPage />
-          <SkillsMaxMd />
+          {window.innerWidth >= 1024 ? <Skills /> : <SkillsMaxMd />}
           <TimeLineDemo />
+          <Projects />
         </div>
       </ThemeContextProvider>
     </>

@@ -11,7 +11,7 @@ function FlowingMenu({
   borderColor = "#fff",
 }) {
   return (
-    <div className="w-full h-full overflow-hidden bg-white dark:bg-black">
+    <div className="w-full h-full overflow-hidden bg-[#EEF1FF] dark:bg-black">
       <nav className="flex flex-col h-full m-0 p-0">
         {items.map((item, idx) => (
           <MenuItem
@@ -151,7 +151,7 @@ function MenuItem({
         {text}
       </a>
       <div
-        className="absolute bg-gray-700 dark:bg-white top-0 left-0 w-full h-full overflow-hidden pointer-events-none translate-y-[101%]"
+        className="absolute bg-gray-200 dark:bg-white top-0 left-0 w-full h-full overflow-hidden pointer-events-none translate-y-[101%]"
         ref={marqueeRef}
       >
         <div className="h-full w-fit flex" ref={marqueeInnerRef}>
@@ -171,7 +171,7 @@ function MenuItem({
                       src={`${skill.logo}`}
                       className="object-contain h-18"
                     ></img>
-                    <p className="font-mono text-white dark:text-black">{skill.name}</p>
+                    <p className="font-mono text-black">{skill.name}</p>
                   </div>
                 );
               })}
