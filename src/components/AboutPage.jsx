@@ -18,7 +18,7 @@ const AboutPage = () => {
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 2, delay: 0.1 }}
+        transition={{ duration: 2, delay: 0.1}}
         className="flex justify-center pt-6 text-black dark:text-white text-5xl font-outfit font-bold"
       >
         <h1> ABOUT ME </h1>
@@ -33,38 +33,58 @@ const AboutPage = () => {
         </div>
 
         <div className="right md:w-1/2 flex flex-col max-md:items-center mx-4 max-md:mx-8 mt-6">
-          <motion.div
-            initial={{ x: 40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
-          >
-            <h2 className="mb-4 text-3xl font-semibold font-manrope text-gray-900 dark:text-white">
+          <div>
+            <motion.h2
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{once:true}}
+              className="mb-4 text-3xl font-semibold font-manrope text-gray-900 dark:text-white"
+            >
               Who is{" "}
               <span className="font-outfit text-primary dark:text-[#C9CCFF]">
                 Kapil Yadav
               </span>{" "}
               👋
-            </h2>
+            </motion.h2>
 
-            <p className="mb-4 text-lg leading-relaxed font-inter text-gray-700 dark:text-[#E3E5FF]">
+            <motion.p
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{once:true}}
+              className="mb-4 text-lg leading-relaxed font-inter text-gray-700 dark:text-[#E3E5FF]"
+            >
               I’m a{" "}
               <span className="font-outfit font-medium text-gray-900 dark:text-white">
                 Full Stack Web Developer
               </span>{" "}
               focused on building clean, modern websites with smooth animations
               and intuitive user experiences.
-            </p>
+            </motion.p>
 
-            <p className="mb-4 text-base leading-relaxed font-inter text-gray-600 dark:text-[#C9CCFF]">
+            <motion.p
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{once:true}}
+              className="mb-4 text-base leading-relaxed font-inter text-gray-600 dark:text-[#C9CCFF]"
+            >
               Currently, I’m a{" "}
               <span className="font-outfit font-medium text-gray-900 dark:text-white">
                 B.Tech 1st Year student
               </span>{" "}
               with a strong foundation in web development, creating complete
               applications from frontend to backend.
-            </p>
+            </motion.p>
 
-            <p className="text-base leading-relaxed font-inter text-gray-600 dark:text-[#C9CCFF]">
+            <motion.p
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{once:true}}
+              className="text-base leading-relaxed font-inter text-gray-600 dark:text-[#C9CCFF]"
+            >
               I primarily work with the{" "}
               <span className="font-outfit font-medium text-gray-900 dark:text-white">
                 MERN stack
@@ -75,8 +95,8 @@ const AboutPage = () => {
               </span>{" "}
               and animation libraries (such as Framer Motion) to deliver fast,
               responsive, and visually polished digital experiences.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
           <div className="connect mt-24 flex max-md:flex-col gap-4 items-center">
             <motion.button
               initial={{ x: -40, opacity: 0 }}

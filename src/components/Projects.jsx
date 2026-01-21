@@ -1,73 +1,114 @@
 import { motion } from "motion/react";
+import learnify from "../assets/learnify.png";
 
-("use client");
-
-import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
-
-export default function Projects() {
+const Projects = () => {
   return (
-    <>
-      <div className="px-8 border-t">
-        <motion.div
-          initial={{ y: 40, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="skillhead py-16 flex justify-center text-5xl font-ubuntu font-bold text-black dark:text-white"
-        >
-          <h3> Projects </h3>
-        </motion.div>
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-16 bg-[#F4F6FF] dark:bg-[#121633]">
+      
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="mb-12 max-md:text-center"
+      >
+        <h1 className="font-outfit font-bold text-5xl max-md:text-3xl text-gray-900 dark:text-white">
+          My Latest Work
+        </h1>
+        <p className="mt-3 max-w-xl mx-auto md:mx-0 font-inter text-gray-600 dark:text-gray-300">
+          A selection of projects showcasing my skills in modern web
+          development, UI design, and interactive experiences.
+        </p>
+      </motion.div>
 
-        <CardContainer className="inter-var ">
-          <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-            <CardItem
-              translateZ="50"
-              className="text-xl font-bold text-neutral-600 dark:text-white"
+      {/* Card */}
+      <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.8,delay:0.2 ,ease: "easeOut" }}
+          className="
+            w-full sm:w-[80%] md:w-[55%] lg:w-[22%]
+            rounded-2xl
+            bg-white/90 dark:bg-white/10
+            border border-black/10 dark:border-white/15
+            shadow-sm hover:shadow-xl
+            hover:-translate-y-1
+            transition-all duration-300
+            px-4 py-4
+          "
+        >
+          {/* Image */}
+          <div className="relative overflow-hidden rounded-xl">
+            <img
+              src={learnify}
+              alt="Learnify"
+              className="
+                rounded-xl
+                transition-transform duration-500
+                hover:scale-110
+                hover:cursor-pointer
+              "
+            />
+          </div>
+
+          {/* Content */}
+          <div className="mt-4">
+            <h2 className="text-xl font-outfit font-semibold text-gray-900 dark:text-white">
+              Learnify
+            </h2>
+
+            <p className="mt-2 text-sm leading-relaxed font-inter text-gray-600 dark:text-gray-300">
+              Learnify is an AI-powered assistant that helps users solve doubts,
+              practice concepts, and learn interactively.
+            </p>
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-4 flex gap-3">
+            <a
+              href="#"
+              className="
+                flex-1 text-center
+                px-4 py-2 rounded-lg
+                font-outfit font-semibold text-sm
+                text-primary
+                bg-primary/5
+                dark:bg-white
+                border border-primary/30
+                shadow-sm shadow-primary/15
+                hover:bg-primary hover:text-white
+                hover:shadow-md hover:shadow-primary/30
+                hover:scale-95
+                transition-all duration-300
+              "
             >
-              Learnify - AI Teaching Assistant
-            </CardItem>
-            <CardItem
-              as="p"
-              translateZ="60"
-              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+              GitHub
+            </a>
+
+            <a
+              href="#"
+              className="
+                flex-1 text-center
+                px-4 py-2 rounded-lg
+                font-outfit font-semibold text-sm
+                text-white
+                bg-primary
+                border border-primary
+                shadow-md shadow-primary/25
+                hover:bg-primary/90
+                hover:shadow-lg hover:shadow-primary/40
+                hover:scale-95
+                transition-all duration-300
+              "
             >
-              An AI Powered Teaching Assistant that solves doutes and helps in
-              practice for exam
-            </CardItem>
-            <CardItem
-              translateZ="100"
-              rotateX={20}
-              rotateZ={-10}
-              className="w-full mt-4"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                height="1000"
-                width="1000"
-                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                alt="thumbnail"
-              />
-            </CardItem>
-            <div className="flex justify-between items-center mt-20">
-              <CardItem
-                translateZ={20}
-                translateX={-40}
-                as="button"
-                className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white border border-gray hover:scale-125"
-              >
-                <a href="https://www.google.com/">Get Code</a>
-              </CardItem>
-              <CardItem
-                translateZ={20}
-                translateX={40}
-                as="button"
-                className="px-4 py-2 hover:scale-125 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-              >
-                <a href="https://www.google.com/">Live Site</a>
-              </CardItem>
-            </div>
-          </CardBody>
-        </CardContainer>
+              Live Site
+            </a>
+          </div>
+        </motion.div>
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default Projects;

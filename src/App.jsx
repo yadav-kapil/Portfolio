@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import SkillsMaxMd from "./components/SkillsMaxMd";
 import Projects from "./components/Projects";
 import "lenis/dist/lenis.css";
+import ContactPage from "./components/ContactPage";
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
           <Navbar />
           <Hero />
           <AboutPage />
-          {window.innerWidth >= 1024 ? <Skills /> : <SkillsMaxMd />}
+          {window.innerWidth >= 1280 ? <Skills /> : <SkillsMaxMd />}
           <TimeLineDemo />
           <Projects />
+          <ContactPage />
         </div>
       </ThemeContextProvider>
     </>
