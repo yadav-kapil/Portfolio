@@ -105,19 +105,20 @@ const AboutPage = () => {
               className="
                   relative group
                   flex items-center gap-2
-                  rounded-xl px-4 py-2
+                  rounded-xl px-2 py-1
                   font-bold font-outfit
 
-                  bg-white/90 text-primary
                   border border-primary/20
                   shadow-sm shadow-primary/15
 
                   hover:shadow-md hover:shadow-primary/25
-                  hover:scale-95
+                  hover:scale-90
+                  hover:bg-violet-700
 
-                  dark:bg-primary
-                  dark:border-white/20
-                  dark:text-white
+
+                bg-primary
+                border-white/20
+               text-white
                   dark:shadow-black/40
 
                   transition-all duration-300 ease-out

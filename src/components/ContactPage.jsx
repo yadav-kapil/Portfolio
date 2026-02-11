@@ -1,20 +1,29 @@
 import { motion } from "motion/react";
-import Spline from "@splinetool/react-spline";
+import { Player } from "@lottiefiles/react-lottie-player";
+import contactAnimation from "@/assets/videos/Support.json";
 
 const ContactPage = () => {
   return (
-    <div className="w-full h-screen flex flex-col bg-[#F4F6FF] ">
+    <>
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="max-md:text-center mx-auto"
+        initial={{ y: 40, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="skillHead mb-8 flex justify-center text-5xl font-ubuntu font-bold text-black dark:text-white"
       >
-        <h1 className="font-outfit font-bold text-5xl max-md:text-3xl text-gray-900 dark:text-white">
-          Get In Touch
-        </h1>
+        <h3> GET IN TOUCH </h3>
       </motion.div>
-    </div>
+      <div className="w-full h-screen flex bg-[#F4F6FF] ">
+        <Player
+          autoplay
+          loop
+          src={contactAnimation}
+          className="w-[50%]"
+          style={{ height: "600px", width: "600px" }} // Set the size with inline styles
+        ></Player>
+        
+      </div>
+    </>
   );
 };
 
