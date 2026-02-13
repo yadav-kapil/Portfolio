@@ -1,14 +1,19 @@
 import { motion } from "motion/react";
 import learnify from "../assets/learnify.png";
+import particlesWave from "@/assets/videos/particlesWave.json";
+import { Player } from "@lottiefiles/react-lottie-player";
+
 
 const Projects = () => {
   return (
     <div className="relative w-full px-6 sm:px-10 lg:px-20 py-24 overflow-hidden bg-gradient-to-br from-[#eef2ff] via-white to-[#f8faff] dark:from-[#0f1226] dark:via-[#121633] dark:to-[#0b0e1d]">
+      <div className="absolute left-0 -top-12">
+        <Player autoplay loop src={particlesWave}/>
+      </div>
       
       {/* Background Glow Effects */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/20 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl opacity-30"></div>
-
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -26,7 +31,7 @@ const Projects = () => {
       </motion.div>
 
       {/* Card */}
-      <div className="flex justify-center">
+      <div className="flex justify-center z-50">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

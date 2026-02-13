@@ -13,7 +13,11 @@ const services = [
 export default function Services() {
   return (
     <>
-      <div className="service relative flex items-center max-md:justify-center md:ml-16 gap-4 mb-10 max-md:mb-4">
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x:0 }}
+        transition={{ duration: 1 }}
+        className="service relative flex items-center max-md:justify-center md:ml-16 gap-4 mb-10 max-md:mb-4">
         <div
           className="
             p-3 rounded-xl
@@ -35,15 +39,14 @@ export default function Services() {
           Providing
         </h2>
         <div className="relative w-28 h-16 overflow-hidden -ml-2">
-  <Player
-    autoplay
-    loop
-    src={serviceLoading}
-    className="absolute w-48 h-48 -top-16 left-1/2 -translate-x-1/2"
-  />
-</div>
-
-      </div>
+          <Player
+            autoplay
+            loop
+            src={serviceLoading}
+            className="absolute w-48 h-48 -top-16 left-1/2 -translate-x-1/2"
+          />
+        </div>
+      </motion.div>
 
       <div className="flex flex-col gap-6">
         {services.map((service, index) => {
@@ -52,10 +55,9 @@ export default function Services() {
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
               className="
               group
               mx-10

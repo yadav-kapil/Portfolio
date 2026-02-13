@@ -76,7 +76,6 @@ const AboutPage = () => {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              viewport={{ once: true }}
               className="
                 mb-6 text-3xl max-md:text-2xl
                 font-semibold font-manrope
@@ -101,7 +100,6 @@ const AboutPage = () => {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
               className="
                 mb-6 text-lg leading-relaxed
                 font-inter
@@ -121,7 +119,6 @@ const AboutPage = () => {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
               className="
                 mb-6 text-base leading-relaxed
                 font-inter
@@ -141,7 +138,6 @@ const AboutPage = () => {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
               className="
                 text-base leading-relaxed
                 font-inter
