@@ -1,24 +1,24 @@
 import { motion } from "motion/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import contactAnimation from "@/assets/videos/Support.json";
+import headerAnimation from "@/assets/videos/headerAnim.json";
 
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#F4F6FF] to-[#E6ECFF] dark:from-[#0f172a] dark:to-[#1e293b] flex flex-col items-center justify-center px-6 py-12">
-
       {/* Heading */}
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="mb-12 text-4xl md:text-5xl font-bold text-gray-800 dark:text-white"
+        className="md:mb-12 mb-8 text-4xl flex justify-center items-center md:text-5xl font-bold text-gray-800 dark:text-white"
       >
-        GET IN TOUCH
+        <h1>GET IN TOUCH</h1>
+        <Player autoplay loop src={headerAnimation} className="h-32 max-md:hidden" />
       </motion.div>
 
       {/* Main Card */}
       <div className="w-full max-w-6xl bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-2xl rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center">
-
         {/* Left Side - Animation */}
         <div className="flex justify-center">
           <Player

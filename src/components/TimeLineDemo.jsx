@@ -1,39 +1,101 @@
 import { Timeline } from "./ui/timeline";
+import { HiAcademicCap } from "react-icons/hi2";
+import { FaGraduationCap } from "react-icons/fa";
+import { HiTrophy } from "react-icons/hi2";
 
 export function TimeLineDemo() {
+  const cardStyle =
+    "group relative w-full max-w-3xl xl:max-w-4xl rounded-3xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white/70 dark:bg-neutral-900/70 backdrop-blur-xl p-10 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2";
+
   const data = [
     {
       title: "2023",
       content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Passed Class 10 Board Exam with 92.4%
-          </p>
+        <div className={cardStyle}>
+          <div className="flex items-start gap-6">
+            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#5044e5]/20 to-indigo-400/20 text-[#5044e5] text-3xl">
+              <HiAcademicCap />
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                Class 10 Board Exam
+              </h3>
+              <p className="mt-2 text-base text-neutral-600 dark:text-neutral-400">
+                Successfully completed with <span className="font-semibold text-[#5044e5]">92.4%</span>
+              </p>
+            </div>
+          </div>
         </div>
       ),
     },
     {
       title: "2025",
       content: (
-        <div className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          <p>Passed Class 12 with 92%</p>
-          <p>Got 98.38 percentile in Jee Mains 2025</p>
+        <div className="space-y-8">
+          {/* Class 12 */}
+          <div className={cardStyle}>
+            <div className="flex items-start gap-6">
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#5044e5]/20 to-indigo-400/20 text-[#5044e5] text-3xl">
+                <FaGraduationCap />
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                  Class 12 Board Exam
+                </h3>
+                <p className="mt-2 text-base text-neutral-600 dark:text-neutral-400">
+                  Completed with <span className="font-semibold text-[#5044e5]">92%</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* JEE */}
+          <div className={cardStyle}>
+            <div className="flex items-start gap-6">
+              <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#5044e5]/20 to-indigo-400/20 text-[#5044e5] text-3xl">
+                <HiTrophy />
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                  JEE Mains 2025
+                </h3>
+                <p className="mt-2 text-base text-neutral-600 dark:text-neutral-400">
+                  Secured <span className="font-semibold text-[#5044e5]">98.38 Percentile</span>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       ),
     },
     {
       title: "August 2025",
       content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Got Enrolled in Btech with CST Branch at IIEST,Shibpur
-          </p>
+        <div className={cardStyle}>
+          <div className="flex items-start gap-6">
+            <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#5044e5]/20 to-indigo-400/20 text-[#5044e5] text-3xl">
+              <FaGraduationCap />
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                B.Tech – CST Branch
+              </h3>
+              <p className="mt-2 text-base text-neutral-600 dark:text-neutral-400">
+                Enrolled at <span className="font-semibold text-[#5044e5]">IIEST, Shibpur</span>
+              </p>
+            </div>
+          </div>
         </div>
       ),
     },
   ];
+
   return (
-    <div className="relative w-full overflow-clip">
+    <div className="relative w-full overflow-hidden">
       <Timeline data={data} />
     </div>
   );

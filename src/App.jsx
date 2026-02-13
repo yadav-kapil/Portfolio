@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import "lenis/dist/lenis.css";
 import ContactPage from "./components/ContactPage";
 import Footer from "./components/Footer";
+import Services from './components/Services';
 
 function App() {
   return (

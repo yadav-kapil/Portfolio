@@ -5,6 +5,8 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { motion } from "motion/react";
+import { Player } from "@lottiefiles/react-lottie-player";
+import rocket from "@/assets/videos/rocket.json";
 
 const Footer = () => {
   return (
@@ -29,9 +31,12 @@ const Footer = () => {
           <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12 mb-20 shadow-2xl">
             <div className="flex flex-col items-center text-center md:flex-row md:justify-between md:text-left gap-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-3">
-                  Stay Updated 🚀
-                </h2>
+                <div className="flex items-center relative">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                    Stay Updated
+                  </h2>
+                  <Player autoplay loop src={rocket} className="h-18 absolute right-4 -top-5" />
+                </div>
                 <p className="text-white/80">
                   Join my newsletter and get latest updates.
                 </p>
@@ -43,7 +48,7 @@ const Footer = () => {
                   placeholder="Enter your email"
                   className="px-5 py-3 rounded-full bg-white/20 placeholder:text-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white transition w-full md:w-72 text-center md:text-left"
                 />
-                <button className="flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition">
+                <button className="flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer">
                   Subscribe <FaArrowRight />
                 </button>
               </div>
@@ -65,18 +70,16 @@ const Footer = () => {
               <div>
                 <h4 className="font-semibold mb-4 text-lg">Navigation</h4>
                 <ul className="space-y-2 text-white/80">
-                  {["Home", "About", "Projects", "Skills"].map(
-                    (item) => (
-                      <li key={item}>
-                        <a
-                          href={`/${item.toLowerCase()}`}
-                          className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ),
-                  )}
+                  {["Home", "About", "Projects", "Skills"].map((item) => (
+                    <li key={item}>
+                      <a
+                        href={`/${item.toLowerCase()}`}
+                        className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -137,9 +140,7 @@ const Footer = () => {
             <p>© {new Date().getFullYear()} Kapil. All rights reserved.</p>
 
             <div className="flex gap-6 justify-center">
-              <h1 className="hover:text-white transition">
-                KAPIL YADAV
-              </h1>
+              <h1 className="hover:text-white transition">KAPIL YADAV</h1>
             </div>
           </div>
         </div>

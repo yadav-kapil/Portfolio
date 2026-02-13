@@ -5,44 +5,93 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { motion } from "motion/react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import Services from "./Services";
 
 const AboutPage = () => {
   return (
     <div
       className="
-    pb-12 px-4
-    bg-[#F4F6FF] dark:bg-[#121633]
-
+    relative w-full px-4 pb-16
+    overflow-hidden
+    bg-gradient-to-br 
+    from-[#eef2ff] via-white to-[#f8faff] 
+    dark:from-[#0f1226] dark:via-[#121633] dark:to-[#0b0e1d]
   "
     >
+      {/* Background Glow Effects */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-primary/30 rounded-full blur-3xl opacity-30"></div>
+
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-400/30 rounded-full blur-3xl opacity-30"></div>
+
+      {/* MAIN HEADING */}
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 2, delay: 0.1}}
-        className="flex justify-center pt-6 text-black dark:text-white text-5xl font-outfit font-bold"
+        transition={{ duration: 1.2, delay: 0.1 }}
+        className="flex justify-center pt-10 z-40"
       >
-        <h1> ABOUT ME </h1>
+        <h1
+          className="
+          text-5xl max-md:text-3xl
+          font-outfit font-extrabold
+          tracking-tight
+          bg-gradient-to-r from-primary to-violet-600
+          bg-clip-text text-transparent
+        "
+        >
+          ABOUT ME
+        </h1>
       </motion.div>
-      <div className="flex max-md:flex-col justify-center items-center mt-12">
-        <div className="left flex justify-center items-center">
-          <img
-            src={kapilYadav}
-            alt="logo"
-            className="w-2/3 max-md:w-3/4 bg-white rounded-full border px-18"
-          />
+
+      <div className="flex max-md:flex-col-reverse justify-center items-center md:mt-8">
+        {/* SERVICES */}
+        <div className="w-5/12 max-md:w-[80%] px-2 max-md:mt-18">
+          <Services />
         </div>
 
-        <div className="right md:w-1/2 flex flex-col max-md:items-center mx-4 max-md:mx-8 mt-6">
+        {/* CONTENT */}
+        <div
+          className="
+          right max-md:w-[90%] md:w-7/12
+          flex flex-col
+          mx-4 md:mx-0 mt-8
+
+          p-8 md:p-10 
+          rounded-3xl
+
+          backdrop-blur-xl
+          bg-white/60 dark:bg-white/5
+
+          border border-white/40 dark:border-white/10
+
+          shadow-lg shadow-primary/10
+          hover:shadow-primary/30
+          hover:-translate-y-2
+
+          transition-all duration-500 ease-out
+        "
+        >
           <div>
             <motion.h2
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              viewport={{once:true}}
-              className="mb-4 text-3xl font-semibold font-manrope text-gray-900 dark:text-white"
+              viewport={{ once: true }}
+              className="
+                mb-6 text-3xl max-md:text-2xl
+                font-semibold font-manrope
+                tracking-tight
+                text-slate-900 dark:text-white
+              "
             >
               Who is{" "}
-              <span className="font-outfit text-primary dark:text-[#C9CCFF]">
+              <span
+                className="
+                font-outfit font-semibold
+                bg-gradient-to-r from-primary to-violet-500
+                bg-clip-text text-transparent
+              "
+              >
                 Kapil Yadav
               </span>{" "}
               👋
@@ -51,12 +100,17 @@ const AboutPage = () => {
             <motion.p
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              viewport={{once:true}}
-              className="mb-4 text-lg leading-relaxed font-inter text-gray-700 dark:text-[#E3E5FF]"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="
+                mb-6 text-lg leading-relaxed
+                font-inter
+                tracking-wide
+                text-slate-700 dark:text-slate-300
+              "
             >
               I’m a{" "}
-              <span className="font-outfit font-medium text-gray-900 dark:text-white">
+              <span className="font-semibold text-slate-900 dark:text-white">
                 Full Stack Web Developer
               </span>{" "}
               focused on building clean, modern websites with smooth animations
@@ -66,12 +120,17 @@ const AboutPage = () => {
             <motion.p
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              viewport={{once:true}}
-              className="mb-4 text-base leading-relaxed font-inter text-gray-600 dark:text-[#C9CCFF]"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="
+                mb-6 text-base leading-relaxed
+                font-inter
+                tracking-wide
+                text-slate-600 dark:text-slate-400
+              "
             >
               Currently, I’m a{" "}
-              <span className="font-outfit font-medium text-gray-900 dark:text-white">
+              <span className="font-semibold text-slate-900 dark:text-white">
                 B.Tech 1st Year student
               </span>{" "}
               with a strong foundation in web development, creating complete
@@ -81,22 +140,29 @@ const AboutPage = () => {
             <motion.p
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              viewport={{once:true}}
-              className="text-base leading-relaxed font-inter text-gray-600 dark:text-[#C9CCFF]"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="
+                text-base leading-relaxed
+                font-inter
+                tracking-wide
+                text-slate-600 dark:text-slate-400
+              "
             >
               I primarily work with the{" "}
-              <span className="font-outfit font-medium text-gray-900 dark:text-white">
+              <span className="font-semibold text-slate-900 dark:text-white">
                 MERN stack
               </span>{" "}
               (MongoDB, Express, React, Node.js), along with{" "}
-              <span className="font-outfit font-medium text-gray-900 dark:text-white">
+              <span className="font-semibold text-slate-900 dark:text-white">
                 Tailwind CSS
               </span>{" "}
               and animation libraries (such as Framer Motion) to deliver fast,
               responsive, and visually polished digital experiences.
             </motion.p>
           </div>
+
+          {/* CONNECT SECTION (UNCHANGED) */}
           <div className="connect mt-24 flex max-md:flex-col gap-4 items-center">
             <motion.button
               initial={{ x: -40, opacity: 0 }}
@@ -105,22 +171,17 @@ const AboutPage = () => {
               className="
                   relative group
                   flex items-center gap-2
-                  rounded-xl px-2 py-1
+                  rounded-xl px-2 py-2
                   font-bold font-outfit
-
                   border border-primary/20
                   shadow-sm shadow-primary/15
-
                   hover:shadow-md hover:shadow-primary/25
                   hover:scale-90
                   hover:bg-violet-700
-
-
-                bg-primary
-                border-white/20
-               text-white
+                  bg-primary
+                  border-white/20
+                  text-white
                   dark:shadow-black/40
-
                   transition-all duration-300 ease-out
                 "
             >
@@ -129,6 +190,7 @@ const AboutPage = () => {
               </p>
               <FaArrowAltCircleRight className="max-md:hidden translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" />
             </motion.button>
+
             <motion.div
               initial={{ x: 40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -137,15 +199,9 @@ const AboutPage = () => {
             >
               <a
                 href="#"
-                className="bg-white text-primary rounded-full px-2 py-1
-             group flex items-center
-             transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
-                <span
-                  className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap
-               group-hover:max-w-[95px]
-               transition-all duration-500 font-semibold font-outfit"
-                >
+                <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   LinkedIn
                 </span>
                 <FaLinkedinIn
@@ -156,15 +212,9 @@ const AboutPage = () => {
 
               <a
                 href="#"
-                className="bg-white text-primary rounded-full px-2 py-1
-             group flex items-center
-             transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
-                <span
-                  className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap
-               group-hover:max-w-[95px]
-               transition-all duration-500 font-semibold font-outfit"
-                >
+                <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   Instagram
                 </span>
                 <FaInstagram
@@ -175,15 +225,9 @@ const AboutPage = () => {
 
               <a
                 href="#"
-                className="bg-white text-primary rounded-full px-2 py-1
-             group flex items-center
-             transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
-                <span
-                  className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap
-               group-hover:max-w-[95px]
-               transition-all duration-500 font-semibold font-outfit"
-                >
+                <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   Twitter
                 </span>
                 <FaXTwitter
@@ -194,15 +238,9 @@ const AboutPage = () => {
 
               <a
                 href="#"
-                className="bg-white text-primary rounded-full px-2 py-1
-             group flex items-center
-             transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
-                <span
-                  className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap
-               group-hover:max-w-[95px]
-               transition-all duration-500 font-semibold font-outfit"
-                >
+                <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   GitHub
                 </span>
                 <FiGithub
@@ -214,7 +252,8 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-      <div id="skills"> </div>
+
+      <div id="skills"></div>
     </div>
   );
 };
