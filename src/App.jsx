@@ -9,6 +9,7 @@ import SkillsMaxMd from "./components/SkillsMaxMd";
 import Projects from "./components/Projects";
 import "lenis/dist/lenis.css";
 import ContactPage from "./components/ContactPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <TimeLineDemo />
           <Projects />
           <ContactPage />
+          <Footer />
         </div>
       </ThemeContextProvider>
     </>
