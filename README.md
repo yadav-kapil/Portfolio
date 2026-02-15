@@ -23,5 +23,5 @@ git clone https://github.com/yadav-kapil/Portfolio.git
 
 ## Contact Information
 For inquiries, please reach out:
-- Email: yadav.kapil@example.com
-- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/yadav-kapil)
+- Email: ky843622@gmail.com
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/kapilyadav9560/)
