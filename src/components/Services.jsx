@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
 import { FiMonitor, FiLayout, FiZap } from "react-icons/fi";
 import { FiGrid } from "react-icons/fi";
 import serviceLoading from "@/assets/videos/serviceLoading.json";
@@ -15,9 +15,10 @@ export default function Services() {
     <>
       <motion.div
         initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x:0 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="service relative flex items-center max-md:justify-center md:ml-16 gap-4 mb-10 max-md:mb-4">
+        className="service relative flex items-center max-md:justify-center md:ml-16 gap-4 mb-10 max-md:mb-4"
+      >
         <div
           className="
             p-3 rounded-xl
@@ -36,7 +37,7 @@ export default function Services() {
     relative
   "
         >
-          Providing
+          What I Provide
         </h2>
         <div className="relative w-28 h-16 overflow-hidden -ml-2">
           <Player
@@ -55,9 +56,17 @@ export default function Services() {
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.1, ease: easeIn }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 25px rgba(99, 102, 241, 0.4)",
+                transition: {
+                  duration: 0.3,
+                  ease: "easeIn",
+                },
+              }}
               className="
               group
               mx-10
@@ -67,9 +76,7 @@ export default function Services() {
               backdrop-blur-xl
               bg-white/60 dark:bg-white/5
               border border-white/40 dark:border-white/10
-              shadow-lg hover:shadow-primary/30
-              hover:scale-105
-              transition-all duration-500
+              shadow-lg
             "
             >
               <div className="flex items-center gap-4">
@@ -90,7 +97,11 @@ export default function Services() {
                 text-xl font-semibold
                 bg-gradient-to-r from-primary to-violet-600
                 bg-clip-text text-transparent
-                group-hover:${index % 2 == 0 ? "-rotate-3" : "rotate-3"}
+                ${
+                  index % 2 === 0
+                    ? "group-hover:-rotate-3"
+                    : "group-hover:rotate-3"
+                }
                 transition-all duration-500
               `}
                 >

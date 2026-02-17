@@ -5,6 +5,8 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 
 const Projects = () => {
+  const tags = ["React", "Framer Motion"];
+
   return (
     <div className="relative w-full px-6 sm:px-10 lg:px-20 py-24 overflow-hidden bg-gradient-to-br from-[#eef2ff] via-white to-[#f8faff] dark:from-[#0f1226] dark:via-[#121633] dark:to-[#0b0e1d]">
       <div className="absolute left-0 -top-12">
@@ -36,7 +38,6 @@ const Projects = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          whileHover={{ y: -10 }}
           className="
             group relative
             w-full sm:w-[80%] md:w-[55%] lg:w-[25%]
@@ -72,6 +73,29 @@ const Projects = () => {
               practice concepts, and learn interactively.
             </p>
 
+            <div className="mt-5 flex flex-wrap gap-3">
+  {tags.map((tag, index) => (
+    <motion.span
+      key={index}
+      whileHover={{ scale: 1.08 }}
+      transition={{ type: "spring", stiffness: 300, damping: 18 }}
+      className="
+        px-4 py-1.5
+        text-[11px] font-semibold tracking-wider uppercase
+        rounded-full
+        bg-gradient-to-r from-primary/20 to-purple-500/20
+        text-primary dark:text-purple-300
+        border border-primary/30 dark:border-purple-400/30
+        backdrop-blur-md
+        transition-colors duration-300
+      "
+    >
+      {tag}
+    </motion.span>
+  ))}
+</div>
+
+            
             {/* Buttons */}
             <div className="mt-6 flex gap-4">
               <a
