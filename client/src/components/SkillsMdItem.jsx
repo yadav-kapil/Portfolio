@@ -6,6 +6,7 @@ const SkillsMdItem = ({ item }) => {
       {item.map((tool, idx) => {
         return (
           <motion.div
+            key={Date.now() * Math.random()}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}

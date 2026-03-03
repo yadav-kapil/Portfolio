@@ -7,8 +7,37 @@ import {
 import { motion } from "motion/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import rocket from "@/assets/videos/rocket.json";
+import { useRef } from "react";
 
 const Footer = () => {
+  
+  const subscribeRef = useRef();
+
+  const handleSubscribe = async () => {
+    const email = subscribeRef.current.value.trim();
+
+    if (!email) return; // prevent empty submit
+
+    try {
+      const response = await fetch("http://localhost:8081/api/postSubscriber", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Subscription failed");
+      }
+
+      subscribeRef.current.value = ""; // clear input
+      console.log("Subscribed successfully");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <footer className="relative text-white overflow-hidden">
       {/* 🌊 Top Wave */}
@@ -33,22 +62,26 @@ const Footer = () => {
               <div>
                 <div className="flex items-center relative">
                   <h2 className="text-3xl md:text-4xl font-bold mb-3">
-                    Stay Updated
+                    Stay Connected
                   </h2>
-                  <Player autoplay loop src={rocket} className="h-18 absolute right-4 -top-5" />
+                  <Player autoplay loop src={rocket} className="h-18 " />
                 </div>
                 <p className="text-white/80">
-                  Join my newsletter and get latest updates.
+                  Stay updated with my latest projects
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row w-full md:w-auto gap-4">
                 <input
+                  ref={subscribeRef}
                   type="email"
                   placeholder="Enter your email"
                   className="px-5 py-3 rounded-full bg-white/20 placeholder:text-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white transition w-full md:w-72 text-center md:text-left"
                 />
-                <button className="flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer">
+                <button
+                  onClick={handleSubscribe}
+                  className="flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer"
+                >
                   Subscribe <FaArrowRight />
                 </button>
               </div>
@@ -73,7 +106,7 @@ const Footer = () => {
                   {["Home", "About", "Projects", "Skills"].map((item) => (
                     <li key={item}>
                       <a
-                        href={`/${item.toLowerCase()}`}
+                        href={`#${item.toLowerCase()}`}
                         className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
                       >
                         {item}
@@ -88,18 +121,26 @@ const Footer = () => {
                 <h4 className="font-semibold mb-4 text-lg">Resources</h4>
                 <ul className="space-y-2 text-white/80">
                   <li>
-                    <a href="#" className="hover:text-white transition">
+                    <a
+                      href="https://drive.google.com/file/d/10oGDG8rgL93mwzLKwq7PALkLoHlx9bLM/view?usp=sharing"
+                      target="_blank"
+                      className="hover:text-white transition"
+                    >
                       Resume
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-white transition">
+                    <a
+                      href="https://www.linkedin.com/in/kapilyadav9560/"
+                      target="_blank"
+                      className="hover:text-white transition"
+                    >
                       Hire Me
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-white transition">
-                      Support
+                    <a href="#contact" className="hover:text-white transition">
+                      Connect
                     </a>
                   </li>
                 </ul>
@@ -108,25 +149,28 @@ const Footer = () => {
 
             {/* Social */}
             <div className="flex flex-col items-center md:items-start">
-              <h4 className="font-semibold mb-4 text-lg">Connect</h4>
+              <h4 className="font-semibold mb-4 text-lg">Social Links</h4>
               <div className="flex gap-5 text-2xl justify-center md:justify-start">
                 <motion.a
                   whileHover={{ scale: 1.2 }}
-                  href="#"
+                  href="https://www.instagram.com/_yadav__kapil_"
+                  target="_blank"
                   className="hover:text-pink-300 transition"
                 >
                   <FaInstagram />
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.2 }}
-                  href="#"
+                  href="https://github.com/yadav-kapil"
+                  target="_blank"
                   className="hover:text-gray-300 transition"
                 >
                   <FaGithub />
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.2 }}
-                  href="#"
+                  href="https://www.linkedin.com/in/kapilyadav9560/"
+                  target="_blank"
                   className="hover:text-blue-300 transition"
                 >
                   <FaLinkedin />
