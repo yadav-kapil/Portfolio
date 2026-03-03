@@ -97,7 +97,12 @@ const Hero = () => {
                 className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center cursor-pointer"
               >
                 <MdOutlineCloudDownload />
-                <span>Resume</span>
+                <a
+                  href="https://drive.google.com/file/d/10oGDG8rgL93mwzLKwq7PALkLoHlx9bLM/view?usp=sharing"
+                  target="_blank"
+                >
+                  Resume
+                </a>
               </motion.button>
               <motion.button
                 initial={{ x: 20, opacity: 0 }}
@@ -105,7 +110,12 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 0.1 }}
                 className="px-3 py-1.5 font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-all"
               >
-                Hire Me
+                <a
+                  href="https://www.linkedin.com/in/kapilyadav9560/"
+                  target="_blank"
+                >
+                  Hire Me
+                </a>
               </motion.button>
             </div>
           </motion.div>
@@ -138,11 +148,12 @@ const Hero = () => {
               className="scale-x-95 absolute max-sm:left-6 max-sm:-bottom-6 left-8 -bottom-8 rounded-b-2xl border-b-2 border-primary dark:border-b-white"
             />
           </motion.div>
-          <motion.div 
-           initial={{ opacity: 0 }}
+          <motion.div
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2, delay: 0.8 }}
-          className="bgGradient scale-125 absolute w-full h-full md:bottom-28 md:right-36 lg:bottom-28 lg:right-56 dark:hidden z-5 max-md:hidden">
+            className="bgGradient scale-125 absolute w-full h-full md:bottom-28 md:right-36 lg:bottom-28 lg:right-56 dark:hidden z-5 max-md:hidden"
+          >
             <img src={blueGradient} className="w-full h-full" />
           </motion.div>
         </div>
@@ -154,13 +165,11 @@ const Hero = () => {
         transition={{ duration: 1.5, delay: 0.1 }}
         className="loop max-sm:hidden"
       >
-         <div id="about" ></div>
         <CurvedLoop
           marqueeText=" Kapil Yadav ✦ Full Stack Developer ✦ "
           curveAmount={50}
         />
       </motion.div>
-     
     </>
   );
 };

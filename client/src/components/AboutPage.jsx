@@ -5,11 +5,14 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { motion } from "motion/react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import Services from "./Services";
+
 
 const AboutPage = () => {
   return (
     <div
+      id="about"
       className="
     relative w-full px-4 pb-16
     overflow-hidden
@@ -162,10 +165,11 @@ const AboutPage = () => {
 
           {/* CONNECT SECTION (UNCHANGED) */}
           <div className="connect mt-24 flex max-md:flex-col gap-4 items-center">
-            <motion.button
+            <motion.a
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
+              href="#contact"
               className="
                   relative group
                   flex items-center gap-2
@@ -187,7 +191,7 @@ const AboutPage = () => {
                 Let's Connect
               </p>
               <FaArrowAltCircleRight className="max-md:hidden translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" />
-            </motion.button>
+            </motion.a>
 
             <motion.div
               initial={{ x: 40, opacity: 0 }}
@@ -196,7 +200,8 @@ const AboutPage = () => {
               className="social flex items-center gap-1"
             >
               <a
-                href="#"
+                href="https://www.linkedin.com/in/kapilyadav9560/"
+                target="_blank"
                 className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
@@ -209,7 +214,8 @@ const AboutPage = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/_yadav__kapil_"
+                target="_blank"
                 className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
@@ -222,20 +228,22 @@ const AboutPage = () => {
               </a>
 
               <a
-                href="#"
+                href="https://wa.me/9560340701"
+                target="_blank"
                 className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
-                  Twitter
+                  WhatsApp
                 </span>
-                <FaXTwitter
+                <FaWhatsapp
                   size={18}
                   className="transition-all duration-300 group-hover:w-0"
                 />
               </a>
 
               <a
-                href="#"
+                href="https://github.com/yadav-kapil"
+                target="_blank"
                 className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">

@@ -5,7 +5,7 @@ import headerAnimation from "@/assets/videos/headerAnim.json";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F4F6FF] to-[#E6ECFF] dark:from-[#0f172a] dark:to-[#1e293b] flex flex-col items-center justify-center px-6 py-12">
+    <div id="contact" className="min-h-screen bg-gradient-to-br from-[#F4F6FF] to-[#E6ECFF] dark:from-[#0f172a] dark:to-[#1e293b] flex flex-col items-center justify-center px-6 py-12">
       {/* Heading */}
       <motion.div
         initial={{ y: 40, opacity: 0 }}

@@ -31,7 +31,7 @@ const Navbar = () => {
       }}
       transition={{
         duration: 1,
-        delay : 0.5,
+        delay: 0.5,
       }}
       className="
     fixed top-0 w-full z-50
@@ -44,9 +44,9 @@ const Navbar = () => {
   "
     >
       <div className="text-xl font-bold">
-        <span className="text-primary">{'{ '}</span>
+        <span className="text-primary">{"{ "}</span>
         <span className="text-black dark:text-white">kapil</span>
-        <span className="text-primary">{' }'}</span>
+        <span className="text-primary">{" }"}</span>
       </div>
 
       <div
@@ -98,17 +98,17 @@ const Navbar = () => {
         </a>
         <a
           onClick={() => setSidebarState(false)}
-          href="#projects"
+          href="#education"
           className="sm:hover:border-b transition-all"
         >
-          Project
+          Education
         </a>
         <a
           onClick={() => setSidebarState(false)}
-          href="#"
+          href="#projects"
           className="sm:hover:border-b transition-all"
         >
-          Contact
+          Projects
         </a>
 
         <a
@@ -138,7 +138,8 @@ const Navbar = () => {
           <HiMenuAlt1 size={35} />
         </button>
         <a
-          href="#"
+          href="https://www.linkedin.com/in/kapilyadav9560/"
+          target="_blank"
           className="rounded-full max-md:px-2 px-4 py-1 flex items-center gap-1 bg-primary text-white cursor-pointer hover:scale-105 hover:bg-[#4338CA] transition-all max-sm:hidden"
         >
           <p className="max-md:hidden">Contact</p>
