@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_ORIGIN,
     methods: ["GET", "POST"],
   }),
 );
@@ -44,7 +44,7 @@ app.post('/api/postSubscriber', async (req,res) => {
   }
 })
 
-const port = 8081;
+const port = process.env.PORT || 8081;
 
 const startServer = async () => {
   try {
