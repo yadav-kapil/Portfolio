@@ -13,7 +13,8 @@ const Skills = () => {
   <motion.div
     initial={{ y: 40, opacity: 0 }}
     whileInView={{ y: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 0.2 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        viewport={{ once: true }}
     className="
       skillhead py-16 flex justify-center
       text-5xl font-ubuntu font-bold

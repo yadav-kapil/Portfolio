@@ -99,6 +99,7 @@ const Projects = () => {
                     key={index}
                     whileHover={{ scale: 1.08 }}
                     transition={{ type: "spring", stiffness: 300, damping: 18 }}
+                    viewport={{ once: true }}
                     className="
         px-4 py-1.5
         text-[11px] font-semibold tracking-wider uppercase

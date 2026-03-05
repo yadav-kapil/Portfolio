@@ -5,8 +5,6 @@ import headerAnimation from "@/assets/videos/headerAnim.json";
 import { useRef } from "react";
 import { useState } from "react";
 
-
-
 const ContactPage = () => {
   const [status, setStatus] = useState("");
 
@@ -29,13 +27,24 @@ const ContactPage = () => {
         if (!res.ok) {
           throw new Error("Failed to send");
         }
-        setStatus("success");
-        nameRef.current.value = "";
-        emailRef.current.value = "";
-        messageRef.current.value = "";
+        setTimeout(() => {
+          setStatus("success");
+          nameRef.current.value = "";
+          emailRef.current.value = "";
+          messageRef.current.value = "";
+
+          setTimeout(() => {
+            setStatus("");
+          }, 10000);
+        }, 3000);
       })
       .catch(() => {
-        setStatus("error");
+        setTimeout(() => {
+          setStatus("error");
+          setTimeout(() => {
+            setStatus("");
+          }, 10000);
+        }, 3000);
       });
   };
 
@@ -54,6 +63,7 @@ const ContactPage = () => {
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
           className="md:mb-12 mb-8 text-4xl flex justify-center items-center md:text-5xl font-bold text-gray-800 dark:text-white"
         >
           <h1>GET IN TOUCH</h1>
@@ -82,6 +92,7 @@ const ContactPage = () => {
             initial={{ x: 40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
             className="space-y-6"
             onSubmit={handleSubmit}
           >
@@ -128,9 +139,21 @@ const ContactPage = () => {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 className="mt-4 px-4 py-2 text-sm font-medium text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-xl"
               >
                 Form Submitted Successfully ✅
+              </motion.p>
+            )}
+
+            {status === "loading" && (
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-4 px-4 py-2 text-sm font-medium text-yellow-700 dark:text-yellow-300 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-700 rounded-xl"
+              >
+                Connecting to Server
               </motion.p>
             )}
 
@@ -138,6 +161,7 @@ const ContactPage = () => {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 className="mt-4 px-4 py-2 text-sm font-medium text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-xl"
               >
                 Something went wrong ❌
@@ -146,9 +170,12 @@ const ContactPage = () => {
 
             <button
               type="submit"
-              className="w-full cursor-pointer py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 hover:scale-95 text-white font-semibold transition duration-300 shadow-lg hover:shadow-indigo-500/40"
+              disabled={status === "loading"}
+              className="w-full py-3 rounded-xl bg-indigo-600 text-white font-semibold transition duration-300 cursor-pointer shadow-lg
+  hover:bg-indigo-700 hover:scale-95 hover:shadow-indigo-500/40
+  disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-indigo-600"
             >
-              {status === "loading" ? "Sending ..." : "Send Message"}
+              {status === "loading" ? "Sending..." : "Send Message"}
             </button>
           </motion.form>
         </div>

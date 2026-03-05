@@ -19,6 +19,7 @@ bg-[#F4F6FF] dark:bg-[#121633]
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
+        viewport={{ once: true }}
         className="skillHead mb-8 flex justify-center text-5xl font-ubuntu font-bold text-black dark:text-white"
       >
         <h3> My Skills </h3>
@@ -28,6 +29,7 @@ bg-[#F4F6FF] dark:bg-[#121633]
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="flex justify-center items-center gap-2"
       >
         {tabs.map((tab) => (

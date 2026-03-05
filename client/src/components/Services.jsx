@@ -17,6 +17,7 @@ export default function Services() {
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className="service relative flex items-center max-md:justify-center md:ml-16 gap-4 mb-10 max-md:mb-4"
       >
         <div
@@ -67,6 +68,7 @@ export default function Services() {
                   ease: "easeIn",
                 },
               }}
+              viewport={{ once: true }}
               className="
               group
               mx-10

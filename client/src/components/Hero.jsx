@@ -36,6 +36,7 @@ const Hero = () => {
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.1 }}
+            viewport={{ once: true }}
             className="w-fit font-mono py-2 px-4 border-black border text-black dark:text-white dark:border-white relative"
           >
             <div className="w-3 h-2 bg-blue-700 absolute -top-1 -right-1"></div>
@@ -48,6 +49,7 @@ const Hero = () => {
           <motion.div
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 1.5, delay: 0.3 }}
             className="flex gap-3 items-center"
           >
@@ -63,6 +65,7 @@ const Hero = () => {
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.6 }}
+            viewport={{ once: true }}
             className="flex items-center max-md:flex-col"
           >
             <div className="sm:text-xl md:text-3xl text-black dark:text-white lg:text-5xl font-bold">
@@ -82,6 +85,7 @@ const Hero = () => {
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5, delay: 0.6 }}
+              viewport={{ once: true }}
               className="desc text-sm text-gray-500"
             >
               I build modern, responsive web applications designed for
@@ -94,6 +98,7 @@ const Hero = () => {
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.1 }}
+                viewport={{ once: true }}
                 href="https://drive.google.com/file/d/10oGDG8rgL93mwzLKwq7PALkLoHlx9bLM/view?usp=sharing"
                 target="_blank"
                 className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center cursor-pointer"
@@ -105,9 +110,10 @@ const Hero = () => {
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.1 }}
+                viewport={{ once: true }}
                 href="https://www.linkedin.com/in/kapilyadav9560/"
                 target="_blank"
-                className="px-3 py-1.5 font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-all"
+                className="px-3 py-1.5 flex justify-center font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-all"
               >
                 <p>Hire Me</p>
               </motion.a>
@@ -120,6 +126,7 @@ const Hero = () => {
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.8 }}
+            viewport={{ once: true }}
             className="
             z-10
             imgBg bg-transparent relative
@@ -146,6 +153,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2, delay: 0.8 }}
+            viewport={{ once: true }}
             className="bgGradient scale-125 absolute w-full h-full md:bottom-28 md:right-36 lg:bottom-28 lg:right-56 dark:hidden z-5 max-md:hidden"
           >
             <img src={blueGradient} className="w-full h-full" />
@@ -157,10 +165,11 @@ const Hero = () => {
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.1 }}
+        viewport={{ once: true }}
         className="loop max-sm:hidden"
       >
         <CurvedLoop
-          marqueeText=" Kapil Yadav ✦ Full Stack Developer ✦ "
+          marqueeText=" Modern Web App ✦ Responsive UI ✦ Scalable APIs ✦"
           curveAmount={50}
         />
       </motion.div>

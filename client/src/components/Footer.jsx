@@ -7,39 +7,67 @@ import {
 import { motion } from "motion/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import rocket from "@/assets/videos/rocket.json";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const Footer = () => {
-  
+  const [subscribeState, setSubscribeState] = useState("");
+
   const subscribeRef = useRef();
 
   const handleSubscribe = async () => {
     const email = subscribeRef.current.value.trim();
 
-    if (!email) return; // prevent empty submit
-
+    if (!email) {
+      toast.warning("Please Enter A Valid Email");
+      return;
+    }
     try {
-      const response = await fetch(`${import.meta.env.VITE_SERVER_URI}/api/postSubscriber`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      setSubscribeState("loading");
+
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URI}/api/postSubscriber`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
         },
-        body: JSON.stringify({ email }),
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Subscription failed");
       }
 
-      subscribeRef.current.value = ""; // clear input
-      console.log("Subscribed successfully");
+      setTimeout(() => {
+        setSubscribeState("");
+        subscribeRef.current.value = "";
+        toast.success("Subscribed Successfully :)");
+      }, 2000);
     } catch (error) {
-      console.error(error);
+      setTimeout(() => {
+        console.error(error);
+        setSubscribeState("");
+        toast.error("Something Went Wrong !");
+      }, 2000);
     }
   };
 
   return (
     <footer className="relative text-white overflow-hidden">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={9000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       {/* 🌊 Top Wave */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
         <svg
@@ -82,7 +110,10 @@ const Footer = () => {
                   onClick={handleSubscribe}
                   className="flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition cursor-pointer"
                 >
-                  Subscribe <FaArrowRight />
+                  {subscribeState === "loading"
+                    ? "Please Wait ..."
+                    : "Subscribe"}{" "}
+                  <FaArrowRight />
                 </button>
               </div>
             </div>

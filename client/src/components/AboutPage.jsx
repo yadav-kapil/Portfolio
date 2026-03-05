@@ -104,6 +104,7 @@ const AboutPage = () => {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
               className="
                 mb-6 text-lg leading-relaxed
                 font-inter
@@ -123,6 +124,7 @@ const AboutPage = () => {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
               className="
                 mb-6 text-base leading-relaxed
                 font-inter
@@ -142,6 +144,7 @@ const AboutPage = () => {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
               className="
                 text-base leading-relaxed
                 font-inter
@@ -168,6 +171,7 @@ const AboutPage = () => {
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: true }}
               href="#contact"
               className="
                   relative group
@@ -196,6 +200,7 @@ const AboutPage = () => {
               initial={{ x: 40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: true }}
               className="social flex items-center gap-1"
             >
               <a
