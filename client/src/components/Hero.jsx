@@ -90,33 +90,27 @@ const Hero = () => {
               devices.
             </motion.div>
             <div className="btnHire flex gap-6 max-sm:flex-col">
-              <motion.button
+              <motion.a
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.1 }}
+                href="https://drive.google.com/file/d/10oGDG8rgL93mwzLKwq7PALkLoHlx9bLM/view?usp=sharing"
+                target="_blank"
                 className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center cursor-pointer"
               >
                 <MdOutlineCloudDownload />
-                <a
-                  href="https://drive.google.com/file/d/10oGDG8rgL93mwzLKwq7PALkLoHlx9bLM/view?usp=sharing"
-                  target="_blank"
-                >
-                  Resume
-                </a>
-              </motion.button>
-              <motion.button
+                <p>Resume</p>
+              </motion.a>
+              <motion.a
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.1 }}
+                href="https://www.linkedin.com/in/kapilyadav9560/"
+                target="_blank"
                 className="px-3 py-1.5 font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-all"
               >
-                <a
-                  href="https://www.linkedin.com/in/kapilyadav9560/"
-                  target="_blank"
-                >
-                  Hire Me
-                </a>
-              </motion.button>
+                <p>Hire Me</p>
+              </motion.a>
             </div>
           </motion.div>
         </div>

@@ -5,6 +5,8 @@ import headerAnimation from "@/assets/videos/headerAnim.json";
 import { useRef } from "react";
 import { useState } from "react";
 
+
+
 const ContactPage = () => {
   const [status, setStatus] = useState("");
 
@@ -16,7 +18,7 @@ const ContactPage = () => {
       email: emailRef.current.value,
       message: messageRef.current.value,
     };
-    fetch("http://localhost:8081/api/postContactForm", {
+    fetch(`${import.meta.env.VITE_SERVER_URI}/api/postContactForm`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

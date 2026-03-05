@@ -44,7 +44,7 @@ app.post('/api/postSubscriber', async (req,res) => {
   }
 })
 
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 3001;
 
 const startServer = async () => {
   try {

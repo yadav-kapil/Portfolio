@@ -19,7 +19,7 @@ const Footer = () => {
     if (!email) return; // prevent empty submit
 
     try {
-      const response = await fetch("http://localhost:8081/api/postSubscriber", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URI}/api/postSubscriber`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

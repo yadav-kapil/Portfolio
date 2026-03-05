@@ -13,6 +13,9 @@ This portfolio showcases my projects and skills as a developer.
 - CSS
 - JavaScript
 - React
+- Node Js
+- Express Js
+- MongoDB
 
 ## Getting Started
 To get started with this portfolio, clone the repository and open the index.html file in your browser.

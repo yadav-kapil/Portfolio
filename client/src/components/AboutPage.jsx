@@ -8,7 +8,6 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import Services from "./Services";
 
-
 const AboutPage = () => {
   return (
     <div
@@ -202,7 +201,8 @@ const AboutPage = () => {
               <a
                 href="https://www.linkedin.com/in/kapilyadav9560/"
                 target="_blank"
-                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out border border-white/40 dark:border-white/10 shadow-lg shadow-primary/10
+                hover:shadow-primary/30"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   LinkedIn
@@ -216,7 +216,9 @@ const AboutPage = () => {
               <a
                 href="https://www.instagram.com/_yadav__kapil_"
                 target="_blank"
-                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out border border-white/40 dark:border-white/10
+                shadow-lg shadow-primary/10
+                hover:shadow-primary/30"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   Instagram
@@ -230,7 +232,9 @@ const AboutPage = () => {
               <a
                 href="https://wa.me/9560340701"
                 target="_blank"
-                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out border border-white/40 dark:border-white/10
+                shadow-lg shadow-primary/10
+                hover:shadow-primary/30"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   WhatsApp
@@ -244,7 +248,9 @@ const AboutPage = () => {
               <a
                 href="https://github.com/yadav-kapil"
                 target="_blank"
-                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out"
+                className="bg-white text-primary rounded-full px-2 py-1 group flex items-center transition-all duration-500 ease-in-out border border-white/40 dark:border-white/10
+                shadow-lg shadow-primary/10
+                hover:shadow-primary/30"
               >
                 <span className="max-md:hidden max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[95px] transition-all duration-500 font-semibold font-outfit">
                   GitHub
