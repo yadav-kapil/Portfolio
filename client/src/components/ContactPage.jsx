@@ -36,7 +36,7 @@ const ContactPage = () => {
           setTimeout(() => {
             setStatus("");
           }, 10000);
-        }, 3000);
+        }, 1500);
       })
       .catch(() => {
         setTimeout(() => {
@@ -44,7 +44,7 @@ const ContactPage = () => {
           setTimeout(() => {
             setStatus("");
           }, 10000);
-        }, 3000);
+        }, 1500);
       });
   };
 
@@ -56,7 +56,7 @@ const ContactPage = () => {
     <>
       <div
         id="contact"
-        className="min-h-screen bg-gradient-to-br from-[#F4F6FF] to-[#E6ECFF] dark:from-[#0f172a] dark:to-[#1e293b] flex flex-col items-center justify-center px-6 py-12"
+        className="min-h-screen bg-gradient-to-br from-[#F4F6FF] to-[#E6ECFF] dark:from-[#0f172a] dark:to-[#1e293b] flex flex-col items-center px-6 sm:px-12 lg:px-24 py-12"
       >
         {/* Heading */}
         <motion.div
@@ -64,7 +64,7 @@ const ContactPage = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="md:mb-12 mb-8 text-4xl flex justify-center items-center md:text-5xl font-bold text-gray-800 dark:text-white"
+          className="mb-8 md:mb-12 text-3xl sm:text-4xl md:text-5xl flex justify-center items-center font-bold text-gray-800 dark:text-white"
         >
           <h1>GET IN TOUCH</h1>
           <Player
@@ -76,14 +76,14 @@ const ContactPage = () => {
         </motion.div>
 
         {/* Main Card */}
-        <div className="w-full max-w-6xl bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-2xl rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center">
+        <div className="w-full max-w-6xl bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-2xl rounded-3xl p-6 sm:p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center">
           {/* Left Side - Animation */}
           <div className="flex justify-center">
             <Player
               autoplay
               loop
               src={contactAnimation}
-              className="w-[300px] md:w-[450px]"
+              className="w-[270px] sm:w-[300px] md:w-[450px]"
             />
           </div>
 
@@ -93,7 +93,7 @@ const ContactPage = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 px-4 w-full min-w-0"
             onSubmit={handleSubmit}
           >
             <div>
@@ -105,7 +105,7 @@ const ContactPage = () => {
                 type="text"
                 name="name"
                 placeholder="Enter your name"
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:text-white bg-gray-100 dark:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+                className="w-full max-w-full px-4 py-3 border border-gray-400 rounded-xl placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:text-white bg-gray-100 dark:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
               />
             </div>
 

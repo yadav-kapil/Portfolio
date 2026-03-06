@@ -27,9 +27,9 @@ const Hero = () => {
     <>
       <div
         id="home"
-        className="flex flex-row max-sm:flex-col-reverse gap-12 px-6 sm:px-12 lg:px-32 pb-16 relative w-full overflow-x-hidden"
+        className="flex flex-row max-sm:flex-col-reverse gap-24 px-8 sm:px-12 lg:px-28 max-sm:pt-36 pb-16 relative w-full overflow-x-hidden"
       >
-        <div className="left flex flex-col flex-1 gap-5 sm:mt-60 max-sm:mt-20 max-sm:mb-12 max-sm:p-6 max-sm:items-center h-fit">
+        <div className="left flex flex-col flex-1 gap-5 sm:mt-60 max-sm:items-center h-fit">
           <motion.span
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -136,15 +136,10 @@ const Hero = () => {
             lg:w-[280px] lg:h-[350px]
           "
           >
-            <div
-              className="innerBg w-full h-full absolute max-sm:left-6 max-sm:top-6 left-8 top-8 border border-black dark:border-white rounded-2xl bg-gradient-to-br
-              from-[#5044E5]
-              via-[#6A5CF2]
-              to-[#3B2ECF]"
-            ></div>
+            <div className="innerBg w-full h-full absolute left-4 top-6 sm:left-8 sm:top-8 border border-black dark:border-white rounded-2xl bg-gradient-to-br from-[#5044E5] via-[#6A5CF2] to-[#3B2ECF]"></div>
             <img
               src={kapilYadav}
-              className="scale-x-95 absolute left-0 sm:left-4 lg:left-8 -bottom-8 rounded-b-2xl border-b-2 border-primary dark:border-b-white"
+              className="scale-x-95 absolute left-4 lg:left-8 -bottom-6 sm:-bottom-8 rounded-b-2xl border-b-2 border-primary dark:border-b-white"
             />
           </motion.div>
           <motion.div
