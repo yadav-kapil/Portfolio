@@ -27,11 +27,9 @@ const Hero = () => {
     <>
       <div
         id="home"
-        className="
-        flex max-sm:mx-auto max-sm:flex-col-reverse mb-16 relative
-        "
+        className="flex flex-row max-sm:flex-col-reverse gap-12 px-6 sm:px-12 lg:px-32 pb-16 relative w-full overflow-x-hidden"
       >
-        <div className="left flex sm:ml-[10%] sm:mt-60 max-sm:mt-20 max-sm:mx-auto max-sm:mb-12 max-sm:p-6 gap-5 flex-col w-[50%] max-sm:items-center max-sm:w-[100%] h-fit">
+        <div className="left flex flex-col flex-1 gap-5 sm:mt-60 max-sm:mt-20 max-sm:mb-12 max-sm:p-6 max-sm:items-center h-fit">
           <motion.span
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -121,7 +119,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="right sm:w-[50%] w-[100%] mt-32 max-sm:flex max-sm:justify-center sm:mt-52 sm:ml-12 md:ml-16 lg:ml-26 relative">
+        <div className="right flex-1 flex justify-center sm:mt-52 relative">
           <motion.div
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -146,7 +144,7 @@ const Hero = () => {
             ></div>
             <img
               src={kapilYadav}
-              className="scale-x-95 absolute max-sm:left-6 max-sm:-bottom-6 left-8 -bottom-8 rounded-b-2xl border-b-2 border-primary dark:border-b-white"
+              className="scale-x-95 absolute left-0 sm:left-4 lg:left-8 -bottom-8 rounded-b-2xl border-b-2 border-primary dark:border-b-white"
             />
           </motion.div>
           <motion.div
@@ -154,7 +152,7 @@ const Hero = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2, delay: 0.8 }}
             viewport={{ once: true }}
-            className="bgGradient scale-125 absolute w-full h-full md:bottom-28 md:right-36 lg:bottom-28 lg:right-56 dark:hidden z-5 max-md:hidden"
+            className="bgGradient scale-110 absolute w-full h-full md:bottom-28 md:right-36 lg:bottom-28 lg:right-56 dark:hidden z-5 max-md:hidden"
           >
             <img src={blueGradient} className="w-full h-full" />
           </motion.div>

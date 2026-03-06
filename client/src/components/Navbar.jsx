@@ -37,7 +37,7 @@ const Navbar = () => {
       className="
     fixed top-0 w-full z-50
     flex justify-between items-center
-    p-8 sm:px-12 md:px-16 lg:px-24 xl:px-40 py-4
+    px-6 sm:px-12 md:px-16 lg:px-24 xl:px-40 py-4
     backdrop-blur-xl
     font-medium
     bg-white/50

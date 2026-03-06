@@ -11,7 +11,6 @@ import "lenis/dist/lenis.css";
 import ContactPage from "./components/ContactPage";
 import Footer from "./components/Footer";
 
-
 function App() {
   return (
     <>
@@ -20,7 +19,12 @@ function App() {
           <Navbar />
           <Hero />
           <AboutPage />
-          {window.innerWidth >= 1280 ? <Skills /> : <SkillsMaxMd />}
+          <div className="hidden xl:block">
+            <Skills />
+          </div>
+          <div className="block xl:hidden">
+            <SkillsMaxMd />
+          </div>
           <TimeLineDemo />
           <Projects />
           <ContactPage />
