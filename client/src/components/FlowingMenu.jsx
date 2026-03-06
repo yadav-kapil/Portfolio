@@ -57,15 +57,24 @@ function MenuItem({
 
   useEffect(() => {
     const calculateRepetitions = () => {
-      if (!marqueeInnerRef.current) return;
-      const marqueeContent =
-        marqueeInnerRef.current.querySelector(".marquee-part");
-      if (!marqueeContent) return;
-      const contentWidth = marqueeContent.offsetWidth;
-      const viewportWidth = window.innerWidth;
-      const needed = Math.ceil(viewportWidth / contentWidth) + 2;
-      setRepetitions(Math.max(15, needed));
-    };
+  if (!marqueeInnerRef.current) return;
+
+  const marqueeContent =
+    marqueeInnerRef.current.querySelector(".marquee-part");
+
+  if (!marqueeContent) return;
+
+  const contentWidth = marqueeContent.offsetWidth;
+  const viewportWidth = window.innerWidth;
+
+  if (!contentWidth || contentWidth <= 0) return;
+
+  const needed = Math.ceil(viewportWidth / contentWidth) + 2;
+
+  const safeValue = Math.max(15, Math.floor(needed || 0));
+
+  setRepetitions(safeValue);
+};
 
     calculateRepetitions();
     window.addEventListener("resize", calculateRepetitions);
