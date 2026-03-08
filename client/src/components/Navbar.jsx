@@ -113,7 +113,8 @@ const Navbar = () => {
         </a>
 
         <a
-          href="#"
+          href="https://www.linkedin.com/in/kapilyadav9560/"
+          target="_blank"
           className="rounded-full px-4 py-1 flex items-center justify-center gap-1 bg-white text-primary font-bold cursor-pointer hover:scale-x-105 hover:bg-[#8f8f8f] transition-all sm:hidden absolute bottom-28 m-auto"
         >
           <p>Contact</p>
