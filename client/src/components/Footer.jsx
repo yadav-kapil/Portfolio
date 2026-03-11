@@ -153,7 +153,7 @@ const Footer = () => {
                 <ul className="space-y-2 text-white/80">
                   <li>
                     <a
-                      href="https://drive.google.com/file/d/10oGDG8rgL93mwzLKwq7PALkLoHlx9bLM/view?usp=sharing"
+                      href="https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing"
                       target="_blank"
                       className="hover:text-white transition"
                     >

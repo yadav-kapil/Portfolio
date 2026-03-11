@@ -97,7 +97,7 @@ const Hero = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 viewport={{ once: true }}
-                href="https://drive.google.com/file/d/10oGDG8rgL93mwzLKwq7PALkLoHlx9bLM/view?usp=sharing"
+                href="https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing"
                 target="_blank"
                 className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center cursor-pointer"
               >
