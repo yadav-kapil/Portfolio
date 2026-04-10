@@ -16,7 +16,7 @@ app.use(
   }),
 );
 
-app.post("/api/postContactForm", async (req, res) => {
+app.post("/api/contactForm", async (req, res) => {
   try {
     const { name, email, message } = req.body;
     console.log(req.body);
@@ -30,7 +30,7 @@ app.post("/api/postContactForm", async (req, res) => {
   }
 });
 
-app.post('/api/postSubscriber', async (req,res) => {
+app.post('/api/subscribe', async (req,res) => {
   try {
     const { email } = req.body;
     console.log(req.body);

@@ -26,7 +26,7 @@ const Footer = () => {
       setSubscribeState("loading");
 
       const response = await fetch(
-        `${import.meta.env.VITE_SERVER_URI}/api/postSubscriber`,
+        `${import.meta.env.VITE_SERVER_URI}/api/subscribe`,
         {
           method: "POST",
           headers: {

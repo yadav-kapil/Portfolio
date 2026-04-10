@@ -16,7 +16,7 @@ const ContactPage = () => {
       email: emailRef.current.value,
       message: messageRef.current.value,
     };
-    fetch(`${import.meta.env.VITE_SERVER_URI}/api/postContactForm`, {
+    fetch(`${import.meta.env.VITE_SERVER_URI}/api/contactForm`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
