@@ -134,7 +134,8 @@ const Projects = () => {
                   GitHub
                 </a>
 
-                <button
+                <a
+                  href="https://learnify-hacksprint.vercel.app/"
                   className="
                   cursor-pointer
                   flex-1 text-center
@@ -145,10 +146,9 @@ const Projects = () => {
                   hover:opacity-90
                   transition-all duration-300
                 "
-                  onClick={notify}
                 >
                   Live Site
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
