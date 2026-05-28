@@ -13,36 +13,46 @@ const SkillsMaxMd = () => {
   };
   return (
 <div className="w-screen py-12 
-bg-[#F4F6FF] dark:bg-[#121633]
+bg-[#FAFBFD] dark:bg-[#0A0D1A]
+transition-colors duration-300
 ">
       <motion.div
-        initial={{ y: 40, opacity: 0 }}
+        initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
         viewport={{ once: true }}
-        className="skillHead mb-8 flex justify-center text-5xl font-ubuntu font-bold text-black dark:text-white"
+        className="skillHead mb-8 flex flex-col items-center gap-2 text-center"
       >
-        <h3> My Skills </h3>
+        <span className="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/25 shadow-sm backdrop-blur-md">
+          ✦ EXPERTISE ✦
+        </span>
+        <h3 className="text-5xl max-md:text-3xl font-outfit font-extrabold tracking-tight bg-gradient-to-r from-primary via-indigo-500 to-violet-600 bg-clip-text text-transparent">
+          MY SKILLS
+        </h3>
       </motion.div>
 
       <motion.div
-        initial={{ y: 40, opacity: 0 }}
+        initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
-        className="flex justify-center items-center gap-2"
+        className="flex justify-center items-center"
       >
-        {tabs.map((tab) => (
-          <div
-            key={tab + Math.random()}
-            className={`tabs dark:text-white dark:border-white px-3 py-0.5 border w-fit flex gap-2 rounded-full max-md:text-sm font-medium font-outfit text-black hover:bg-primary hover:text-white cursor-pointer transition-all duration-500 hover:scale-95 ${currTab === tab ? "bg-primary text-white" : ""}`}
-            onClick={() => {
-              onTabClick(tab);
-            }}
-          >
-            {tab}
-          </div>
-        ))}
+        <div className="flex gap-2 p-1.5 rounded-full bg-white/40 dark:bg-white/5 border border-white/40 dark:border-white/10 backdrop-blur-md shadow-sm">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => onTabClick(tab)}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold font-outfit transition-all duration-300 cursor-pointer ${
+                currTab === tab
+                  ? "bg-gradient-to-r from-primary to-violet-600 text-white shadow-md shadow-primary/20 scale-95"
+                  : "text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-slate-100/50 dark:hover:bg-white/5"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </motion.div>
 
       <div className="my-6 max-md:px-3 px-12 flex flex-wrap justify-center items-center gap-8 w-full">
@@ -50,7 +60,7 @@ bg-[#F4F6FF] dark:bg-[#121633]
           return (
             skill.tab === currTab && (
               <SkillsMdItem
-                key={skill.tab + Math.random()}
+                key={skill.tab}
                 item={skill.image}
               />
             )

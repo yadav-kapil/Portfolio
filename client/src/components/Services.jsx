@@ -1,4 +1,4 @@
-import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
+import { motion } from "motion/react";
 import { FiMonitor, FiLayout, FiZap } from "react-icons/fi";
 import { FiGrid } from "react-icons/fi";
 import serviceLoading from "@/assets/videos/serviceLoading.json";
@@ -59,7 +59,7 @@ export default function Services() {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.1, ease: easeIn }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 10px 25px rgba(99, 102, 241, 0.4)",

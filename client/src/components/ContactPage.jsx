@@ -56,7 +56,7 @@ const ContactPage = () => {
     <>
       <div
         id="contact"
-        className="min-h-screen bg-gradient-to-br from-[#F4F6FF] to-[#E6ECFF] dark:from-[#0f172a] dark:to-[#1e293b] flex flex-col items-center px-6 sm:px-12 lg:px-24 py-12"
+        className="min-h-screen bg-gradient-to-br from-[#FAFBFD] to-[#F1F5F9] dark:from-[#0A0D1A] dark:to-[#0E1229] flex flex-col items-center px-6 sm:px-12 lg:px-24 py-12 transition-colors duration-300"
       >
         {/* Heading */}
         <motion.div

@@ -78,7 +78,7 @@ const Hero = () => {
             />
           </motion.div>
 
-          <motion.div className="leftBottom mt-4 max-md:mt-3 w-[95%] sm:w-[90%] md:w-[80%] flex flex-col gap-4">
+          <div className="leftBottom mt-4 max-md:mt-3 w-[95%] sm:w-[90%] md:w-[80%] flex flex-col gap-4">
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -95,11 +95,12 @@ const Hero = () => {
               <motion.a
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
+                whileHover={{ scale: 0.95 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 viewport={{ once: true }}
                 href="https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing"
                 target="_blank"
-                className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:scale-95 hover:bg-[#4338CA] transition-all flex justify-center overflow-hidden items-center gap-2 justify-center cursor-pointer"
+                className="group bg-primary px-3 py-1.5 border-[0.5px] text-white font-bold border-gray-900 rounded-lg hover:bg-[#4338CA] transition-colors duration-300 flex justify-center overflow-hidden items-center gap-2 cursor-pointer"
               >
                 <MdOutlineCloudDownload />
                 <p>Resume</p>
@@ -107,16 +108,17 @@ const Hero = () => {
               <motion.a
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
+                whileHover={{ scale: 0.95 }}
                 transition={{ duration: 1, delay: 0.1 }}
                 viewport={{ once: true }}
                 href="https://www.linkedin.com/in/kapilyadav9560/"
                 target="_blank"
-                className="px-3 py-1.5 flex justify-center font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:scale-95 hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-all"
+                className="px-3 py-1.5 flex justify-center font-bold border rounded-lg text-black bg-gray-400/10 border-gray-400/70 dark:bg-white/90 dark:border-white hover:bg-gray-500/30 dark:hover:bg-white/20 cursor-pointer dark:hover:text-white transition-colors duration-300"
               >
                 <p>Hire Me</p>
               </motion.a>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="right flex-1 flex justify-center sm:mt-52 relative">

@@ -53,7 +53,7 @@ const Navbar = () => {
       <div
         className={`
         tabs flex gap-5
-        text-gray-700 dark:text-white
+        text-gray-700
         sm:flex-row sm:static sm:w-auto sm:h-auto sm:bg-transparent sm:p-0 sm:translate-x-0
         sm:items-center
 
@@ -61,7 +61,7 @@ const Navbar = () => {
         max-sm:fixed top-0 right-0
         max-sm:w-60 max-sm:h-screen
         max-sm:pt-40 max-sm:pl-10
-        max-sm:bg-primary max-sm:text-white
+        max-sm:bg-primary
 
         transition-transform duration-500 ease-out
         ${
@@ -79,37 +79,42 @@ const Navbar = () => {
         <a
           onClick={() => setSidebarState(false)}
           href="#home"
-          className="sm:hover:border-b transition-all"
+          className="relative py-1 text-slate-700 max-sm:text-slate-200 dark:text-slate-200 sm:hover:text-primary dark:sm:hover:text-white transition-colors duration-300 font-outfit text-sm tracking-wide group "
         >
           Home
+          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-violet-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right group-hover:origin-left max-sm:hidden " />
         </a>
         <a
           onClick={() => setSidebarState(false)}
           href="#about"
-          className="sm:hover:border-b transition-all"
+          className="relative py-1 text-slate-700 max-sm:text-slate-200 dark:text-slate-200 sm:hover:text-primary dark:sm:hover:text-white transition-colors duration-300 font-outfit text-sm tracking-wide group"
         >
           About
+          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-violet-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left max-sm:hidden origin-right group-hover:origin-left" />
         </a>
         <a
           onClick={() => setSidebarState(false)}
           href="#skills"
-          className="sm:hover:border-b transition-all"
+          className="relative py-1 text-slate-700 max-sm:text-slate-200 dark:text-slate-200 sm:hover:text-primary dark:sm:hover:text-white transition-colors duration-300 font-outfit text-sm tracking-wide group"
         >
           Skills
+          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-violet-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left max-sm:hidden origin-right group-hover:origin-left" />
         </a>
         <a
           onClick={() => setSidebarState(false)}
           href="#education"
-          className="sm:hover:border-b transition-all"
+          className="relative py-1 text-slate-700 max-sm:text-slate-200 dark:text-slate-200 sm:hover:text-primary dark:sm:hover:text-white transition-colors duration-300 font-outfit text-sm tracking-wide group"
         >
           Education
+          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-violet-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left max-sm:hidden origin-right group-hover:origin-left" />
         </a>
         <a
           onClick={() => setSidebarState(false)}
           href="#projects"
-          className="sm:hover:border-b transition-all"
+          className="relative py-1 text-slate-700 max-sm:text-slate-200 dark:text-slate-200 sm:hover:text-primary dark:sm:hover:text-white transition-colors duration-300 font-outfit text-sm tracking-wide group"
         >
           Projects
+          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-violet-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left max-sm:hidden origin-right group-hover:origin-left" />
         </a>
 
         <a

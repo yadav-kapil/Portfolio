@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useTransform, motion } from "motion/react";
+import { useScroll, useTransform, useSpring, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import experienceHeader from "@/assets/videos/experienceHeader.json";
@@ -21,14 +21,21 @@ export const Timeline = ({ data }) => {
     offset: ["start 10%", "end 50%"],
   });
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  // Apply spring smoothing to scroll progress
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 25,
+    restDelta: 0.001
+  });
+
+  const heightTransform = useTransform(smoothProgress, [0, 1], [0, height]);
+  const opacityTransform = useTransform(smoothProgress, [0, 0.1], [0, 1]);
 
   return (
     <div
-      className="w-full bg-gradient-to-b from-white via-white to-indigo-50/40 
-               dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-900 
-               font-sans md:px-10 pt-20"
+      className="w-full bg-gradient-to-b from-[#FAFBFD] via-[#FAFBFD] to-[#F1F5F9] 
+               dark:from-[#0A0D1A] dark:via-[#0A0D1A] dark:to-[#05070E] 
+               font-sans md:px-10 pt-20 transition-colors duration-300"
       ref={containerRef}
     >
       {/* Header */}
@@ -56,13 +63,13 @@ export const Timeline = ({ data }) => {
           const progressPoint = (index + 1) / data.length;
 
           const dotColor = useTransform(
-            scrollYProgress,
+            smoothProgress,
             [progressPoint - 0.3, progressPoint - 0.1],
             ["#e5e7eb", "#5044e5"], // neutral-200 → primary
           );
 
           const dotScale = useTransform(
-            scrollYProgress,
+            smoothProgress,
             [progressPoint - 0.1, progressPoint],
             [1, 1.25],
           );

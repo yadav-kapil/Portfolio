@@ -25,7 +25,7 @@ const Projects = () => {
       />
       <div
         id="projects"
-        className="relative w-full px-6 sm:px-10 lg:px-20 py-24 overflow-hidden bg-gradient-to-br from-[#eef2ff] via-white to-[#f8faff] dark:from-[#0f1226] dark:via-[#121633] dark:to-[#0b0e1d]"
+        className="relative w-full px-6 sm:px-10 lg:px-20 py-24 overflow-hidden bg-gradient-to-br from-[#FAFBFD] via-white to-[#F1F5F9] dark:from-[#0A0D1A] dark:via-[#0E1229] dark:to-[#05070E] transition-colors duration-300"
       >
         <div className="absolute left-0 -top-12">
           <Player autoplay loop src={particlesWave} />
@@ -56,7 +56,8 @@ const Projects = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
             className="
             group relative
@@ -65,8 +66,8 @@ const Projects = () => {
             backdrop-blur-xl
             bg-white/60 dark:bg-white/5
             border border-white/40 dark:border-white/10
-            shadow-xl shadow-primary/10
-            transition-all duration-500
+            shadow-xl shadow-primary/10 hover:shadow-2xl hover:shadow-primary/20
+            transition-colors duration-500
             overflow-hidden
           "
           >
@@ -136,6 +137,7 @@ const Projects = () => {
 
                 <a
                   href="https://learnify-hacksprint.vercel.app/"
+                  target="_blank"
                   className="
                   cursor-pointer
                   flex-1 text-center

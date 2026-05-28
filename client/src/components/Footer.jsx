@@ -186,7 +186,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.2 }}
                   href="https://www.instagram.com/_yadav__kapil_"
                   target="_blank"
-                  className="hover:text-pink-300 transition"
+                  className="hover:text-pink-300 transition-colors duration-200"
                 >
                   <FaInstagram />
                 </motion.a>
@@ -194,7 +194,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.2 }}
                   href="https://github.com/yadav-kapil"
                   target="_blank"
-                  className="hover:text-gray-300 transition"
+                  className="hover:text-gray-300 transition-colors duration-200"
                 >
                   <FaGithub />
                 </motion.a>
@@ -202,7 +202,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.2 }}
                   href="https://www.linkedin.com/in/kapilyadav9560/"
                   target="_blank"
-                  className="hover:text-blue-300 transition"
+                  className="hover:text-blue-300 transition-colors duration-200"
                 >
                   <FaLinkedin />
                 </motion.a>

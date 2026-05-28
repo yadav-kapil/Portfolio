@@ -5,8 +5,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  font-family: "Manrope", "Inter", sans-serif;
-  font-weight: 500;
+  font-family: "Inter", "Manrope", sans-serif;
+  font-weight: 450;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @theme {
@@ -16,6 +18,21 @@
   --font-outfit: "Outfit", sans-serif;
   --font-ubuntu: "Ubuntu", sans-serif;
   --font-mono: "Intel One Mono", monospace;
+  
+  --animate-float-slow: float-slow 12s ease-in-out infinite;
+  --animate-float-delayed: float-slow 16s ease-in-out infinite 2s;
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(20px, -30px) scale(1.05);
+    }
+    66% {
+      transform: translate(-10px, 15px) scale(0.95);
+    }
+  }
 }
 
 html {
@@ -24,4 +41,9 @@ html {
 
 html, body {
   overflow-x: hidden;
+  background-color: #F4F6FF;
+}
+
+body.dark {
+  background-color: #121633;
 }
