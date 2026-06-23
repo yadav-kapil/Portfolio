@@ -16,7 +16,7 @@ export default function Services() {
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ type: "tween", duration: 0.4 }}
         viewport={{ once: true }}
         className="service relative flex items-center max-md:justify-center md:ml-16 gap-4 mb-10 max-md:mb-4"
       >
@@ -59,7 +59,7 @@ export default function Services() {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ type: "tween", duration: 0.4, delay: index * 0.1 }}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 10px 25px rgba(99, 102, 241, 0.4)",

@@ -28,6 +28,7 @@ const Navbar = () => {
         y: 0,
       }}
       transition={{
+        type: "tween",
         duration: 0.4,
         delay: 0.1,
       }}

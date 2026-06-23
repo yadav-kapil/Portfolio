@@ -30,7 +30,7 @@ const AboutPage = () => {
       <motion.div
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.05 }}
+        transition={{ type: "tween", duration: 0.4, delay: 0.05 }}
         className="flex flex-col items-center pt-10 z-40 gap-2"
         viewport={{ once: true }}
       >
@@ -73,14 +73,14 @@ const AboutPage = () => {
           hover:shadow-primary/30
           hover:-translate-y-2
 
-          transition-all duration-500 ease-out
+          transition-[background-color,border-color,box-shadow,transform] duration-500 ease-out
         "
         >
           <div>
             <motion.h2
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.05 }}
+              transition={{ type: "tween", duration: 0.4, delay: 0.05 }}
               viewport={{ once: true }}
               className="
                 mb-6 text-3xl max-md:text-2xl
@@ -105,7 +105,7 @@ const AboutPage = () => {
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              transition={{ type: "tween", duration: 0.4, delay: 0.1 }}
               viewport={{ once: true }}
               className="
                 mb-6 text-lg leading-relaxed
@@ -125,7 +125,7 @@ const AboutPage = () => {
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.15 }}
+              transition={{ type: "tween", duration: 0.4, delay: 0.15 }}
               viewport={{ once: true }}
               className="
                 mb-6 text-base leading-relaxed
@@ -145,7 +145,7 @@ const AboutPage = () => {
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
+              transition={{ type: "tween", duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
               className="
                 text-base leading-relaxed
@@ -173,7 +173,7 @@ const AboutPage = () => {
               initial={{ x: -30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               whileHover={{ scale: 1.02, y: -2 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              transition={{ type: "tween", duration: 0.4, delay: 0.1 }}
               viewport={{ once: true }}
               href="#contact"
               className="
@@ -185,7 +185,7 @@ const AboutPage = () => {
                   hover:shadow-lg hover:shadow-primary/30
                   text-white
                   border border-white/10
-                  transition-all duration-300 ease-out
+                  transition-[color,background-color,border-color,box-shadow] duration-300 ease-out
                   cursor-pointer
                 "
             >
@@ -196,7 +196,7 @@ const AboutPage = () => {
             <motion.div
               initial={{ x: 30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              transition={{ type: "tween", duration: 0.4, delay: 0.1 }}
               viewport={{ once: true }}
               className="social flex items-center gap-2 flex-wrap"
             >

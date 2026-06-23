@@ -5,7 +5,7 @@ import { HiTrophy } from "react-icons/hi2";
 
 export function TimeLineDemo() {
   const cardStyle =
-    "group relative w-full max-w-3xl xl:max-w-4xl rounded-3xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white/70 dark:bg-neutral-900/70 backdrop-blur-xl p-10 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2";
+    "group relative w-full max-w-3xl xl:max-w-4xl rounded-3xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white/70 dark:bg-neutral-900/70 backdrop-blur-xl p-10 shadow-md hover:shadow-2xl transition-[background-color,border-color,box-shadow,transform] duration-500 hover:-translate-y-2";
 
   const data = [
     {

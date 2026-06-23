@@ -38,7 +38,7 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ type: "tween", duration: 0.4 }}
           viewport={{ once: true, amount: 0.2 }}
           className="mb-16 text-center"
         >
@@ -57,7 +57,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -6 }}
-            transition={{ duration: 0.4 }}
+            transition={{ type: "tween", duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="
             group relative
@@ -129,7 +129,7 @@ const Projects = () => {
                   text-primary
                   bg-primary/10
                   hover:bg-primary hover:text-white
-                  transition-all duration-300
+                  transition-[color,background-color,border-color] duration-300
                 "
                 >
                   GitHub
@@ -146,7 +146,7 @@ const Projects = () => {
                   text-white
                   bg-gradient-to-r from-primary to-purple-500
                   hover:opacity-90
-                  transition-all duration-300
+                  transition-[opacity] duration-300
                 "
                 >
                   Live Site
