@@ -9,7 +9,7 @@ const SkillsMdItem = ({ item }) => {
             key={tool.name}
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: "tween", duration: 0.4, delay: idx * 0.04 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.5, delay: idx * 0.04 }}
             whileHover={{ 
               scale: 1.05,
               y: -4,

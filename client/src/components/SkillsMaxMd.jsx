@@ -19,7 +19,7 @@ transition-colors duration-300
       <motion.div
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ type: "tween", duration: 0.4, delay: 0.05 }}
+        transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.05 }}
         viewport={{ once: true }}
         className="skillHead mb-8 flex flex-col items-center gap-2 text-center"
       >
@@ -34,7 +34,7 @@ transition-colors duration-300
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ type: "tween", duration: 0.4, delay: 0.1 }}
+        transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
         className="flex justify-center items-center"
       >

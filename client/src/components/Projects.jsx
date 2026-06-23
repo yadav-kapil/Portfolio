@@ -38,7 +38,7 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "tween", duration: 0.4 }}
+          transition={{ type: "tween", ease: "easeOut", duration: 0.6 }}
           viewport={{ once: true, amount: 0.2 }}
           className="mb-16 text-center"
         >
@@ -57,7 +57,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -6 }}
-            transition={{ type: "tween", duration: 0.4 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
             className="
             group relative

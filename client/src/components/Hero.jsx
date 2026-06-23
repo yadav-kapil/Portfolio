@@ -33,7 +33,7 @@ const Hero = () => {
           <motion.span
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ type: "tween", duration: 0.4, delay: 0.05 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.05 }}
             viewport={{ once: true }}
             className="w-fit font-mono py-2 px-4 border-black border text-black dark:text-white dark:border-white relative"
           >
@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ type: "tween", duration: 0.4, delay: 0.1 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.1 }}
             className="flex gap-3 items-center"
           >
             <span className="sm:text-lg md:text-2xl text-black dark:text-white lg:text-4xl font-bold">
@@ -62,7 +62,7 @@ const Hero = () => {
           <motion.div
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ type: "tween", duration: 0.4, delay: 0.15 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.15 }}
             viewport={{ once: true }}
             className="flex items-center max-md:flex-col"
           >
@@ -82,7 +82,7 @@ const Hero = () => {
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ type: "tween", duration: 0.4, delay: 0.2 }}
+              transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               className="desc text-sm text-gray-500"
             >
@@ -95,8 +95,8 @@ const Hero = () => {
               <motion.a
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                whileHover={{ scale:  0.95 }}
-                transition={{ type: "tween", duration: 0.4, delay: 0.05 }}
+                whileHover={{ scale: 0.95 }}
+                transition={{ type: "tween", ease: "easeOut", duration: 0.5, delay: 0.05 }}
                 viewport={{ once: true }}
                 href="https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing"
                 target="_blank"
@@ -109,7 +109,7 @@ const Hero = () => {
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 whileHover={{ scale: 0.95 }}
-                transition={{ type: "tween", duration: 0.4, delay: 0.05 }}
+                transition={{ type: "tween", ease: "easeOut", duration: 0.5, delay: 0.05 }}
                 viewport={{ once: true }}
                 href="https://www.linkedin.com/in/kapilyadav9560/"
                 target="_blank"
@@ -125,7 +125,7 @@ const Hero = () => {
           <motion.div
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ type: "tween", duration: 0.4, delay: 0.25 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.25 }}
             viewport={{ once: true }}
             className="
             z-10
@@ -147,7 +147,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ type: "tween", duration: 0.5, delay: 0.3 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
             className="bgGradient scale-110 absolute w-full h-full md:bottom-28 md:right-36 lg:bottom-28 lg:right-56 dark:hidden z-5 max-md:hidden"
           >
@@ -159,7 +159,7 @@ const Hero = () => {
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ type: "tween", duration: 0.4, delay: 0.1 }}
+        transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
         className="loop max-sm:hidden"
       >

@@ -29,7 +29,8 @@ const Navbar = () => {
       }}
       transition={{
         type: "tween",
-        duration: 0.4,
+        ease: "easeOut",
+        duration: 0.6,
         delay: 0.1,
       }}
       viewport={{ once: true }}

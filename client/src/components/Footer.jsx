@@ -85,7 +85,7 @@ const Footer = () => {
       <div className="bg-primary pt-32 pb-16 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* ✨ Newsletter */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12 mb-20 shadow-2xl">
+          <div className="bg-gradient-to-br from-[#4338ca] to-[#6d28d9] border border-white/10 rounded-3xl p-8 md:p-12 mb-20 shadow-2xl">
             <div className="flex flex-col items-center text-center md:flex-row md:justify-between md:text-left gap-8">
               <div>
                 <div className="flex items-center relative">

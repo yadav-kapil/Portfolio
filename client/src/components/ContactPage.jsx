@@ -62,7 +62,7 @@ const ContactPage = () => {
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ type: "tween", duration: 0.4 }}
+          transition={{ type: "tween", ease: "easeOut", duration: 0.6 }}
           viewport={{ once: true }}
           className="mb-8 md:mb-12 text-3xl sm:text-4xl md:text-5xl flex justify-center items-center font-bold text-gray-800 dark:text-white"
         >
@@ -91,7 +91,7 @@ const ContactPage = () => {
           <motion.form
             initial={{ x: 40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ type: "tween", duration: 0.4, delay: 0.1 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
             className="space-y-6 px-4 w-full min-w-0"
             onSubmit={handleSubmit}
