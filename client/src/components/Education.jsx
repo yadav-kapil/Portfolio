@@ -86,7 +86,7 @@ const Education = () => {
       description:
         "Currently pursuing undergraduate studies, focusing on data structures, algorithms, database systems, and software engineering principles.",
       icon: <FaGraduationCap className="w-6 h-6" />,
-      tags: ["IIEST Shibpur", "Computer Science", "B.Tech", "Algorithms"],
+      tags: ["IIEST Shibpur", "Computer Science", "B.Tech"],
     },
     {
       title: "Class 12 – CBSE Board",
@@ -96,7 +96,7 @@ const Education = () => {
       description:
         "Graduated with secondary high school education, majoring in Science (Physics, Chemistry, Math) with a final academic score of 92%.",
       icon: <FaGraduationCap className="w-6 h-6" />,
-      tags: ["CBSE", "Class 12", "Science", "NIPS"],
+      tags: ["Class 12", "NIPS"],
     },
     {
       title: "Class 10 – CBSE Board",
@@ -106,7 +106,7 @@ const Education = () => {
       description:
         "Completed secondary school curriculum, securing an overall score of 92.4% in the final CBSE Board Examination.",
       icon: <HiAcademicCap className="w-6 h-6" />,
-      tags: ["CBSE", "Class 10", "General Sciences", "NIPS"],
+      tags: ["Class 10", "NIPS"],
     },
   ];
 
