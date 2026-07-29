@@ -1,4 +1,3 @@
-import "./App.css";
 import AboutPage from "./components/AboutPage";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -6,7 +5,6 @@ import Education from "./components/Education";
 import ThemeContextProvider from "./store/themeContext";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import "lenis/dist/lenis.css";
 import ContactPage from "./components/ContactPage";
 import Footer from "./components/Footer";
 
