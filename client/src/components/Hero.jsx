@@ -257,7 +257,7 @@ const Hero = () => {
             </svg>
           </div>
 
-          <div className="relative w-[280px] sm:w-[340px] lg:w-[380px] h-[350px] sm:h-[420px] lg:h-[470px]">
+          <div className="max-md:px-2 relative w-[280px] sm:w-[340px] lg:w-[380px] h-[350px] sm:h-[420px] lg:h-[470px]">
             
             {/* React Floating Badge */}
             <div className="absolute top-[22%] -left-[45px] sm:-left-[60px] z-30 bg-white/90 dark:bg-gradient-to-br dark:from-[#0B0D1A]/90 dark:to-[#05060C]/95 backdrop-blur-sm border border-slate-200/50 dark:border-indigo-500/25 rounded-2xl p-3 shadow-xl shadow-indigo-950/5 dark:shadow-black/40 hover:border-indigo-500/45 dark:hover:shadow-[0_0_15px_rgba(99,102,241,0.05)] transition-colors duration-300 select-none w-[70px] sm:w-[85px] flex flex-col items-center gap-1.5 animate-float-badge">

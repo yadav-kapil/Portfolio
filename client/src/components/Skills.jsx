@@ -224,13 +224,13 @@ const Skills = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-1.5 text-center mb-16"
         >
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-purple-250/20 dark:border-purple-950/40 bg-purple-50/50 dark:bg-purple-950/10 w-fit select-none">
-            <span className="text-purple-500">
-              <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/20 dark:border-indigo-500/30 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/8 dark:to-purple-500/8 w-fit select-none hover:border-indigo-500/40 hover:shadow-[0_2px_12px_rgba(99,102,241,0.15)] transition-all duration-300">
+            <span className="text-indigo-500 dark:text-indigo-400 animate-pulse">
+              <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
                 <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
               </svg>
             </span>
-            <span className="text-[10px] font-bold tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-manrope uppercase">
+            <span className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-manrope uppercase">
               My Skills
             </span>
           </div>
@@ -260,7 +260,7 @@ const Skills = () => {
                 default: { duration: 0.8, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }
               }}
               viewport={{ once: true, margin: "-50px" }}
-              className="flex flex-col p-8 rounded-[2rem] border border-white/60 dark:border-indigo-500/15 bg-white/40 dark:bg-[#090A1A]/70 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden group hover:border-indigo-500/35 dark:hover:border-indigo-500/45 dark:hover:shadow-[0_20px_50px_rgba(99,102,241,0.08)] transition-colors duration-500 select-none text-left"
+              className="flex flex-col p-6 sm:p-8 rounded-[2rem] border border-white/60 dark:border-indigo-500/15 bg-white/40 dark:bg-[#090A1A]/70 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden group hover:border-indigo-500/35 dark:hover:border-indigo-500/45 dark:hover:shadow-[0_20px_50px_rgba(99,102,241,0.08)] transition-colors duration-500 select-none text-left"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-indigo-500 dark:from-indigo-500 dark:to-indigo-400 text-white flex items-center justify-center shadow-md transform group-hover:scale-105 transition-transform duration-300 shrink-0">
@@ -277,9 +277,9 @@ const Skills = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4 mt-8 w-full">
+              <div className="flex flex-wrap gap-3.5 sm:gap-4 mt-8 w-full justify-center sm:justify-start">
                 {category.skills.map((skill, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 group/item cursor-pointer w-[21%] min-w-[50px] max-w-[65px]">
+                  <div key={i} className="flex flex-col items-center gap-2 group/item cursor-pointer w-[21%] min-w-[48px] max-w-[65px]">
                     <div className="w-11 h-11 rounded-xl bg-slate-50/80 dark:bg-[#090A22]/90 border border-slate-200/50 dark:border-indigo-500/15 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover/item:scale-110 group-hover/item:bg-white dark:group-hover/item:bg-[#0E0F30] group-hover/item:border-indigo-500/55 group-hover/item:shadow-[0_0_15px_rgba(99,102,241,0.2)] transition-all duration-300 shadow-sm">
                       {skill.icon}
                     </div>

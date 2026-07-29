@@ -54,7 +54,7 @@ const AboutPage = () => {
     { href: "https://www.linkedin.com/in/kapilyadav9560/", icon: <FaLinkedinIn className="w-4.5 h-4.5 text-[#0077B5]" />, hoverColor: "hover:border-[#0077B5]/45 hover:shadow-[#0077B5]/5" },
     { href: "https://github.com/yadav-kapil", icon: <FaGithub className="w-4.5 h-4.5 text-slate-800 dark:text-slate-200" />, hoverColor: "hover:border-black/45 dark:hover:border-white/35 hover:shadow-black/5 dark:hover:shadow-white/5" },
     { href: "https://www.instagram.com/_yadav__kapil_/", icon: <FaInstagram className="w-4.5 h-4.5 text-[#E1306C]" />, hoverColor: "hover:border-[#E1306C]/45 hover:shadow-[#E1306C]/5" },
-    { href: "mailto:kapilyadav9560@gmail.com", icon: <LuMail className="w-4.5 h-4.5 text-[#6366F1]" />, hoverColor: "hover:border-[#6366F1]/45 hover:shadow-[#6366F1]/5" }
+    { href: "mailto:ky843622@gmail.com", icon: <LuMail className="w-4.5 h-4.5 text-[#6366F1]" />, hoverColor: "hover:border-[#6366F1]/45 hover:shadow-[#6366F1]/5" }
   ];
 
   return (
@@ -284,9 +284,16 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center gap-1.5 text-center mb-14"
           >
-            <span className="text-[10px] font-bold tracking-[0.25em] text-indigo-600 dark:text-indigo-400 font-['Intel_One_Mono'] uppercase">
-              What I Do
-            </span>
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/20 dark:border-indigo-500/30 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/8 dark:to-purple-500/8 w-fit select-none hover:border-indigo-500/40 hover:shadow-[0_2px_12px_rgba(99,102,241,0.15)] transition-all duration-300">
+              <span className="text-indigo-500 dark:text-indigo-400 animate-pulse">
+                <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
+                </svg>
+              </span>
+              <span className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-manrope uppercase">
+                What I Do
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-outfit tracking-tight text-slate-900 dark:text-white">
               Services I Provide
             </h2>

@@ -3,9 +3,39 @@ import { motion } from "motion/react";
 import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import { HiOutlineInformationCircle } from "react-icons/hi2";
 import learnify from "../assets/learnify.png";
+import queueCure from "../assets/queue-cure-project.png";
 
 /* ─── Project data ────────────────────────────────────────────────────── */
 const projects = [
+  {
+    title: "Queue Cure",
+    subtitle: "Smart Queue. Better Care.",
+    description:
+      "A real-time clinic queue management platform connecting doctors, receptionists, and patients through a shared live queue, eliminating waiting uncertainty.",
+    image: queueCure,
+    tags: ["React", "Express", "MongoDB", "Socket.IO"],
+    github: "https://github.com/yadav-kapil/queue-cure-26",
+    live: "https://queue-cure-yadavkapil.duckdns.org/",
+    // ── Popup detail fields ──────────────────────────────────────────────
+    fullDescription:
+      "Queue Cure transforms traditional clinic queue management into a transparent, connected, and real-time system. Instead of relying on paper tokens, verbal announcements, and manual display updates, Queue Cure provides live queue tracking, dynamic wait-time estimation, and instant synchronization across doctor, receptionist, and patient dashboards using Socket.IO. Building Queue Cure was more than just a full-stack project—it gave me hands-on experience with real-time systems using WebSockets and Socket.IO, synchronizing state across users, and building scalable, production-ready apps with modern DevOps practices, including CI/CD pipelines, containerization, and cloud deployment.",
+    highlights: [
+      "Real-time synchronized queue with instant updates using Socket.IO",
+      "Role-based dashboards for doctors and receptionists with queue and session management",
+      "Patient interface with live queue tracking and dynamic wait-time estimation",
+      "Smart notifications and automated token generation for seamless flow",
+      "Modern DevOps pipeline featuring AWS EC2, Docker, Docker Compose, Nginx, and GitHub Actions",
+    ],
+    techStackDetail: {
+      frontend: ["React", "Vite", "React Router", "Tailwind CSS", "Framer Motion", "jsPDF"],
+      backend: ["Node.js", "Express.js", "Socket.IO", "JWT Authentication", "Bcrypt.js", "Joi Validation", "Multer", "Nodemailer"],
+      database: ["MongoDB Atlas", "Cloudinary"],
+      infrastructure: ["AWS EC2", "Docker", "Docker Compose", "Nginx", "GitHub Actions"]
+    },
+    role: "Full-Stack Developer",
+    duration: "Hackathon Submission",
+    status: "Live",
+  },
   {
     title: "Learnify",
     subtitle: "AI-Powered Learning Assistant",
@@ -25,10 +55,14 @@ const projects = [
       "Responsive dark-mode UI built with React + Framer Motion",
       "REST API backend with Node.js & Express",
     ],
+    techStackDetail: {
+      frontend: ["React", "Vite", "Framer Motion", "Tailwind CSS", "Web Speech API"],
+      backend: ["Node.js", "Express.js", "Gemini API", "REST API"]
+    },
     role: "Full-Stack Developer",
     duration: "48 hrs (Hackathon)",
     status: "Live",
-  },
+  }
 ];
 
 /* ─── Tag pill ────────────────────────────────────────────────────────── */
@@ -108,6 +142,15 @@ const ProjectDialog = ({ project, dialogRef }) => {
       {/* Divider */}
       <div className="mx-7 mt-4 h-px bg-slate-100 dark:bg-white/[0.06]" />
 
+      {/* Project Cover Image / Full Logo */}
+      <div className="mx-7 mt-4 rounded-xl overflow-hidden bg-slate-50 dark:bg-[#0d0e24] h-44 border border-slate-100 dark:border-white/[0.05]">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+
       {/* Body */}
       <div className="px-7 py-5 flex flex-col gap-5">
 
@@ -152,10 +195,25 @@ const ProjectDialog = ({ project, dialogRef }) => {
 
         {/* Tech stack */}
         <div>
-          <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 font-mono mb-2.5">Tech Stack</h3>
-          <div className="flex flex-wrap gap-1.5">
-            {project.tags.map((tag, i) => <TagPill key={i} tag={tag} />)}
-          </div>
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 font-mono mb-3">Tech Stack</h3>
+          {project.techStackDetail ? (
+            <div className="flex flex-col gap-3">
+              {Object.entries(project.techStackDetail).map(([category, items]) => (
+                <div key={category} className="flex flex-col gap-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 font-mono">
+                    {category}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {items.map((item, i) => <TagPill key={i} tag={item} />)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-1.5">
+              {project.tags.map((tag, i) => <TagPill key={i} tag={tag} />)}
+            </div>
+          )}
         </div>
       </div>
 
@@ -196,17 +254,17 @@ const ProjectCard = ({ project, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: index * 0.12 }}
         viewport={{ once: true, amount: 0.15 }}
-        className="group relative flex flex-col rounded-2xl overflow-hidden border border-slate-200/70 dark:border-white/[0.07] bg-white dark:bg-[#07081A] shadow-[0_2px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.55)] hover:shadow-[0_8px_40px_rgba(99,102,241,0.12)] dark:hover:shadow-[0_12px_50px_rgba(99,102,241,0.15)] hover:-translate-y-1.5 transition-all duration-400"
+        className="group relative flex flex-col w-full sm:w-[370px] rounded-2xl overflow-hidden border border-slate-200/70 dark:border-white/[0.07] bg-white dark:bg-[#07081A] shadow-[0_2px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.55)] hover:shadow-[0_8px_40px_rgba(99,102,241,0.12)] dark:hover:shadow-[0_12px_50px_rgba(99,102,241,0.15)] hover:-translate-y-1.5 transition-all duration-400"
       >
         {/* Top accent bar */}
         <div className="h-[3px] w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shrink-0" />
 
-        {/* Image */}
-        <div className="relative overflow-hidden bg-slate-50 dark:bg-[#0d0e24] h-40 shrink-0">
+        {/* Image - Full Thumbnail using Cover */}
+        <div className="relative overflow-hidden bg-slate-50 dark:bg-[#0c0d24] h-48 shrink-0 border-b border-slate-100 dark:border-white/[0.04]">
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
           />
         </div>
 
@@ -285,24 +343,134 @@ const ProjectCard = ({ project, index }) => {
 const Projects = () => (
   <div
     id="projects"
-    className="relative w-full overflow-hidden bg-[#FAFBFD] dark:bg-[#030308] transition-colors duration-300 pt-20 pb-24 px-6 sm:px-12 lg:px-24"
+    className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-50/15 via-white to-purple-50/15 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 transition-colors duration-300 pt-20 pb-24 px-6 sm:px-12 lg:px-24"
   >
-    {/* Background glows */}
-    <div className="absolute top-[-10%] right-[-8%] w-[420px] h-[420px] rounded-full blur-[90px] pointer-events-none z-0"
-      style={{ background: "radial-gradient(circle, rgba(99,102,241,0.13) 0%, transparent 70%)" }} />
-    <div className="absolute bottom-[-5%] left-[-8%] w-[380px] h-[380px] rounded-full blur-[80px] pointer-events-none z-0"
-      style={{ background: "radial-gradient(circle, rgba(168,85,247,0.11) 0%, transparent 70%)" }} />
+    {/* Background Dot Grid Pattern (matches Hero and About) */}
+    <div className="absolute inset-0 bg-[radial-gradient(#c7d2fe_1.2px,transparent_1.2px)] dark:bg-[radial-gradient(#312e81_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 dark:opacity-30 pointer-events-none z-0"></div>
 
-    {/* Dot-grid */}
-    <div
-      className="absolute inset-0 z-0 pointer-events-none opacity-[0.28] dark:opacity-[0.13]"
-      style={{ backgroundImage: "radial-gradient(circle, #6366f1 1px, transparent 1px)", backgroundSize: "36px 36px" }}
-    />
-    {/* Vignette */}
-    <div className="absolute inset-0 z-0 pointer-events-none"
-      style={{ background: "radial-gradient(ellipse 85% 85% at 50% 50%, transparent 45%, #FAFBFD 100%)" }} />
-    <div className="absolute inset-0 z-0 pointer-events-none dark:block hidden"
-      style={{ background: "radial-gradient(ellipse 85% 85% at 50% 50%, transparent 45%, #030308 100%)" }} />
+    {/* Decorative Orbits in Background (matches Hero) */}
+    <div className="absolute top-[10%] left-[-150px] w-[500px] h-[500px] rounded-full border border-indigo-200/20 dark:border-indigo-500/10 pointer-events-none z-0"></div>
+    <div className="absolute top-[15%] left-[-100px] w-[400px] h-[400px] rounded-full border border-dashed border-indigo-200/25 dark:border-indigo-500/15 pointer-events-none z-0 animate-[spin_100s_linear_infinite]"></div>
+    <div className="absolute bottom-[10%] right-[-200px] w-[600px] h-[600px] rounded-full border border-indigo-200/15 dark:border-indigo-500/5 pointer-events-none z-0"></div>
+    <div className="absolute bottom-[15%] right-[-150px] w-[500px] h-[500px] rounded-full border border-dashed border-indigo-200/20 dark:border-indigo-500/10 pointer-events-none z-0 animate-[spin_80s_linear_infinite]"></div>
+
+    {/* Ambient Glow Mesh Blobs (same as loading screen) */}
+    <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full blur-3xl pointer-events-none z-0 animate-pulse bg-indigo-500/10 dark:bg-indigo-500/8" />
+    <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] rounded-full blur-3xl pointer-events-none z-0 animate-pulse delay-1000 bg-purple-500/10 dark:bg-purple-500/8" />
+
+    {/* Spinning Dashed background orbits (curves floating around) */}
+    <div className="absolute top-[28%] left-[22%] hidden md:block z-0 animate-[spin_45s_linear_infinite] opacity-35 dark:opacity-20 pointer-events-none">
+      <svg className="w-12 h-12 text-indigo-500" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" fill="none" />
+      </svg>
+    </div>
+    <div className="absolute bottom-[28%] right-[22%] hidden md:block z-0 animate-[spin_60s_linear_infinite] opacity-35 dark:opacity-20 pointer-events-none">
+      <svg className="w-14 h-14 text-purple-500" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" fill="none" />
+      </svg>
+    </div>
+
+    {/* Floating 3D Crystal (Top-Left) */}
+    <div className="absolute top-[12%] left-[6%] xl:left-[10%] z-5 pointer-events-none select-none animate-float-slow hidden xl:block">
+      <svg className="w-14 h-14 overflow-visible filter drop-shadow-[0_10px_15px_rgba(192,132,252,0.2)]" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="projFacet1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C084FC" />
+            <stop offset="100%" stopColor="#818CF8" />
+          </linearGradient>
+          <linearGradient id="projFacet2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#818CF8" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#4F46E5" />
+          </linearGradient>
+          <linearGradient id="projFacet3" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#A855F7" />
+            <stop offset="100%" stopColor="#C084FC" />
+          </linearGradient>
+        </defs>
+        <polygon points="50,15 80,45 50,75" fill="url(#projFacet1)" />
+        <polygon points="50,15 20,45 50,75" fill="url(#projFacet2)" />
+        <polygon points="50,75 80,45 50,85" fill="url(#projFacet3)" />
+        <polygon points="50,75 20,45 50,85" fill="url(#projFacet2)" opacity="0.6" />
+      </svg>
+    </div>
+
+    {/* Floating 3D Torus/Ring (Middle-Right) */}
+    <div className="absolute top-[40%] right-[5%] xl:right-[8%] z-5 pointer-events-none select-none animate-float-delayed hidden xl:block">
+      <svg className="w-14 h-14 overflow-visible animate-pulse" viewBox="0 0 100 100" transform="rotate(25)">
+        <defs>
+          <linearGradient id="projTorus" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#F472B6" />
+            <stop offset="50%" stopColor="#C084FC" />
+            <stop offset="100%" stopColor="#6366F1" />
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="28" stroke="url(#projTorus)" strokeWidth="10" fill="none" filter="drop-shadow(0 10px 15px rgba(192,132,252,0.15))" />
+      </svg>
+    </div>
+
+    {/* Floating 3D Code Block (Bottom-Left) */}
+    <div className="absolute bottom-[15%] left-[5%] xl:left-[8%] z-5 pointer-events-none select-none animate-float-delayed hidden xl:block">
+      <svg className="w-14 h-14 overflow-visible" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="projCubeFront" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C084FC" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#818CF8" stopOpacity="0.55" />
+          </linearGradient>
+          <linearGradient id="projCubeTop" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#E9D5FF" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#C084FC" stopOpacity="0.65" />
+          </linearGradient>
+        </defs>
+        <polygon points="10,35 50,20 90,35 50,50" fill="url(#projCubeTop)" />
+        <polygon points="10,35 50,50 50,85 10,70" fill="url(#projCubeFront)" />
+        <polygon points="50,50 90,35 90,70 50,85" fill="url(#projCubeFront)" opacity="0.8" />
+        <text x="50" y="60" fill="white" fontSize="16" fontWeight="bold" textAnchor="middle" transform="skewY(-10) rotate(-10)">{"</>"}</text>
+      </svg>
+    </div>
+
+    {/* Decorative Sparkles / Stars (matches loading screen / Hero) */}
+    <div className="absolute top-[15%] right-[12%] text-indigo-400/50 dark:text-indigo-500/30 animate-pulse z-0">
+      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
+      </svg>
+    </div>
+    <div className="absolute bottom-[30%] left-[8%] text-purple-400/40 dark:text-purple-500/20 animate-pulse z-0 delay-1000">
+      <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M10 0l2.5 7.5 7.5 2.5-7.5 2.5-2.5 7.5-2.5-7.5-7.5-2.5 7.5-2.5z" />
+      </svg>
+    </div>
+
+    {/* Interlacing Dotted curves wave background (same as loading screen) */}
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <svg className="w-full h-full opacity-25 dark:opacity-[0.12]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="projCurveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#6366F1" stopOpacity="0.5" />
+            <stop offset="50%" stopColor="#A855F7" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#EC4899" stopOpacity="0.05" />
+          </linearGradient>
+          <linearGradient id="projCurveGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#6366F1" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path 
+          d="M-100 500 C 200 600, 500 200, 800 550 C 1100 800, 1300 400, 1600 450" 
+          fill="none" 
+          stroke="url(#projCurveGrad1)" 
+          strokeWidth="2" 
+          strokeDasharray="6 6" 
+        />
+        <path 
+          d="M-50 300 C 300 100, 600 700, 900 350 C 1200 100, 1400 600, 1650 550" 
+          fill="none" 
+          stroke="url(#projCurveGrad2)" 
+          strokeWidth="2.5" 
+          strokeDasharray="8 6" 
+        />
+      </svg>
+    </div>
 
     <div className="w-full max-w-6xl mx-auto relative z-10">
 
@@ -314,13 +482,13 @@ const Projects = () => (
         viewport={{ once: true }}
         className="flex flex-col items-center gap-1.5 text-center mb-16"
       >
-        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-purple-250/20 dark:border-purple-950/40 bg-purple-50/50 dark:bg-purple-950/10 w-fit select-none">
-          <span className="text-purple-500">
-            <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/20 dark:border-indigo-500/30 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/8 dark:to-purple-500/8 w-fit select-none hover:border-indigo-500/40 hover:shadow-[0_2px_12px_rgba(99,102,241,0.15)] transition-all duration-300">
+          <span className="text-indigo-500 dark:text-indigo-400 animate-pulse">
+            <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
               <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
             </svg>
           </span>
-          <span className="text-[10px] font-bold tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-manrope uppercase">
+          <span className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-manrope uppercase">
             My Work
           </span>
         </div>
@@ -343,14 +511,14 @@ const Projects = () => (
         </p>
       </motion.div>
 
-      {/* Cards */}
-      <div className="flex justify-center">
-        <div className="w-full max-w-sm">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
-          ))}
-        </div>
+      {/* Flex Wrap Cards Layout - Fits as many cards per row as possible */}
+      <div className="flex flex-wrap justify-center gap-8 w-full max-w-6xl mx-auto">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.title} project={project} index={index} />
+        ))}
       </div>
+
+
 
       {/* GitHub CTA */}
       <motion.div

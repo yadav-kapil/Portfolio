@@ -254,13 +254,13 @@ const Education = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-1.5 text-center mb-20"
         >
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-purple-250/20 dark:border-purple-950/40 bg-purple-50/50 dark:bg-purple-950/10 w-fit select-none">
-            <span className="text-purple-500">
-              <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/20 dark:border-indigo-500/30 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/8 dark:to-purple-500/8 w-fit select-none hover:border-indigo-500/40 hover:shadow-[0_2px_12px_rgba(99,102,241,0.15)] transition-all duration-300">
+            <span className="text-indigo-500 dark:text-indigo-400 animate-pulse">
+              <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
                 <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
               </svg>
             </span>
-            <span className="text-[10px] font-bold tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-manrope uppercase">
+            <span className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-manrope uppercase">
               My Journey
             </span>
           </div>

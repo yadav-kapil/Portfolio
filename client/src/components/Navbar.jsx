@@ -92,7 +92,7 @@ const Navbar = () => {
           {/* Let's Connect Button */}
           <a
             href="#contact"
-            className="rounded-full bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:opacity-95 text-white font-semibold text-[13px] px-5 py-2 flex items-center gap-1.5 shadow-md shadow-indigo-500/10 dark:shadow-indigo-500/20 hover:shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer max-sm:hidden"
+            className="rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:opacity-95 text-white font-semibold text-[13px] px-5 py-2 flex items-center gap-1.5 shadow-md shadow-indigo-500/10 dark:shadow-indigo-500/20 hover:shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer max-sm:hidden"
           >
             <span>Let's Connect</span>
             <LuArrowRight className="w-3.5 h-3.5" />
@@ -160,7 +160,7 @@ const Navbar = () => {
                 <a
                   href="#contact"
                   onClick={() => setSidebarState(false)}
-                  className="rounded-full w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center gap-1.5 shadow-md shadow-indigo-500/20 hover:opacity-95 active:scale-[0.98] transition-all"
+                  className="rounded-xl w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center gap-1.5 shadow-md shadow-indigo-500/20 hover:opacity-95 active:scale-[0.98] transition-all"
                 >
                   <span>Let's Connect</span>
                   <LuArrowRight size={16} />
