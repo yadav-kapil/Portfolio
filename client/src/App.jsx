@@ -2,7 +2,7 @@ import "./App.css";
 import AboutPage from "./components/AboutPage";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import { TimeLineDemo } from "./components/TimeLineDemo";
+import Education from "./components/Education";
 import ThemeContextProvider from "./store/themeContext";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -19,7 +19,7 @@ function App() {
           <Hero />
           <AboutPage />
           <Skills />
-          <TimeLineDemo />
+          <Education />
           <Projects />
           <ContactPage />
           <Footer />

@@ -312,7 +312,7 @@ const AboutPage = () => {
                   default: { duration: 0.85, delay: index * 0.16, ease: [0.16, 1, 0.3, 1] }
                 }}
                 viewport={{ once: true, margin: "-50px" }}
-                className="flex flex-col p-6 rounded-[2rem] border border-white/60 dark:border-indigo-500/15 bg-white/40 dark:bg-[#090A1A]/70 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden group hover:border-indigo-500/35 dark:hover:border-indigo-500/45 dark:hover:shadow-[0_20px_50px_rgba(99,102,241,0.08)] transition-all duration-500 select-none text-left"
+                className="flex flex-col p-6 rounded-[2rem] border border-white/60 dark:border-indigo-500/15 bg-white/40 dark:bg-[#090A1A]/70 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden group hover:border-indigo-500/35 dark:hover:border-indigo-500/45 dark:hover:shadow-[0_20px_50px_rgba(99,102,241,0.08)] transition-colors duration-500 select-none text-left"
               >
                 <div className="w-12 h-12 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-100/50 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shadow-sm mb-6 transform group-hover:scale-105 transition-transform duration-300">
                   {service.icon}
