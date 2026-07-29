@@ -45,7 +45,7 @@ html, body {
 }
 
 body.dark {
-  background-color: #121633;
+  background-color: #030308;
 }
 
 @media (max-width: 768px) {
@@ -56,4 +56,38 @@ body.dark {
   .dark .backdrop-blur-xl {
     background-color: rgba(14, 18, 41, 0.95) !important;
   }
+}
+
+/* Redesign custom animations and utilities */
+@keyframes float-badge {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-badge {
+  animation: float-badge 4s ease-in-out infinite;
+}
+
+.animate-float-badge-delayed {
+  animation: float-badge 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
 }
