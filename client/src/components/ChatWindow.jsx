@@ -51,10 +51,7 @@ export default function ChatWindow({ onClose }) {
       id: Date.now(),
       sender: "user",
       text: text.trim(),
-      time: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       type: "text",
     };
 
@@ -62,82 +59,44 @@ export default function ChatWindow({ onClose }) {
     if (!textToSend) setInput("");
     setIsTyping(true);
 
-    // Simulate smart bot response based on keywords
-    setTimeout(() => {
-      let botResponse = {
-        id: Date.now() + 1,
-        sender: "bot",
-        time: new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-        type: "text",
-      };
+    const apiUri = import.meta.env.VITE_SERVER_URI || "http://localhost:3001";
 
-      const textLower = userMessage.text.toLowerCase();
-
-      if (
-        textLower.includes("skill") ||
-        textLower.includes("tech") ||
-        textLower.includes("technology") ||
-        textLower.includes("work with")
-      ) {
-        botResponse.text =
-          "I work with a variety of technologies across the stack. Here are my core skills:";
-        botResponse.type = "skills";
-      } else if (
-        textLower.includes("project") ||
-        textLower.includes("work") ||
-        textLower.includes("portfolio")
-      ) {
-        botResponse.text =
-          "I have built several modern web applications. Here are Kapil's featured projects:";
-        botResponse.type = "projects";
-        botResponse.projects = [
-          {
-            name: "Queue Cure",
-            desc: "Smart hospital queue manager.",
-            tech: "React, Node.js, Express, MongoDB",
-            link: "#projects",
-          },
-          {
-            name: "Learnify",
-            desc: "Interactive online learning platform.",
-            tech: "React, Tailwind CSS, Framer Motion",
-            link: "#projects",
-          },
-        ];
-      } else if (
-        textLower.includes("resume") ||
-        textLower.includes("cv") ||
-        textLower.includes("download")
-      ) {
-        botResponse.text =
-          "You can view or download Kapil's resume using the button below. Let me know if you have any questions!";
-        botResponse.type = "resume";
-      } else if (
-        textLower.includes("contact") ||
-        textLower.includes("hire") ||
-        textLower.includes("work with me")
-      ) {
-        botResponse.text =
-          "I'm always open to new opportunities! You can drop an email at ky843622@gmail.com, or fill out the Contact Form directly below.";
-        botResponse.type = "contact";
-      } else if (
-        textLower.includes("hello") ||
-        textLower.includes("hi") ||
-        textLower.includes("hey")
-      ) {
-        botResponse.text =
-          "Hey there! 👋 Welcome to Kapil's portfolio site. Ask me about his skills, projects, or how to contact him!";
-      } else {
-        botResponse.text =
-          "Thanks for asking! I'm Kapil's AI assistant. You can ask me about his tech stack, download his resume, or check out his recent projects.";
-      }
-
-      setMessages((prev) => [...prev, botResponse]);
-      setIsTyping(false);
-    }, 1000);
+    fetch(`${apiUri}/api/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: text.trim() }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to contact chat API");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const botMessage = {
+          id: Date.now() + 1,
+          sender: "bot",
+          text: data.text || "Sorry, I received an empty response from the server.",
+          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+          type: "text",
+        };
+        setMessages((prev) => [...prev, botMessage]);
+        setIsTyping(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        const errorMessage = {
+          id: Date.now() + 1,
+          sender: "bot",
+          text: "Oops! ⚠️ Connection error. Please verify the backend is running and try again.",
+          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+          type: "text",
+        };
+        setMessages((prev) => [...prev, errorMessage]);
+        setIsTyping(false);
+      });
   };
 
   const handleFormSubmit = (e) => {

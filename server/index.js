@@ -44,6 +44,22 @@ app.post('/api/subscribe', async (req,res) => {
   }
 })
 
+app.post("/api/chat", async (req, res) => {
+  try {
+    const { message } = req.body;
+    console.log("Chat query:", message);
+
+    // Fixed sample text response
+    const replyText =
+      "Hello! Thanks for reaching out. Kapil's AI chatbot is currently under maintenance. Please try again later!";
+
+    res.status(200).json({ text: replyText });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 const port = process.env.PORT || 3001;
 
 const startServer = async () => {
