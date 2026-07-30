@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec \"node --env-file=.env\" index.js",
+    "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "author": "Kapil-Yadav",

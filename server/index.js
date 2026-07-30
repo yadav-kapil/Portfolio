@@ -1,10 +1,16 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const ContactForm = require("./models/ContactForm");
 const connectDB = require("./config/db");
-const Subscribers = require('./models/Subscribers');
+const Subscribers = require("./models/Subscribers");
+const { GoogleGenAI } = require("@google/genai");
+const { systemInstruction } = require("./config/data");
 
 const app = express();
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,40 +29,59 @@ app.post("/api/contactForm", async (req, res) => {
     const newContactData = new ContactForm({ name, email, message });
     await newContactData.save();
     console.log("saved");
-    res.sendStatus(200); // 201 = created
+    res.sendStatus(201);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to save data" });
   }
 });
 
-app.post('/api/subscribe', async (req,res) => {
+app.post("/api/subscribe", async (req, res) => {
   try {
     const { email } = req.body;
     console.log(req.body);
     const newSubscriber = new Subscribers({ email });
     await newSubscriber.save();
     console.log("saved");
-    res.sendStatus(200); // 201 = created
+    res.sendStatus(201);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to save data" });
   }
-})
+});
 
 app.post("/api/chat", async (req, res) => {
   try {
-    const { message } = req.body;
-    console.log("Chat query:", message);
+    const { message, history } = req.body;
 
-    // Fixed sample text response
-    const replyText =
-      "Hello! Thanks for reaching out. Kapil's AI chatbot is currently under maintenance. Please try again later!";
+    
+    let promptContext = "";
+    if (history && Array.isArray(history) && history.length > 0) {
+      const lastTwo = history.slice(-2);
+      promptContext += "Previous conversation history context:\n";
+      lastTwo.forEach((turn) => {
+        const speaker = turn.role === "user" ? "User" : "Chatbot";
+        promptContext += `${speaker}: ${turn.text}\n`;
+      });
+      promptContext += "\n";
+    }
 
-    res.status(200).json({ text: replyText });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal server error" });
+    const finalPrompt = `${promptContext}User Query: ${message}`;
+
+    const response = await ai.models.generateContent({
+      model: "gemini-3.5-flash-lite",
+      contents: finalPrompt,
+      config: {
+        systemInstruction: systemInstruction,
+      },
+    });
+    console.log(response.text);
+    res.status(200).send({
+      text: response.text,
+    });
+  } catch (err) {
+    console.error("Chat Error:", err);
+    res.status(500).json({ error: "Something Went Wrong" });
   }
 });
 
@@ -64,7 +89,7 @@ const port = process.env.PORT || 3001;
 
 const startServer = async () => {
   try {
-    await connectDB(); // Wait for DB first
+    await connectDB(); 
     app.listen(port, () => {
       console.log(`Server running on port ${port}`);
     });

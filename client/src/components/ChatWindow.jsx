@@ -1,7 +1,5 @@
 import { useRef, useEffect } from "react";
 import { motion } from "motion/react";
-import { Player } from "@lottiefiles/react-lottie-player";
-import chatbotAnim from "../assets/videos/chatbot.json";
 import { useChatbot } from "../hooks/useChatbot";
 import {
   LuSend,
@@ -15,6 +13,7 @@ import {
   LuGraduationCap,
   LuMonitor,
   LuMail,
+  LuBot,
 } from "react-icons/lu";
 
 export default function ChatWindow({ onClose }) {
@@ -44,26 +43,21 @@ export default function ChatWindow({ onClose }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 50, scale: 0.9 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed bottom-6 right-6 z-50 w-[350px] sm:w-[380px] h-[520px] bg-white/95 dark:bg-[#07081A]/95 border border-slate-200/80 dark:border-white/[0.08] shadow-2xl rounded-[2rem] overflow-hidden flex flex-col font-inter backdrop-blur-md"
+      className="fixed bottom-4 right-4 left-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 w-auto sm:w-[380px] h-[78vh] sm:h-[520px] max-h-[520px] bg-white/95 dark:bg-[#07081A]/95 border border-slate-200/80 dark:border-white/[0.08] shadow-2xl rounded-[2rem] overflow-hidden flex flex-col font-inter backdrop-blur-md"
     >
-      {/* Header */}
+      
       <div className="px-5 py-4 border-b border-slate-200/60 dark:border-white/[0.06] flex items-center justify-between text-slate-800 dark:text-white shadow-sm select-none shrink-0 bg-white/80 dark:bg-[#07081A]/80">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-white/[0.03] overflow-hidden flex items-center justify-center shrink-0">
-            <Player
-              autoplay
-              loop
-              src={chatbotAnim}
-              className="w-12 h-12 scale-125 pointer-events-none"
-            />
+          <div className="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-100/50 dark:border-indigo-500/10">
+            <LuBot className="w-5.5 h-5.5" strokeWidth={2} />
           </div>
           <div>
             <div className="text-sm font-black font-manrope tracking-tight flex items-center gap-1">
-              <span>Kapil Bot</span>
+              <span>Kapil Yadav</span>
               <span className="text-indigo-500 text-xs">✦</span>
             </div>
             <div className="text-[10px] text-slate-400 dark:text-slate-500 font-semibold flex items-center gap-1 mt-0.5">
-              <span>Your AI Assistant</span>
+              <span>AI Assistant Chatbot</span>
               <span className="text-slate-300 dark:text-slate-700 font-normal">
                 •
               </span>
@@ -91,7 +85,7 @@ export default function ChatWindow({ onClose }) {
         </div>
       </div>
 
-      {/* Messages */}
+      
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/20 dark:bg-[#030308]/10 relative">
         <div className="absolute top-[25%] right-[15%] text-indigo-400/10 dark:text-indigo-400/5 select-none pointer-events-none">
           <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
@@ -112,13 +106,8 @@ export default function ChatWindow({ onClose }) {
             }`}
           >
             {msg.sender === "bot" && (
-              <div className="w-7 h-7 rounded-full bg-slate-100 dark:bg-white/[0.04] overflow-hidden flex items-center justify-center shrink-0 border border-slate-200/50 dark:border-transparent">
-                <Player
-                  autoplay
-                  loop
-                  src={chatbotAnim}
-                  className="w-9 h-9 scale-125"
-                />
+              <div className="w-7 h-7 rounded-full bg-indigo-50 dark:bg-indigo-950/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-100/30 dark:border-indigo-500/10">
+                <LuBot className="w-4 h-4" strokeWidth={2} />
               </div>
             )}
 
@@ -148,16 +137,11 @@ export default function ChatWindow({ onClose }) {
           </div>
         ))}
 
-        {/* Typing Simulator */}
+        
         {isTyping && (
           <div className="flex items-start gap-2.5 max-w-[85%] animate-pulse">
-            <div className="w-7 h-7 rounded-full bg-slate-100 dark:bg-white/[0.04] overflow-hidden flex items-center justify-center shrink-0 border border-slate-200/50 dark:border-transparent">
-              <Player
-                autoplay
-                loop
-                src={chatbotAnim}
-                className="w-9 h-9 scale-125"
-              />
+            <div className="w-7 h-7 rounded-full bg-indigo-50 dark:bg-indigo-950/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-100/30 dark:border-indigo-500/10">
+              <LuBot className="w-4 h-4" strokeWidth={2} />
             </div>
             <div className="px-3.5 py-3 rounded-2xl rounded-tl-none bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.02] flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600 animate-bounce"></span>
@@ -169,9 +153,9 @@ export default function ChatWindow({ onClose }) {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Actions Action Pills */}
+      
       <div className="px-3.5 py-2.5 flex items-center gap-2 overflow-x-auto shrink-0 bg-white/70 dark:bg-[#07081A]/70 border-t border-slate-200/40 dark:border-white/[0.04] select-none scrollbar-none">
-        {/* About Pill */}
+        
         <button
           onClick={() => handleSend("Who is Kapil?")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
@@ -180,7 +164,7 @@ export default function ChatWindow({ onClose }) {
           <span>Who is Kapil?</span>
         </button>
 
-        {/* Skills Pill */}
+        
         <button
           onClick={() => handleSend("What are your skills?")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
@@ -189,7 +173,7 @@ export default function ChatWindow({ onClose }) {
           <span>What are your skills?</span>
         </button>
 
-        {/* Projects Pill */}
+        
         <button
           onClick={() => handleSend("Show me your projects")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
@@ -198,7 +182,7 @@ export default function ChatWindow({ onClose }) {
           <span>Show me your projects</span>
         </button>
 
-        {/* Education Pill */}
+        
         <button
           onClick={() => handleSend("Where did you study?")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
@@ -207,7 +191,7 @@ export default function ChatWindow({ onClose }) {
           <span>Where did you study?</span>
         </button>
 
-        {/* Services Pill */}
+        
         <button
           onClick={() => handleSend("What services do you provide?")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
@@ -216,7 +200,7 @@ export default function ChatWindow({ onClose }) {
           <span>What services do you provide?</span>
         </button>
 
-        {/* Resume Pill */}
+        
         <button
           onClick={() => handleSend("Download Resume")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
@@ -225,7 +209,7 @@ export default function ChatWindow({ onClose }) {
           <span>Download Resume</span>
         </button>
 
-        {/* Contact Pill */}
+        
         <button
           onClick={() => handleSend("How can I hire you?")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
@@ -235,7 +219,7 @@ export default function ChatWindow({ onClose }) {
         </button>
       </div>
 
-      {/* Input Message Form */}
+      
       <div className="p-3 bg-white dark:bg-[#07081A] border-t border-slate-200/80 dark:border-white/[0.08] shrink-0">
         <form
           onSubmit={handleFormSubmit}
@@ -258,7 +242,7 @@ export default function ChatWindow({ onClose }) {
           </button>
         </form>
 
-        {/* Footer author tag */}
+        
         <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 text-center mt-2 font-mono flex items-center justify-center gap-1 select-none">
           <span className="text-indigo-500 font-bold">✦</span>
           <span>Built with 💜 by Kapil Yadav</span>

@@ -3,11 +3,40 @@ import { ThemeContext } from "../store/themeContext";
 import { motion, AnimatePresence } from "motion/react";
 
 import { FiMoon } from "react-icons/fi";
-import { LuSun, LuArrowRight } from "react-icons/lu";
+import { LuSun, LuArrowRight, LuBot, LuMenu } from "react-icons/lu";
 import { IoCloseOutline } from "react-icons/io5";
-import { HiMenuAlt1 } from "react-icons/hi";
 
-const Navbar = () => {
+const toggleButtonVariants = {
+  hover: { scale: 1.1 },
+  tap: { scale: 0.9 }
+};
+
+const moonVariants = {
+  initial: { y: 15, opacity: 0, rotate: 40 },
+  animate: { y: 0, opacity: 1, rotate: 0 },
+  exit: { y: -15, opacity: 0, rotate: -40 },
+  hover: { rotate: -15 }
+};
+
+const sunVariants = {
+  initial: { y: 15, opacity: 0, rotate: -40 },
+  animate: { y: 0, opacity: 1, rotate: 0 },
+  exit: { y: -15, opacity: 0, rotate: 40 },
+  hover: { rotate: 45 }
+};
+
+const chatbotIconVariants = {
+  hover: { 
+    rotate: [0, -12, 12, -12, 0],
+    scale: 1.1,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut"
+    }
+  }
+};
+
+const Navbar = ({ isChatOpen = false, setIsChatOpen = () => {} }) => {
   const { theme, handleToggleTheme } = useContext(ThemeContext);
   const [isSidebarOpen, setSidebarState] = useState(false);
 
@@ -72,18 +101,62 @@ const Navbar = () => {
         ))}
       </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2.5 sm:gap-4">
           
-          <button
-            onClick={handleToggleTheme}
-            className="rounded-full border border-slate-200 dark:border-slate-800/40 p-2 text-slate-700 dark:text-indigo-400 bg-white/10 dark:bg-indigo-950/15 hover:bg-slate-100 dark:hover:bg-indigo-900/35 transition-all flex items-center justify-center cursor-pointer shadow-sm shadow-black/5"
+          <motion.button
+            onClick={() => setIsChatOpen(true)}
+            whileHover="hover"
+            whileTap="tap"
+            variants={toggleButtonVariants}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className={`rounded-full border p-2 flex items-center justify-center cursor-pointer shadow-sm shadow-black/5 w-9 h-9 transition-colors ${
+              isChatOpen 
+                ? "border-indigo-500/85 dark:border-indigo-500/30 text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 dark:bg-indigo-950/30" 
+                : "border-slate-200 dark:border-slate-800/40 text-slate-700 dark:text-indigo-400 bg-white/10 dark:bg-indigo-950/15 hover:bg-slate-100 dark:hover:bg-indigo-900/35"
+            }`}
+            aria-label="Open chatbot"
           >
-            {theme === "light" ? (
-              <FiMoon className="w-[17px] h-[17px]" strokeWidth={2.5} />
-            ) : (
-              <LuSun className="w-[17px] h-[17px]" strokeWidth={2} />
-            )}
-          </button>
+            <motion.div variants={chatbotIconVariants} className="flex items-center justify-center">
+              <LuBot className="w-[18px] h-[18px]" strokeWidth={2} />
+            </motion.div>
+          </motion.button>
+
+          <motion.button
+            onClick={handleToggleTheme}
+            whileHover="hover"
+            whileTap="tap"
+            variants={toggleButtonVariants}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="rounded-full border border-slate-200 dark:border-slate-800/40 p-2 text-slate-700 dark:text-indigo-400 bg-white/10 dark:bg-indigo-950/15 hover:bg-slate-100 dark:hover:bg-indigo-900/35 transition-colors flex items-center justify-center cursor-pointer shadow-sm shadow-black/5 w-9 h-9 overflow-hidden relative"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {theme === "light" ? (
+                <motion.div
+                  key="moon"
+                  variants={moonVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  className="flex items-center justify-center absolute"
+                >
+                  <FiMoon className="w-[17px] h-[17px]" strokeWidth={2.5} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="sun"
+                  variants={sunVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  className="flex items-center justify-center absolute"
+                >
+                  <LuSun className="w-[17px] h-[17px]" strokeWidth={2} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
 
           <a
             href="#contact"
@@ -93,21 +166,26 @@ const Navbar = () => {
             <LuArrowRight className="w-3.5 h-3.5" />
           </a>
 
-          {/* Mobile Hamburg Trigger */}
-          <button
+          
+          <motion.button
             onClick={() => setSidebarState(true)}
-            className="sm:hidden font-bold text-slate-800 dark:text-white p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer"
+            whileHover="hover"
+            whileTap="tap"
+            variants={toggleButtonVariants}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="sm:hidden rounded-full border border-slate-200 dark:border-slate-800/40 p-2 text-slate-700 dark:text-indigo-400 bg-white/10 dark:bg-indigo-950/15 hover:bg-slate-100 dark:hover:bg-indigo-900/35 transition-colors flex items-center justify-center cursor-pointer shadow-sm shadow-black/5 w-9 h-9 overflow-hidden"
+            aria-label="Open navigation menu"
           >
-            <HiMenuAlt1 size={28} />
-          </button>
+            <LuMenu className="w-[18px] h-[18px]" strokeWidth={2} />
+          </motion.button>
         </div>
       </motion.div>
 
-      {/* Mobile Drawer (Sidebar) - Kept outside of transformed/blur container to prevent sizing bugs */}
+      
       <AnimatePresence>
         {isSidebarOpen && (
           <>
-            {/* Backdrop overlay */}
+            
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -120,7 +198,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
-              className="fixed top-0 right-0 z-50 w-72 h-screen bg-white/95 dark:bg-[#070810]/95 border-l dark:border-[#1E2245]/30 backdrop-blur-md shadow-2xl p-8 flex flex-col justify-between sm:hidden"
+              className="fixed top-0 right-0 z-50 w-72 h-screen bg-white/95 dark:bg-[#070810]/95 border-l dark:border-[#1E2245]/30 backdrop-blur-md shadow-2xl p-8 flex flex-col sm:hidden"
             >
               <div>
                 <div className="flex justify-between items-center mb-10">
@@ -148,18 +226,16 @@ const Navbar = () => {
                       {item.label}
                     </a>
                   ))}
-                </div>
-              </div>
 
-              <div className="mt-auto">
-                <a
-                  href="#contact"
-                  onClick={() => setSidebarState(false)}
-                  className="rounded-xl w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center gap-1.5 shadow-md shadow-indigo-500/20 hover:opacity-95 active:scale-[0.98] transition-all"
-                >
-                  <span>Let's Connect</span>
-                  <LuArrowRight size={16} />
-                </a>
+                  <a
+                    href="#contact"
+                    onClick={() => setSidebarState(false)}
+                    className="rounded-xl w-full mt-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center gap-1.5 shadow-md shadow-indigo-500/20 hover:opacity-95 active:scale-[0.98] transition-all"
+                  >
+                    <span>Let's Connect</span>
+                    <LuArrowRight size={16} />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </>

@@ -20,10 +20,10 @@ import {
 } from "react-icons/fa";
 import kapilImg from "../assets/kapilYadav.png";
 
-// 1. Initial Greeting / Intro Suggestion Card
+
 export const BotIntroResponse = () => (
   <div className="flex flex-col gap-2 font-inter">
-    <span>Hi there! 👋 I'm Kapil Bot. I'm here to help you learn more about Kapil. You can ask me questions like:</span>
+    <span>Hi there! 👋 I'm Kapil's AI Assistant. I'm here to help you learn more about Kapil. You can ask me questions like:</span>
     <div className="flex flex-col gap-1.5 mt-2.5 pt-2.5 border-t border-slate-100 dark:border-white/[0.04] text-[10.5px]">
       <div className="flex items-center gap-1.5 text-slate-550 dark:text-slate-400">
         <span className="text-indigo-500">•</span>
@@ -332,7 +332,7 @@ export const ServicesResponse = () => (
   </div>
 );
 
-// 8. Download Resume CTA Card
+
 export const ResumeResponse = () => (
   <div className="flex flex-col gap-2.5 font-inter">
     <span>You can download my resume using the link below:</span>
@@ -349,12 +349,12 @@ export const ResumeResponse = () => (
   </div>
 );
 
-// 9. Contact / Hire / Connect Details
+
 export const ContactResponse = () => (
   <div className="flex flex-col gap-2.5 font-inter w-full">
     <span>Let's collaborate! You can connect with Kapil via:</span>
     <div className="flex flex-col gap-2.5 mt-2 pt-3 border-t border-slate-100 dark:border-white/[0.04] w-full">
-      {/* LinkedIn connect */}
+      
       <a
         href="https://www.linkedin.com/in/kapilyadav9560/"
         target="_blank"
@@ -364,7 +364,7 @@ export const ContactResponse = () => (
         <FaLinkedinIn className="w-3.5 h-3.5" /> LinkedIn
       </a>
 
-      {/* GitHub connect */}
+      
       <a
         href="https://github.com/yadav-kapil"
         target="_blank"
@@ -374,7 +374,7 @@ export const ContactResponse = () => (
         <FaGithub className="w-3.5 h-3.5" /> GitHub
       </a>
 
-      {/* Email Connect */}
+      
       <a
         href="mailto:ky843622@gmail.com"
         className="flex items-center justify-center gap-2 py-2 rounded-xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.02] text-slate-700 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-white/[0.05] hover:border-indigo-500/30 transition-all font-bold text-[9.5px] font-mono uppercase tracking-wider shadow-sm w-full text-center"

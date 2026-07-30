@@ -18,7 +18,7 @@ function App() {
   return (
     <ThemeContextProvider>
       <div className="relative bg-[#FAFBFD] dark:bg-[#030308] text-slate-800 dark:text-slate-100 transition-colors duration-300">
-        <Navbar />
+        <Navbar isChatOpen={isChatOpen} setIsChatOpen={setIsChatOpen} />
         <Hero />
         <AboutPage />
         <Skills />
@@ -27,7 +27,7 @@ function App() {
         <ContactPage onOpenChat={() => setIsChatOpen(true)} />
         <Footer />
 
-        {/* Chatbot Toggle and Window */}
+        
         {isChatOpen ? (
           <ChatWindow onClose={() => setIsChatOpen(false)} />
         ) : (

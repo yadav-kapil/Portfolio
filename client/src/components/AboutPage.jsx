@@ -179,7 +179,7 @@ const AboutPage = () => {
           </div>
 
           <div className="lg:col-span-6 w-full flex justify-center lg:justify-end relative">
-            {/* Floating 3D Isometric Glass Cube */}
+            
             <div className="absolute top-[35%] -left-[14%] z-30 pointer-events-none select-none animate-float-delayed hidden xl:block">
               <svg className="w-16 h-16 overflow-visible" viewBox="0 0 80 80">
                 <defs>
@@ -211,7 +211,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               className="relative w-full max-w-xl rounded-[2rem] bg-white/60 dark:bg-[#0A0B1A]/60 backdrop-blur-md border border-white/80 dark:border-indigo-500/20 p-8 shadow-2xl shadow-indigo-950/5 dark:shadow-[#030308]/80 flex flex-col gap-6"
             >
-              {/* Saturn Planet with Orbiting Ring */}
+              
               <div className="absolute top-[22%] -right-[30px] z-30 pointer-events-none select-none animate-float-slow hidden xl:block">
                 <svg className="w-24 h-24 overflow-visible" viewBox="0 0 100 100">
                   <defs>
@@ -328,7 +328,7 @@ const AboutPage = () => {
                   {service.description}
                 </p>
 
-                {/* Tag Chips */}
+                
                 <div className="flex flex-wrap gap-1.5 mt-auto pr-10">
                   {service.tags.map((tag, i) => (
                     <span 

@@ -90,9 +90,7 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           return prev + 1;
         } else {
           clearInterval(interval);
-          const finalTimeout = setTimeout(() => {
-            setIsLoading(false);
-          }, 800);
+          setIsLoading(false);
           return 100;
         }
       });

@@ -71,7 +71,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-50/15 via-white to-purple-50/15 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 transition-colors duration-300 pt-24 pb-12 px-6 sm:px-12 lg:px-24">
+    <footer className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-50/15 via-white to-purple-50/15 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 transition-colors duration-300 pt-12 pb-12 px-6 sm:px-12 lg:px-24">
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -98,7 +98,14 @@ const Footer = () => {
 
       <div className="w-full max-w-6xl mx-auto relative z-10">
 
-        <div className="relative bg-white/70 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.08] backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 mb-20 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -12, scale: 1.015 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative bg-white/70 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.08] backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 mb-20 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden"
+        >
 
           <div className="absolute right-[-5%] top-[10%] w-[120px] h-[120px] rounded-full bg-gradient-to-br from-indigo-500 to-purple-650 blur-sm opacity-60 dark:opacity-40 animate-bounce pointer-events-none" />
           <div className="absolute left-[-2%] top-[40%] w-[45px] h-[45px] rounded-full bg-gradient-to-br from-pink-500 to-purple-500 blur-sm opacity-50 dark:opacity-30 pointer-events-none animate-pulse" />
@@ -124,7 +131,7 @@ const Footer = () => {
                 </span>
               </div>
 
-              {/* Title & Description */}
+              
               <h2 className="text-3xl sm:text-4xl font-black font-outfit tracking-tight text-slate-900 dark:text-white leading-tight">
                 Let's Build Something{" "}
                 <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
@@ -136,7 +143,7 @@ const Footer = () => {
                 Get updates about my latest projects, tech insights, and things I'm building.
               </p>
 
-              {/* Dashed trajectory SVG line */}
+              
               <div className="absolute top-[10%] right-[-10%] w-[120px] h-[60px] pointer-events-none z-0 hidden lg:block text-indigo-400 dark:text-indigo-655">
                 <svg className="w-full h-full" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 45 C 30 20, 70 40, 95 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="3 3" />
@@ -145,9 +152,9 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Right Column Form & Features */}
+            
             <div className="flex flex-col gap-6 w-full lg:w-auto">
-              {/* Integrated Form Field */}
+              
               <form onSubmit={handleSubscribe} className="relative flex items-center w-full lg:w-[450px]">
                 <input
                   ref={subscribeRef}
@@ -156,20 +163,27 @@ const Footer = () => {
                   placeholder="Enter your email address"
                   className="w-full px-6 py-4.5 rounded-full border border-slate-200 dark:border-white/[0.08] bg-white/80 dark:bg-[#07081A]/40 text-sm font-semibold text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 pr-36 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 hover:border-slate-300 dark:hover:border-white/10 transition-all font-manrope shadow-sm"
                 />
-                <button
+                <motion.button
                   type="submit"
                   disabled={subscribeState === "loading"}
-                  className="absolute right-2 top-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-95 text-white font-bold text-[10px] uppercase tracking-wider font-mono px-5 py-3 rounded-full shadow-md flex items-center gap-1.5 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 12 }}
+                  className="absolute right-2 top-2 bg-gradient-to-r from-indigo-500 to-purple-650 hover:opacity-95 text-white font-bold text-[10px] uppercase tracking-wider font-mono px-5 py-3 rounded-full shadow-md flex items-center gap-1.5 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {subscribeState === "loading" ? "Subscribing" : "Notify Me"}
                   <LuSend className="w-3 h-3" />
-                </button>
+                </motion.button>
               </form>
 
-              {/* Badges Features Row */}
+              
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
-                {/* Badge 1 */}
-                <div className="flex items-center gap-2 p-3 rounded-2xl bg-white/80 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.04] shadow-sm select-none hover:scale-[1.02] transition-transform duration-200">
+                
+                <motion.div 
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-2 p-3 rounded-2xl bg-white/80 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.04] shadow-sm select-none"
+                >
                   <div className="w-8 h-8 rounded-lg bg-indigo-500/10 dark:bg-indigo-500/15 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
                     <LuZap className="w-4 h-4" />
                   </div>
@@ -177,10 +191,14 @@ const Footer = () => {
                     <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-1 font-outfit">Quick Updates</div>
                     <div className="text-[7.5px] font-bold text-slate-400 dark:text-slate-600 uppercase tracking-wider font-mono leading-none">No spam, just value</div>
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Badge 2 */}
-                <div className="flex items-center gap-2 p-3 rounded-2xl bg-white/80 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.04] shadow-sm select-none hover:scale-[1.02] transition-transform duration-200">
+                
+                <motion.div 
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-2 p-3 rounded-2xl bg-white/80 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.04] shadow-sm select-none"
+                >
                   <div className="w-8 h-8 rounded-lg bg-green-500/10 dark:bg-green-500/15 flex items-center justify-center text-green-600 dark:text-green-400">
                     <LuShield className="w-4 h-4" />
                   </div>
@@ -188,10 +206,14 @@ const Footer = () => {
                     <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-1 font-outfit">100% Privacy</div>
                     <div className="text-[7.5px] font-bold text-slate-400 dark:text-slate-600 uppercase tracking-wider font-mono leading-none">Your data is safe</div>
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Badge 3 */}
-                <div className="flex items-center gap-2 p-3 rounded-2xl bg-white/80 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.04] shadow-sm select-none hover:scale-[1.02] transition-transform duration-200">
+                
+                <motion.div 
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-2 p-3 rounded-2xl bg-white/80 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.04] shadow-sm select-none"
+                >
                   <div className="w-8 h-8 rounded-lg bg-pink-500/10 dark:bg-pink-500/15 flex items-center justify-center text-pink-600 dark:text-pink-400">
                     <LuHeart className="w-4 h-4" />
                   </div>
@@ -199,20 +221,26 @@ const Footer = () => {
                     <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-1 font-outfit">Only Good Stuff</div>
                     <div className="text-[7.5px] font-bold text-slate-400 dark:text-slate-600 uppercase tracking-wider font-mono leading-none">Projects & insights</div>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* 🔗 Columns Layout Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-12 gap-10 mt-16 max-w-6xl mx-auto relative z-10 text-left">
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 lg:grid-cols-12 gap-10 mt-16 max-w-6xl mx-auto relative z-10 text-left"
+        >
           
-          {/* Logo & Contact details (spans 4 columns) */}
+          
           <div className="col-span-2 lg:col-span-4 flex flex-col gap-6">
             
-            {/* Logo */}
+            
             <div className="flex items-center gap-2 font-mono text-xl font-bold select-none text-slate-850 dark:text-white leading-none">
               <span className="text-indigo-500">{`{`}</span>
               <span className="tracking-widest">kapil</span>
@@ -224,22 +252,22 @@ const Footer = () => {
               Backend Developer who loves building scalable, secure and high-performance applications.
             </p>
 
-            {/* Icon Contact list */}
+            
             <div className="flex flex-col gap-3 font-manrope font-semibold text-xs text-slate-600 dark:text-slate-350">
               
-              {/* Mail */}
+              
               <a href="mailto:ky843622@gmail.com" className="flex items-center gap-2.5 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 <LuMail className="w-4.5 h-4.5 text-indigo-500 shrink-0" />
                 <span>ky843622@gmail.com</span>
               </a>
 
-              {/* Map */}
+              
               <div className="flex items-center gap-2.5 text-slate-600 dark:text-slate-350">
                 <LuMapPin className="w-4.5 h-4.5 text-indigo-500 shrink-0" />
                 <span>Noida, Uttar Pradesh</span>
               </div>
 
-              {/* Status */}
+              
               <div className="flex items-center gap-2.5 select-none text-slate-500 dark:text-slate-400">
                 <div className="w-4.5 h-4.5 flex items-center justify-center shrink-0">
                   <LuClock className="w-4.5 h-4.5 text-indigo-500" />
@@ -252,7 +280,7 @@ const Footer = () => {
 
             </div>
 
-            {/* Small Social Icon Boxes */}
+            
             <div className="flex items-center gap-2.5">
               {[
                 { icon: <FaGithub className="w-4 h-4" />, link: "https://github.com/yadav-kapil" },
@@ -260,21 +288,23 @@ const Footer = () => {
                 { icon: <FaInstagram className="w-4 h-4" />, link: "https://www.instagram.com/_yadav__kapil_/" },
                 { icon: <FaEnvelope className="w-4 h-4" />, link: "mailto:ky843622@gmail.com" }
               ].map((social, i) => (
-                <a
+                <motion.a
                   key={i}
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-white dark:bg-white/[0.03] border border-slate-200/60 dark:border-transparent flex items-center justify-center text-slate-650 dark:text-slate-355 hover:bg-indigo-50 hover:text-indigo-650 dark:hover:bg-white/[0.08] dark:hover:text-white shadow-sm hover:scale-105 transition-all duration-200"
+                  whileHover={{ y: -3, scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-9 h-9 rounded-xl bg-white dark:bg-white/[0.03] border border-slate-200/60 dark:border-transparent flex items-center justify-center text-slate-655 dark:text-slate-355 hover:bg-indigo-50 hover:text-indigo-650 dark:hover:bg-white/[0.08] dark:hover:text-white shadow-sm transition-colors duration-200 cursor-pointer"
                 >
                   {social.icon}
-                </a>
+                </motion.a>
               ))}
             </div>
 
           </div>
 
-          {/* Navigation Column (spans 2 columns) */}
+          
           <div className="col-span-1 lg:col-span-2">
             <h3 className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-mono uppercase mb-4 select-none">
               + Navigation
@@ -301,7 +331,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources Column (spans 2 columns) */}
+          
           <div className="col-span-1 lg:col-span-2">
             <h3 className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-mono uppercase mb-4 select-none">
               + Resources
@@ -327,7 +357,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links Column (spans 2 columns) */}
+          
           <div className="col-span-1 lg:col-span-2">
             <h3 className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-mono uppercase mb-4 select-none">
               + Quick Links
@@ -354,7 +384,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Let's Connect Column (spans 2 columns) */}
+          
           <div className="col-span-2 lg:col-span-2 flex flex-col gap-4 relative">
             <h3 className="text-[10px] font-black tracking-[0.25em] text-indigo-650 dark:text-purple-300 font-mono uppercase select-none">
               + Let's Connect
@@ -362,13 +392,16 @@ const Footer = () => {
             <p className="text-xs text-slate-500 dark:text-slate-455 leading-relaxed font-inter">
               Have a project in mind or just want to say hello? I'd love to hear from you!
             </p>
-            <a
+            <motion.a
               href="#contact"
-              className="group py-2 rounded-xl bg-linear-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:opacity-95 text-white font-bold font-mono text-[10px] uppercase tracking-wider shadow-md hover:shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center w-full px-1"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              className="group py-2 rounded-xl bg-linear-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:opacity-95 text-white font-bold font-mono text-[10px] uppercase tracking-wider shadow-md hover:shadow-indigo-500/25 transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center w-full px-1"
             >
               <span>Start a Conversation</span>
               <LuArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            </motion.a>
 
             <div className="w-[120px] h-[55px] text-indigo-550/30 select-none pointer-events-none mt-2 relative mx-auto hidden lg:block">
               <svg className="w-full h-full" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -378,9 +411,15 @@ const Footer = () => {
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
-        <div className="border-t border-slate-200/60 dark:border-white/[0.08] mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono font-bold text-slate-400 dark:text-slate-600 select-none max-w-6xl mx-auto z-10 relative">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="border-t border-slate-200/60 dark:border-white/[0.08] mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono font-bold text-slate-400 dark:text-slate-600 select-none max-w-6xl mx-auto z-10 relative"
+        >
 
           <p>© {new Date().getFullYear()} Kapil Yadav. All rights reserved.</p>
 
@@ -389,17 +428,19 @@ const Footer = () => {
             <span>Made with passion & JavaScript</span>
           </div>
 
-          <button
+          <motion.button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 hover:text-indigo-650 dark:hover:text-indigo-400 hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold uppercase tracking-wider"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-1.5 hover:text-indigo-650 dark:hover:text-indigo-400 transition-colors cursor-pointer font-bold uppercase tracking-wider"
           >
             <span>Back to Top</span>
             <div className="w-5.5 h-5.5 rounded-full bg-slate-100 dark:bg-white/[0.04] border border-slate-200/60 dark:border-transparent flex items-center justify-center shadow-sm">
               <LuArrowUp className="w-3.5 h-3.5 text-indigo-500" />
             </div>
-          </button>
+          </motion.button>
 
-        </div>
+        </motion.div>
 
       </div>
     </footer>

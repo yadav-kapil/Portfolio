@@ -170,7 +170,7 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          {/* Description */}
+          
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -203,7 +203,7 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* Stats Cards Section */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -224,7 +224,7 @@ const Hero = () => {
                     <div className="text-[9.5px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider leading-none">{stat.label}</div>
                   </div>
                 </div>
-                {/* Thin progress indicator bar */}
+                
                 <div className="absolute bottom-0 left-0 w-full h-[3px] bg-slate-200/50 dark:bg-indigo-950/30">
                   <div 
                     className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 transition-all duration-1000" 
@@ -237,10 +237,10 @@ const Hero = () => {
 
         </div>
 
-        {/* Right Column (3D Window + Photo) */}
+        
         <div className="lg:col-span-6 flex justify-center items-center mt-8 lg:mt-0 relative select-none">
           
-          {/* Subtle Abstract Wave Vector at the bottom */}
+          
           <div className="absolute bottom-[-40px] right-[-30px] w-[350px] sm:w-[450px] opacity-25 dark:opacity-15 pointer-events-none z-0">
             <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-indigo-400 dark:text-indigo-300">
               <path d="M10 80 C 40 10, 60 10, 100 80 C 130 150, 150 150, 190 80" stroke="currentColor" strokeWidth="0.5" fill="none" />
@@ -252,7 +252,7 @@ const Hero = () => {
 
           <div className="max-md:px-2 relative w-[280px] sm:w-[340px] lg:w-[380px] h-[350px] sm:h-[420px] lg:h-[470px]">
             
-            {/* React Floating Badge */}
+            
             <div className="absolute top-[22%] -left-[45px] sm:-left-[60px] z-30 bg-white/90 dark:bg-gradient-to-br dark:from-[#0B0D1A]/90 dark:to-[#05060C]/95 backdrop-blur-sm border border-slate-200/50 dark:border-indigo-500/25 rounded-2xl p-3 shadow-xl shadow-indigo-950/5 dark:shadow-black/40 hover:border-indigo-500/45 dark:hover:shadow-[0_0_15px_rgba(99,102,241,0.05)] transition-colors duration-300 select-none w-[70px] sm:w-[85px] flex flex-col items-center gap-1.5 animate-float-badge">
               <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/55 flex items-center justify-center border dark:border-indigo-500/20 text-[#00D8FF]">
                 <FaReact className="w-5.5 h-5.5 animate-[spin_15s_linear_infinite]" />
@@ -260,7 +260,7 @@ const Hero = () => {
               <span className="text-[10px] sm:text-[11px] font-bold text-slate-700 dark:text-slate-200">React</span>
             </div>
 
-            {/* JavaScript Floating Badge */}
+            
             <div className="absolute top-[48%] -right-[40px] sm:-right-[55px] z-30 bg-white/90 dark:bg-gradient-to-br dark:from-[#0B0D1A]/90 dark:to-[#05060C]/95 backdrop-blur-sm border border-slate-200/50 dark:border-indigo-500/25 rounded-2xl p-3 shadow-xl shadow-indigo-950/5 dark:shadow-black/40 hover:border-indigo-500/45 dark:hover:shadow-[0_0_15px_rgba(99,102,241,0.05)] transition-colors duration-300 select-none w-[70px] sm:w-[85px] flex flex-col items-center gap-1.5 animate-float-badge-delayed">
               <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/55 flex items-center justify-center border dark:border-indigo-500/20 text-[#F7DF1E]">
                 <FaJs className="w-5.5 h-5.5" />
@@ -268,7 +268,7 @@ const Hero = () => {
               <span className="text-[10px] sm:text-[11px] font-bold text-slate-700 dark:text-slate-200">JavaScript</span>
             </div>
 
-            {/* Node.js Floating Badge */}
+            
             <div className="absolute bottom-[10%] -left-[30px] sm:-left-[45px] z-30 bg-white/90 dark:bg-gradient-to-br dark:from-[#0B0D1A]/90 dark:to-[#05060C]/95 backdrop-blur-sm border border-slate-200/50 dark:border-indigo-500/25 rounded-2xl p-3 shadow-xl shadow-indigo-950/5 dark:shadow-black/40 hover:border-indigo-500/45 dark:hover:shadow-[0_0_15px_rgba(99,102,241,0.05)] transition-colors duration-300 select-none w-[70px] sm:w-[85px] flex flex-col items-center gap-1.5 animate-float-badge">
               <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/55 flex items-center justify-center border dark:border-indigo-500/20 text-[#5FA04E]">
                 <FaNodeJs className="w-5.5 h-5.5" />
@@ -276,7 +276,7 @@ const Hero = () => {
               <span className="text-[10px] sm:text-[11px] font-bold text-slate-700 dark:text-slate-200">Node.js</span>
             </div>
 
-            {/* 3D Browser Window Frame */}
+            
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -287,32 +287,32 @@ const Hero = () => {
                 transformStyle: "preserve-3d",
               }}
             >
-              {/* Window Header Bar */}
+              
               <div className="flex justify-between items-center w-full pb-4 border-b border-white/10" style={{ transform: "translateZ(10px)" }}>
-                {/* 3 Control Dots */}
+                
                 <div className="flex gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></div>
                   <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
                   <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
                 </div>
-                {/* Window Settings lines */}
+                
                 <div className="flex flex-col gap-1 w-4 cursor-pointer opacity-70">
                   <div className="h-[2px] w-full bg-white rounded-full"></div>
                   <div className="h-[2px] w-3/4 bg-white rounded-full self-end"></div>
                 </div>
               </div>
 
-              {/* Window Main Content Space */}
+              
               <div className="flex-1 flex relative items-stretch mt-4" style={{ transform: "translateZ(15px)", transformStyle: "preserve-3d" }}>
                 
-                {/* Inside script text (Building Scalable Solutions) */}
+                
                 <div 
                   className="absolute left-0 bottom-[15%] text-white select-none z-10 font-serif italic text-base sm:text-lg lg:text-xl leading-tight font-light drop-shadow-sm flex flex-col gap-1"
                   style={{ transform: "translateZ(25px)" }}
                 >
                 </div>
 
-                {/* Simulated IDE Code lines in background */}
+                
                 <div className="flex flex-col gap-2.5 mt-4 w-1/2 opacity-25 select-none" style={{ transform: "translateZ(5px)" }}>
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
@@ -332,7 +332,7 @@ const Hero = () => {
                   </div>
                 </div>
 
-                {/* Portrait Image Overlapping Border (Cropped inside via overflow-hidden) */}
+                
                 <img
                   src={kapilYadav}
                   alt="Kapil Yadav"

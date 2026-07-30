@@ -75,7 +75,7 @@ const ContactPage = ({ onOpenChat }) => {
   return (
     <div
       id="contact"
-      className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-50/15 via-white to-purple-50/15 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 transition-colors duration-300 pt-20 pb-24 px-6 sm:px-12 lg:px-24"
+      className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-50/15 via-white to-purple-50/15 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 transition-colors duration-300 pt-20 pb-12 px-6 sm:px-12 lg:px-24"
     >
       
       <div className="absolute inset-0 bg-[radial-gradient(#c7d2fe_1.2px,transparent_1.2px)] dark:bg-[radial-gradient(#312e81_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 dark:opacity-30 pointer-events-none z-0"></div>
@@ -132,7 +132,7 @@ const ContactPage = ({ onOpenChat }) => {
             </span>
           </div>
 
-          {/* Heading */}
+          
           <h2 className="text-4xl sm:text-5xl font-black font-outfit tracking-tight text-slate-900 dark:text-white leading-tight mt-2">
             Let's Build Something{" "}
             <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent block mt-1 relative w-fit mx-auto">
@@ -146,7 +146,7 @@ const ContactPage = ({ onOpenChat }) => {
             I'd love to hear from you!
           </p>
 
-          {/* Floating Paper Airplane (exactly like image) */}
+          
           <div className="absolute -top-6 right-[12%] lg:right-[18%] animate-float-slow hidden md:block">
             <svg className="w-16 h-16 text-indigo-500 filter drop-shadow-md" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M85 15L15 45L45 55L85 15Z" fill="#818CF8" />
@@ -156,7 +156,7 @@ const ContactPage = ({ onOpenChat }) => {
             </svg>
           </div>
 
-          {/* Floating Mail Icon (matches image) */}
+          
           <div className="absolute top-[30%] left-[8%] lg:left-[12%] animate-float-delayed hidden md:block">
             <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-100 dark:border-white/[0.06] shadow-md flex items-center justify-center text-indigo-500">
               <LuMail className="w-5 h-5" />
@@ -164,23 +164,35 @@ const ContactPage = ({ onOpenChat }) => {
           </div>
         </motion.div>
 
-        {/* Main Card Wrapper */}
-        <div className="w-full bg-white dark:bg-[#07081A] border border-slate-200/60 dark:border-white/[0.06] shadow-xl dark:shadow-[0_24px_60px_rgba(0,0,0,0.6)] rounded-[2.5rem] p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-8 items-stretch relative overflow-hidden">
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="w-full bg-white dark:bg-[#07081A] border border-slate-200/60 dark:border-white/[0.06] shadow-xl dark:shadow-[0_24px_60px_rgba(0,0,0,0.6)] rounded-[2.5rem] p-4 sm:p-6 md:p-8 flex flex-col md:flex-row gap-8 items-stretch relative overflow-hidden"
+        >
           
-          {/* Left Side: Lavender / Purple Card */}
-          <div className="w-full md:w-[380px] bg-gradient-to-br from-[#F0F2FE] to-[#E3E6FF] dark:from-[#11122D] dark:to-[#090A1E] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between shrink-0 border border-indigo-100/50 dark:border-indigo-950/40 relative overflow-hidden">
+          
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: true }}
+            className="w-full md:w-[380px] bg-gradient-to-br from-[#F0F2FE] to-[#E3E6FF] dark:from-[#11122D] dark:to-[#090A1E] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between shrink-0 border border-indigo-100/50 dark:border-indigo-950/40 relative overflow-hidden"
+          >
             
-            {/* Soft decorative background glow */}
+            
             <div className="absolute top-[-20%] right-[-20%] w-[180px] h-[180px] rounded-full bg-indigo-400/10 blur-2xl pointer-events-none" />
 
             <div>
-              {/* Opportunities Badge */}
+              
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white dark:bg-white/[0.06] text-[10px] font-extrabold uppercase tracking-wider text-indigo-650 dark:text-indigo-400 w-fit shadow-sm border border-indigo-100/30 dark:border-transparent select-none">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                 Open to Opportunities
               </div>
 
-              {/* Lottie Support Avatar (as requested) */}
+              
               <div className="relative flex justify-center items-center py-6 h-56 select-none pointer-events-none">
                 <div className="absolute w-40 h-40 rounded-full bg-indigo-500/5 blur-xl"></div>
                 <Player
@@ -191,10 +203,15 @@ const ContactPage = ({ onOpenChat }) => {
                 />
               </div>
 
-              {/* White Detail Panels */}
+              
               <div className="flex flex-col gap-3.5 mt-2">
-                {/* Email Item */}
-                <a href="mailto:ky843622@gmail.com" className="group/item flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04] shadow-sm hover:border-indigo-400/40 dark:hover:border-indigo-500/40 transition-all duration-300">
+                
+                <motion.a 
+                  href="mailto:ky843622@gmail.com" 
+                  whileHover={{ y: -2, scale: 1.015 }}
+                  whileTap={{ scale: 0.985 }}
+                  className="group/item flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04] shadow-sm hover:border-indigo-400/40 dark:hover:border-indigo-500/40 transition-all duration-300 cursor-pointer"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/15 flex items-center justify-center text-indigo-650 dark:text-indigo-400">
                       <LuMail className="w-4.5 h-4.5" />
@@ -205,10 +222,17 @@ const ContactPage = ({ onOpenChat }) => {
                     </div>
                   </div>
                   <LuArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/item:translate-x-1 group-hover/item:text-indigo-500 transition-all" />
-                </a>
+                </motion.a>
 
-                {/* Location Item */}
-                <a href="https://maps.google.com/?q=Delhi+NCR,+India" target="_blank" rel="noopener noreferrer" className="group/item flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04] shadow-sm hover:border-indigo-400/40 dark:hover:border-indigo-500/40 transition-all duration-300">
+                
+                <motion.a 
+                  href="https://maps.google.com/?q=Delhi+NCR,+India" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  whileHover={{ y: -2, scale: 1.015 }}
+                  whileTap={{ scale: 0.985 }}
+                  className="group/item flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04] shadow-sm hover:border-indigo-400/40 dark:hover:border-indigo-500/40 transition-all duration-300 cursor-pointer"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/15 flex items-center justify-center text-indigo-650 dark:text-indigo-400">
                       <LuMapPin className="w-4.5 h-4.5" />
@@ -219,10 +243,14 @@ const ContactPage = ({ onOpenChat }) => {
                     </div>
                   </div>
                   <LuArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/item:translate-x-1 group-hover/item:text-indigo-500 transition-all" />
-                </a>
+                </motion.a>
 
-                {/* Response Time Item */}
-                <div className="group/item flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04] shadow-sm hover:border-indigo-400/40 dark:hover:border-indigo-500/40 transition-all duration-300">
+                
+                <motion.div 
+                  whileHover={{ y: -2, scale: 1.015 }}
+                  whileTap={{ scale: 0.985 }}
+                  className="group/item flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04] shadow-sm hover:border-indigo-400/40 dark:hover:border-indigo-500/40 transition-all duration-300"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/15 flex items-center justify-center text-indigo-650 dark:text-indigo-400">
                       <LuClock className="w-4.5 h-4.5" />
@@ -233,12 +261,14 @@ const ContactPage = ({ onOpenChat }) => {
                     </div>
                   </div>
                   <LuArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/item:translate-x-1 group-hover/item:text-indigo-500 transition-all" />
-                </div>
+                </motion.div>
 
-                {/* Ask AI Item */}
-                <button 
+                
+                <motion.button 
                   onClick={onOpenChat}
                   type="button" 
+                  whileHover={{ y: -2, scale: 1.015 }}
+                  whileTap={{ scale: 0.985 }}
                   className="group/item flex items-center justify-between p-3.5 rounded-2xl bg-indigo-50/50 dark:bg-indigo-950/10 border border-indigo-250/20 dark:border-indigo-950/40 shadow-sm hover:border-indigo-500/40 hover:shadow-indigo-500/5 transition-all duration-300 w-full text-left cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
@@ -247,15 +277,15 @@ const ContactPage = ({ onOpenChat }) => {
                     </div>
                     <div>
                       <div className="text-[9px] font-bold text-slate-400 dark:text-slate-655 uppercase tracking-widest leading-none mb-1 font-mono">Instant Support</div>
-                      <div className="text-[11.5px] font-bold text-slate-800 dark:text-slate-200 leading-none">Ask Kapil Bot (AI)</div>
+                      <div className="text-[11.5px] font-bold text-slate-800 dark:text-slate-200 leading-none">Ask Portfolio AI</div>
                     </div>
                   </div>
                   <LuArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/item:translate-x-1 group-hover/item:text-indigo-500 transition-all" />
-                </button>
+                </motion.button>
               </div>
             </div>
 
-            {/* Bottom Connect row */}
+            
             <div className="mt-8 flex flex-col gap-3">
               <div className="text-[10px] font-bold text-indigo-950/60 dark:text-indigo-200/50 uppercase tracking-widest font-mono text-center">Let's connect across platforms</div>
               <div className="flex items-center justify-center gap-3">
@@ -265,23 +295,31 @@ const ContactPage = ({ onOpenChat }) => {
                   { socialName: "Instagram", icon: <FaInstagram className="w-4 h-4" />, link: "https://www.instagram.com/_yadav__kapil_/" },
                   { socialName: "Email", icon: <FaEnvelope className="w-4 h-4" />, link: "mailto:ky843622@gmail.com" }
                 ].map((social, i) => (
-                  <a
+                  <motion.a
                     key={i}
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Connect via ${social.socialName}`}
-                    className="w-10 h-10 rounded-xl bg-white dark:bg-white/[0.04] border border-indigo-100/40 dark:border-transparent flex items-center justify-center text-slate-600 dark:text-slate-355 hover:bg-indigo-50 hover:text-indigo-650 dark:hover:bg-white/[0.08] dark:hover:text-white shadow-sm hover:scale-105 transition-all duration-200"
+                    whileHover={{ y: -3, scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-10 h-10 rounded-xl bg-white dark:bg-white/[0.04] border border-indigo-100/40 dark:border-transparent flex items-center justify-center text-slate-600 dark:text-slate-355 hover:bg-indigo-50 hover:text-indigo-650 dark:hover:bg-white/[0.08] dark:hover:text-white shadow-sm transition-colors duration-200 cursor-pointer"
                   >
                     {social.icon}
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
-          <div className="flex-1 flex flex-col justify-center px-2 py-4 md:px-6">
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: true }}
+            className="flex-1 flex flex-col justify-center px-2 py-4 md:px-6"
+          >
             <form onSubmit={handleSubmit} className="space-y-6 w-full">
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -381,14 +419,17 @@ const ContactPage = ({ onOpenChat }) => {
               )}
 
               <div className="pt-2 flex flex-col gap-4">
-                <button
+                <motion.button
                   type="submit"
                   disabled={status === "loading"}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   className="group/btn w-full py-4 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white font-bold tracking-wider font-mono text-[12px] uppercase shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 hover:opacity-95 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <LuSend className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                   {status === "loading" ? "Sending..." : "Send Message"}
-                </button>
+                </motion.button>
 
                 <div className="flex items-center justify-center gap-1.5 text-[10px] font-bold text-slate-400 dark:text-slate-600 font-mono select-none">
                   <LuLock className="w-3 h-3 text-indigo-500" />
@@ -397,9 +438,9 @@ const ContactPage = ({ onOpenChat }) => {
               </div>
 
             </form>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
 
       </div>
     </div>

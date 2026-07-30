@@ -101,7 +101,7 @@ body.dark {
   }
 }
 
-/* Redesign custom animations and utilities */
+
 @keyframes float-badge {
   0%, 100% {
     transform: translateY(0);
@@ -135,14 +135,14 @@ body.dark {
   animation: pulse-glow 8s ease-in-out infinite;
 }
 
-/* ── Project details dialog backdrop ──────────────────────────────────── */
+
 dialog::backdrop {
   background-color: rgba(3, 3, 8, 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Smooth open animation */
+
 dialog[open] {
   animation: dialog-in 0.25s ease-out forwards;
 }

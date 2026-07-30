@@ -24,9 +24,9 @@ const Card = ({ milestone, animX }) => (
     transition={{
       scale: { duration: 0.3, ease: "easeOut" },
       y: { duration: 0.3, ease: "easeOut" },
-      default: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+      default: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
     }}
-    viewport={{ once: true, amount: 0.3 }}
+    viewport={{ once: true, amount: 0.75 }}
     className="flex flex-col p-7 rounded-[2rem] border border-white/60 dark:border-indigo-500/15 bg-white/40 dark:bg-[#090A1A]/70 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden group hover:border-indigo-500/35 dark:hover:border-indigo-500/45 dark:hover:shadow-[0_20px_50px_rgba(99,102,241,0.08)] transition-colors duration-500 select-none text-left w-full"
   >
     
