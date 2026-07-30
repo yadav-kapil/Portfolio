@@ -6,6 +6,15 @@ const connectDB = require("./config/db");
 const Subscribers = require("./models/Subscribers");
 const { GoogleGenAI } = require("@google/genai");
 const { systemInstruction } = require("./config/data");
+const rateLimit = require("express-rate-limit");
+
+const chatLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10, 
+  message: { error: "Too many chat requests from this IP, please try again after 15 minutes." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 const app = express();
 const ai = new GoogleGenAI({
@@ -50,7 +59,7 @@ app.post("/api/subscribe", async (req, res) => {
   }
 });
 
-app.post("/api/chat", async (req, res) => {
+app.post("/api/chat", chatLimiter, async (req, res) => {
   try {
     const { message, history } = req.body;
 
