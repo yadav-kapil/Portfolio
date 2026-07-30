@@ -43,7 +43,20 @@ const portfolioData = {
       "live": "https://learnify-hacksprint.vercel.app/"
     }
   ],
-  "experience": [],
+  "experience": [
+    {
+      "role": "Participant",
+      "company": "Wooble Hackathon (Queue Cure '26)",
+      "duration": "July 2026",
+      "details": "Developed a real-time clinic queue management system (Queue Cure) with live updates, role-based dashboards, and smart wait-time estimation."
+    },
+    {
+      "role": "Participant",
+      "company": "SR Technologies Hackathon (HackSprint '25)",
+      "duration": "November 2025",
+      "details": "Developed an AI-powered doubt-solving assistant (Learnify) with voice support via Web Speech API."
+    }
+  ],
   "education": [
     {
       "degree": "B.Tech CST",
@@ -70,13 +83,13 @@ const portfolioData = {
       "name": "Queue Cure '26 Hackathon",
       "issuer": "Wooble",
       "date": "July 2026",
-      "credential": ""
+      "credential": "https://wooble.org/certifications/ad0b62c04fb3c73f86bbb91c6d"
     },
     {
       "name": "Hacksprint Hackathon",
       "issuer": "SR Technologies",
       "date": "November 2025",
-      "credential": ""
+      "credential": "https://drive.google.com/file/d/1Qn9tGWFUXGKNCqMacp_zaTbaFZZJ8m5a/view"
     }
   ],
   "contact": {

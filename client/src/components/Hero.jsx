@@ -51,7 +51,7 @@ const Hero = () => {
   const stats = [
     {
       icon: <LuCode className="w-5 h-5" />,
-      value: "Build",
+      value: "Building",
       label: "Modern Web Apps",
       progress: "100%",
       colorClass: "text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 dark:bg-indigo-500/8 border-indigo-500/20 dark:border-indigo-500/15",
@@ -59,7 +59,7 @@ const Hero = () => {
     },
     {
       icon: <LuShield className="w-5 h-5" />,
-      value: "Engineer",
+      value: "Engineering",
       label: "Secure APIs",
       progress: "100%",
       colorClass: "text-emerald-600 dark:text-emerald-450 bg-emerald-500/10 dark:bg-emerald-500/8 border-emerald-500/20 dark:border-emerald-500/15",
@@ -67,8 +67,8 @@ const Hero = () => {
     },
     {
       icon: <LuCloud className="w-5 h-5" />,
-      value: "Deploy",
-      label: "Cloud Infrastructure",
+      value: "Deploying",
+      label: "Cloud Infrastructure at scale",
       progress: "100%",
       colorClass: "text-sky-600 dark:text-sky-400 bg-sky-500/10 dark:bg-sky-500/8 border-sky-500/20 dark:border-sky-500/15",
       barColor: "from-sky-500 via-sky-400 to-indigo-600"

@@ -3,6 +3,7 @@ import AboutPage from "./components/AboutPage";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 import ThemeContextProvider from "./store/themeContext";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -23,6 +24,7 @@ function App() {
         <AboutPage />
         <Skills />
         <Education />
+        <Experience />
         <Projects />
         <ContactPage onOpenChat={() => setIsChatOpen(true)} />
         <Footer />

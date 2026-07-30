@@ -18,12 +18,13 @@
   --font-outfit: "Outfit", sans-serif;
   --font-ubuntu: "Ubuntu", sans-serif;
   --font-mono: "Intel One Mono", monospace;
-  
+
   --animate-float-slow: float-slow 12s ease-in-out infinite;
   --animate-float-delayed: float-slow 16s ease-in-out infinite 2s;
 
   @keyframes float-slow {
-    0%, 100% {
+    0%,
+    100% {
       transform: translate(0px, 0px) scale(1);
     }
     33% {
@@ -41,40 +42,94 @@
   --animate-scan: scan-line 8s linear infinite;
 
   @keyframes orb-drift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    30%  { transform: translate(40px, -50px) scale(1.08); }
-    60%  { transform: translate(-25px, 30px) scale(0.94); }
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    30% {
+      transform: translate(40px, -50px) scale(1.08);
+    }
+    60% {
+      transform: translate(-25px, 30px) scale(0.94);
+    }
   }
 
   @keyframes orb-drift-alt {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25%  { transform: translate(-35px, 45px) scale(1.06); }
-    65%  { transform: translate(20px, -30px) scale(0.96); }
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(-35px, 45px) scale(1.06);
+    }
+    65% {
+      transform: translate(20px, -30px) scale(0.96);
+    }
   }
 
   @keyframes aurora-shift {
-    0%, 100% { opacity: 0.18; transform: scaleX(1) skewY(0deg); }
-    40%  { opacity: 0.28; transform: scaleX(1.12) skewY(-2deg); }
-    70%  { opacity: 0.14; transform: scaleX(0.95) skewY(1.5deg); }
+    0%,
+    100% {
+      opacity: 0.18;
+      transform: scaleX(1) skewY(0deg);
+    }
+    40% {
+      opacity: 0.28;
+      transform: scaleX(1.12) skewY(-2deg);
+    }
+    70% {
+      opacity: 0.14;
+      transform: scaleX(0.95) skewY(1.5deg);
+    }
   }
 
   @keyframes particle-a {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
-    40%  { transform: translate(18px, -22px) scale(1.2); opacity: 0.9; }
-    75%  { transform: translate(-12px, 14px) scale(0.8); opacity: 0.4; }
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.5;
+    }
+    40% {
+      transform: translate(18px, -22px) scale(1.2);
+      opacity: 0.9;
+    }
+    75% {
+      transform: translate(-12px, 14px) scale(0.8);
+      opacity: 0.4;
+    }
   }
 
   @keyframes particle-b {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.35; }
-    35%  { transform: translate(-20px, 16px) scale(1.15); opacity: 0.7; }
-    70%  { transform: translate(10px, -18px) scale(0.85); opacity: 0.3; }
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.35;
+    }
+    35% {
+      transform: translate(-20px, 16px) scale(1.15);
+      opacity: 0.7;
+    }
+    70% {
+      transform: translate(10px, -18px) scale(0.85);
+      opacity: 0.3;
+    }
   }
 
   @keyframes scan-line {
-    0%   { transform: translateY(-100%); opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
   }
 }
 
@@ -82,9 +137,10 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
-  background-color: #F4F6FF;
+  background-color: #f4f6ff;
 }
 
 body.dark {
@@ -101,9 +157,9 @@ body.dark {
   }
 }
 
-
 @keyframes float-badge {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -112,7 +168,8 @@ body.dark {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.8;
     transform: scale(1);
   }
@@ -135,19 +192,24 @@ body.dark {
   animation: pulse-glow 8s ease-in-out infinite;
 }
 
-
 dialog::backdrop {
   background-color: rgba(3, 3, 8, 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-
 dialog[open] {
   animation: dialog-in 0.25s ease-out forwards;
 }
 
 @keyframes dialog-in {
-  from { opacity: 0; transform: translateY(12px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0)    scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
+
