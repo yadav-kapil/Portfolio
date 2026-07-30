@@ -271,7 +271,53 @@ const AboutPage = () => {
           </div>
         </div>
 
-        <div className="mt-28">
+        <div className="mt-28 relative">
+          {/* Left Margin Floating Background Elements */}
+          <div className="absolute -left-16 xl:-left-36 top-0 z-0 hidden lg:flex flex-col gap-6 items-center pointer-events-none select-none opacity-60">
+            <div className="w-32 h-32 rounded-full bg-indigo-500/10 dark:bg-indigo-500/5 blur-2xl animate-pulse" />
+            <motion.div
+              animate={{ rotate: 360, y: [0, -8, 0] }}
+              transition={{ 
+                rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="w-14 h-14 rounded-2xl border border-dashed border-indigo-400/30 dark:border-indigo-400/15 flex items-center justify-center"
+            >
+              <LuLayers className="w-5 h-5 text-indigo-400/40 dark:text-indigo-400/20" />
+            </motion.div>
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], rotate: 45 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="text-indigo-400/30 dark:text-indigo-400/15"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
+              </svg>
+            </motion.div>
+          </div>
+
+          {/* Right Margin Floating Background Elements */}
+          <div className="absolute -right-16 xl:-right-36 top-0 z-0 hidden lg:flex flex-col gap-6 items-center pointer-events-none select-none opacity-60">
+            <div className="w-32 h-32 rounded-full bg-purple-500/10 dark:bg-purple-500/5 blur-2xl animate-pulse" />
+            <motion.div
+              animate={{ rotate: -360, y: [0, 8, 0] }}
+              transition={{ 
+                rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="w-14 h-14 rounded-full border border-purple-400/30 dark:border-purple-450/15 flex items-center justify-center relative"
+            >
+              <div className="w-8 h-8 rounded-full border border-dashed border-pink-400/30 dark:border-pink-500/15 flex items-center justify-center">
+                <LuCpu className="w-3.5 h-3.5 text-purple-400/40 dark:text-purple-450/20" />
+              </div>
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="w-2 h-2 rounded-full bg-pink-400/25 dark:bg-pink-500/15"
+            />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -289,12 +335,83 @@ const AboutPage = () => {
                 What I Do
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-outfit tracking-tight text-slate-900 dark:text-white">
-              Services I Provide
-            </h2>
-            <div className="relative w-16 h-4 flex items-center mt-0.5 justify-center">
-              <div className="h-[3px] bg-gradient-to-r from-indigo-500 to-purple-600 w-full rounded-full"></div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-indigo-500 border border-white dark:border-[#030308]"></div>
+            <div className="relative">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0, rotate: -45 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                animate={{ 
+                  y: [0, -4, 0],
+                  rotate: [0, 45, 0]
+                }}
+                transition={{
+                  initial: { delay: 0.4 },
+                  animate: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+                }}
+                className="absolute -left-9 top-1/2 -translate-y-1/2 text-indigo-400 dark:text-indigo-400/85 hidden sm:block pointer-events-none"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
+                </svg>
+              </motion.div>
+
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-outfit tracking-tight text-slate-900 dark:text-white px-2">
+                Services I Provide
+              </h2>
+
+              <motion.div 
+                initial={{ opacity: 0, scale: 0, rotate: 45 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                animate={{ 
+                  y: [0, 4, 0],
+                  rotate: [0, -45, 0]
+                }}
+                transition={{
+                  initial: { delay: 0.5 },
+                  animate: { repeat: Infinity, duration: 4.5, ease: "easeInOut" }
+                }}
+                className="absolute -right-9 top-1/2 -translate-y-1/2 text-purple-400 dark:text-purple-450/80 hidden sm:block pointer-events-none"
+              >
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 0l2.5 7.5 7.5 2.5-7.5 2.5-2.5 7.5-2.5-7.5-7.5-2.5 7.5-2.5z" />
+                </svg>
+              </motion.div>
+            </div>
+            
+            <div className="relative w-48 h-8 flex items-center mt-1 justify-center select-none pointer-events-none">
+              <svg className="w-full h-full" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path 
+                  d="M 10 20 Q 50 5, 100 20 T 190 20" 
+                  stroke="rgba(99, 102, 241, 0.15)" 
+                  strokeWidth="2.5" 
+                  strokeLinecap="round" 
+                />
+                <motion.path 
+                  d="M 10 20 Q 50 5, 100 20 T 190 20" 
+                  stroke="url(#servicesGrad)" 
+                  strokeWidth="3" 
+                  strokeLinecap="round" 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                />
+                <defs>
+                  <linearGradient id="servicesGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#6366F1" />
+                    <stop offset="50%" stopColor="#A855F7" />
+                    <stop offset="100%" stopColor="#EC4899" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <motion.div 
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 200, delay: 0.8 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-indigo-500 border border-white dark:border-[#090A1A] shadow-md shadow-indigo-500/50 flex items-center justify-center"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+              </motion.div>
             </div>
             <p className="text-sm text-slate-500 dark:text-slate-350 max-w-lg mt-2 font-inter leading-relaxed">
               I build modern and scalable web solutions to help businesses grow and succeed online.

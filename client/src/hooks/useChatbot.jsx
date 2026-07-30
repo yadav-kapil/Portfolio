@@ -61,7 +61,7 @@ export const useChatbot = () => {
 
       if (wordMatch(["project", "projects"])) {
         responseComponent = <ProjectsResponse />;
-        predefinedText = "Kapil's featured projects are Queue Cure (a real-time clinic queue management platform built with Socket.IO, Express, and Docker), Rentora (a hotel booking platform with secure JWT auth and dashboards), and Learnify (an AI-powered learning assistant with Gemini API integration).";
+        predefinedText = "Kapil's featured projects are Queue Cure (a real-time clinic queue management platform built with Socket.IO, Express, and Docker), Rentora (a peer-to-peer vacation rental marketplace with role-based guest/host dashboards, Wishlists, and Cloudinary media), and Learnify (an AI-powered learning assistant with Gemini API integration).";
       } else if (wordMatch(["skill", "skills", "tech", "stack", "technologies"])) {
         responseComponent = <SkillsResponse />;
         predefinedText = "Kapil's technical skills include: Programming Languages (Python, JavaScript, C, Java), Frontend (HTML, CSS, React.js, Redux, Bootstrap, Tailwind CSS, Framer Motion), Backend (Node.js, Express.js, REST APIs, Socket.io, JWT, Mongoose, Cloudinary), Databases (MongoDB, MySQL), DevOps/Cloud (Docker, AWS EC2, Nginx, CI/CD, Linux), AI/ML (NumPy, Pandas, Scikit-Learn, Ollama, LLMs).";

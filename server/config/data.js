@@ -28,11 +28,11 @@ const portfolioData = {
     },
     {
       "name": "Rentora",
-      "description": "Full-stack hotel booking platform with dashboards and room inventory.",
-      "techStack": ["React", "Vite", "React Router", "Tailwind", "Framer Motion", "Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "JWT", "Docker", "Compose", "AWS EC2", "Nginx", "GitHub Actions"],
-      "features": ["Secure JWT authentication", "Admin & guest dashboards", "Booking workflows & room inventory", "Nginx & Docker deployment"],
-      "github": "https://github.com/yadav-kapil",
-      "live": ""
+      "description": "Full-stack peer-to-peer vacation rental marketplace (similar to Airbnb) connecting property hosts and guests.",
+      "techStack": ["React", "Vite", "React Router", "Tailwind", "Framer Motion", "Node.js", "Express.js", "MongoDB", "Mongoose", "Cloudinary", "REST APIs", "JWT", "Docker", "Compose", "AWS EC2", "Nginx", "GitHub Actions"],
+      "features": ["Guest wishlists & booking history", "Host listing dashboard with Cloudinary uploads", "Booking requests Accept/Reject approvals", "Nginx, Docker & AWS deployment"],
+      "github": "https://github.com/yadav-kapil/Rentora",
+      "live": "https://github.com/yadav-kapil/Rentora"
     },
     {
       "name": "Learnify",

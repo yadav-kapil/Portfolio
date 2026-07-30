@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { MdOutlineCloudDownload } from "react-icons/md";
-import { LuArrowRight, LuFolder, LuCalendar, LuStar } from "react-icons/lu";
+import { LuArrowRight, LuFolder, LuCode, LuShield, LuCloud } from "react-icons/lu";
 import { FaReact, FaNodeJs, FaJs } from "react-icons/fa";
 
 import bgHero from "../assets/bg-hero.jpg";
@@ -28,7 +28,7 @@ const Hero = () => {
         el.textContent = currentWord.slice(0, i);
         if (i === currentWord.length) {
           forward = false;
-          timeoutId = setTimeout(type, 2000);
+          timeoutId = setTimeout(type, 1800);
           return;
         }
       } else {
@@ -50,22 +50,28 @@ const Hero = () => {
 
   const stats = [
     {
-      icon: <LuFolder className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
-      value: "20+",
-      label: "Projects Completed",
-      progress: "85%",
-    },
-    {
-      icon: <LuCalendar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
-      value: "2+",
-      label: "Years Experience",
-      progress: "65%",
-    },
-    {
-      icon: <LuStar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
-      value: "100%",
-      label: "Client Satisfaction",
+      icon: <LuCode className="w-5 h-5" />,
+      value: "Build",
+      label: "Modern Web Apps",
       progress: "100%",
+      colorClass: "text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 dark:bg-indigo-500/8 border-indigo-500/20 dark:border-indigo-500/15",
+      barColor: "from-indigo-500 via-indigo-400 to-purple-600"
+    },
+    {
+      icon: <LuShield className="w-5 h-5" />,
+      value: "Engineer",
+      label: "Secure APIs",
+      progress: "100%",
+      colorClass: "text-emerald-600 dark:text-emerald-450 bg-emerald-500/10 dark:bg-emerald-500/8 border-emerald-500/20 dark:border-emerald-500/15",
+      barColor: "from-emerald-500 via-emerald-400 to-teal-600"
+    },
+    {
+      icon: <LuCloud className="w-5 h-5" />,
+      value: "Deploy",
+      label: "Cloud Infrastructure",
+      progress: "100%",
+      colorClass: "text-sky-600 dark:text-sky-400 bg-sky-500/10 dark:bg-sky-500/8 border-sky-500/20 dark:border-sky-500/15",
+      barColor: "from-sky-500 via-sky-400 to-indigo-600"
     },
   ];
 
@@ -208,26 +214,26 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 lg:mt-4"
+            className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4.5 mt-8 lg:mt-5"
           >
             {stats.map((stat, i) => (
               <div 
                 key={i} 
-                className="flex flex-col p-4.5 rounded-2xl border border-white/60 dark:border-indigo-500/20 bg-white/40 dark:bg-gradient-to-br dark:from-[#0B0D1B]/80 dark:to-[#05060C]/90 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-black/40 relative overflow-hidden group hover:scale-[1.02] hover:border-indigo-500/40 dark:hover:shadow-[0_0_20px_rgba(99,102,241,0.03)] transition-all duration-305"
+                className="flex flex-col py-3 px-5 rounded-2xl border border-slate-200/40 dark:border-indigo-500/15 bg-white/40 dark:bg-gradient-to-br dark:from-[#0B0D1B]/80 dark:to-[#05060C]/90 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-black/40 relative overflow-hidden group hover:scale-[1.02] hover:border-indigo-500/40 dark:hover:shadow-[0_0_20px_rgba(99,102,241,0.03)] transition-all duration-300 select-none text-left w-full"
               >
-                <div className="flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/55 flex items-center justify-center border border-indigo-100/50 dark:border-indigo-900/30">
+                <div className="flex items-center gap-4">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-transform group-hover:scale-105 duration-300 shrink-0 ${stat.colorClass}`}>
                     {stat.icon}
                   </div>
-                  <div>
-                    <div className="text-[20px] font-extrabold text-slate-900 dark:text-white font-outfit tracking-tight leading-none mb-0.5">{stat.value}</div>
-                    <div className="text-[9.5px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider leading-none">{stat.label}</div>
+                  <div className="flex flex-col justify-center">
+                    <div className="text-[16px] sm:text-[18px] font-bold text-slate-900 dark:text-white font-outfit tracking-tight leading-tight">{stat.value}</div>
+                    <div className="text-[12px] sm:text-[13px] font-medium text-slate-500 dark:text-slate-400 font-outfit mt-0.5 leading-tight">{stat.label}</div>
                   </div>
                 </div>
                 
                 <div className="absolute bottom-0 left-0 w-full h-[3px] bg-slate-200/50 dark:bg-indigo-950/30">
                   <div 
-                    className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 transition-all duration-1000" 
+                    className={`h-full bg-gradient-to-r ${stat.barColor} transition-all duration-1000`} 
                     style={{ width: stat.progress }}
                   ></div>
                 </div>

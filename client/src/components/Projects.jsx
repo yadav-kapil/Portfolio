@@ -4,6 +4,7 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import { HiOutlineInformationCircle } from "react-icons/hi2";
 import learnify from "../assets/learnify.png";
 import queueCure from "../assets/queue-cure-project.png";
+import rentora from "../assets/rentora-project.png";
 
 const projects = [
   {
@@ -15,7 +16,6 @@ const projects = [
     tags: ["React", "Express", "MongoDB", "Socket.IO"],
     github: "https://github.com/yadav-kapil/queue-cure-26",
     live: "https://queue-cure-yadavkapil.duckdns.org/",
-    
     fullDescription:
       "Queue Cure transforms traditional clinic queue management into a transparent, connected, and real-time system. Instead of relying on paper tokens, verbal announcements, and manual display updates, Queue Cure provides live queue tracking, dynamic wait-time estimation, and instant synchronization across doctor, receptionist, and patient dashboards using Socket.IO. Building Queue Cure was more than just a full-stack project—it gave me hands-on experience with real-time systems using WebSockets and Socket.IO, synchronizing state across users, and building scalable, production-ready apps with modern DevOps practices, including CI/CD pipelines, containerization, and cloud deployment.",
     highlights: [
@@ -36,6 +36,34 @@ const projects = [
     status: "Live",
   },
   {
+    title: "Rentora",
+    subtitle: "Vacation Rental Marketplace",
+    description:
+      "A peer-to-peer vacation rental marketplace connecting property hosts and guests. Features role-based dashboards, booking workflows, Wishlists, Cloudinary media gallery, and guest reviews.",
+    image: rentora,
+    tags: ["React", "Node.js", "MongoDB", "Cloudinary"],
+    github: "https://github.com/yadav-kapil/Rentora",
+    live: "https://github.com/yadav-kapil/Rentora",
+    fullDescription:
+      "Rentora is a peer-to-peer vacation rental marketplace (similar to Airbnb) that connects property hosts and travelers (guests). Guests can search and filter accommodations, view pricing, reserve stays, save favorites, write reviews, and receive status notifications. Hosts utilize a management dashboard to list properties, upload cover/gallery images to Cloudinary, edit listings, and manage booking approvals (Accept/Reject).",
+    highlights: [
+      "Role-based workflows for Guests (booking history, wishlist, reviews) and Hosts (property listings, approvals)",
+      "Search & filter engine with live pricing, check-in/out date calculations, and support messaging",
+      "Onboarding forms for listings with cover images and media galleries uploaded directly to Cloudinary",
+      "Dynamic booking requests and approvals dashboard with real-time status notifications",
+      "DevOps pipeline featuring AWS EC2, Docker, Docker Compose, Nginx, and GitHub Actions (CI/CD)",
+    ],
+    techStackDetail: {
+      frontend: ["React", "Vite", "React Router", "Tailwind CSS", "Framer Motion"],
+      backend: ["Node.js", "Express.js", "JWT Authentication", "REST APIs"],
+      database: ["MongoDB", "Mongoose", "Cloudinary"],
+      infrastructure: ["Docker", "Docker Compose", "AWS EC2", "Nginx", "GitHub Actions (CI/CD)"]
+    },
+    role: "Full-Stack Developer",
+    duration: "Personal Project",
+    status: "Live",
+  },
+  {
     title: "Learnify",
     subtitle: "AI-Powered Learning Assistant",
     description:
@@ -44,7 +72,6 @@ const projects = [
     tags: ["React", "Framer Motion", "Node.js", "Gemini"],
     github: "https://github.com/yadav-kapil/Learnify_Hacksprint",
     live: "https://learnify-hacksprint.vercel.app/",
-    
     fullDescription:
       "Learnify is a full-stack AI learning assistant built during a hackathon. It lets students type or speak any question and receive clear, structured explanations powered by the Gemini API. The platform adapts to the user's learning level, tracks session history, and suggests follow-up questions to deepen understanding.",
     highlights: [
@@ -240,7 +267,7 @@ const ProjectCard = ({ project, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: index * 0.12 }}
         viewport={{ once: true, amount: 0.15 }}
-        className="group relative flex flex-col w-full sm:w-[370px] rounded-2xl overflow-hidden border border-slate-200/70 dark:border-white/[0.07] bg-white dark:bg-[#07081A] shadow-[0_2px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.55)] hover:shadow-[0_8px_40px_rgba(99,102,241,0.12)] dark:hover:shadow-[0_12px_50px_rgba(99,102,241,0.15)] hover:-translate-y-1.5 transition-all duration-400"
+        className="group relative flex flex-col flex-1 min-w-[290px] sm:min-w-[320px] max-w-[360px] rounded-2xl overflow-hidden border border-slate-200/70 dark:border-white/[0.07] bg-white dark:bg-[#07081A] shadow-[0_2px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.55)] hover:shadow-[0_8px_40px_rgba(99,102,241,0.12)] dark:hover:shadow-[0_12px_50px_rgba(99,102,241,0.15)] hover:-translate-y-1.5 transition-all duration-400"
       >
         
         <div className="h-[3px] w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shrink-0" />

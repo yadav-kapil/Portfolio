@@ -87,7 +87,7 @@ const Navbar = ({ isChatOpen = false, setIsChatOpen = () => {} }) => {
           </div>
         </a>
 
-      <div className="hidden sm:flex items-center gap-7">
+      <div className="hidden md:flex items-center gap-5 lg:gap-7">
         {navItems.map((item) => (
           <a
             key={item.label}
@@ -101,7 +101,7 @@ const Navbar = ({ isChatOpen = false, setIsChatOpen = () => {} }) => {
         ))}
       </div>
 
-        <div className="flex items-center gap-2.5 sm:gap-4">
+        <div className="flex items-center gap-2.5 md:gap-4">
           
           <motion.button
             onClick={() => setIsChatOpen(true)}
@@ -160,7 +160,7 @@ const Navbar = ({ isChatOpen = false, setIsChatOpen = () => {} }) => {
 
           <a
             href="#contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:opacity-95 text-white font-semibold text-[13px] px-5 py-2 flex items-center gap-1.5 shadow-md shadow-indigo-500/10 dark:shadow-indigo-500/20 hover:shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer max-sm:hidden"
+            className="rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:opacity-95 text-white font-semibold text-[13px] px-5 py-2 flex items-center gap-1.5 shadow-md shadow-indigo-500/10 dark:shadow-indigo-500/20 hover:shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer max-md:hidden"
           >
             <span>Let's Connect</span>
             <LuArrowRight className="w-3.5 h-3.5" />
@@ -173,7 +173,7 @@ const Navbar = ({ isChatOpen = false, setIsChatOpen = () => {} }) => {
             whileTap="tap"
             variants={toggleButtonVariants}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            className="sm:hidden rounded-full border border-slate-200 dark:border-slate-800/40 p-2 text-slate-700 dark:text-indigo-400 bg-white/10 dark:bg-indigo-950/15 hover:bg-slate-100 dark:hover:bg-indigo-900/35 transition-colors flex items-center justify-center cursor-pointer shadow-sm shadow-black/5 w-9 h-9 overflow-hidden"
+            className="md:hidden rounded-full border border-slate-200 dark:border-slate-800/40 p-2 text-slate-700 dark:text-indigo-400 bg-white/10 dark:bg-indigo-950/15 hover:bg-slate-100 dark:hover:bg-indigo-900/35 transition-colors flex items-center justify-center cursor-pointer shadow-sm shadow-black/5 w-9 h-9 overflow-hidden"
             aria-label="Open navigation menu"
           >
             <LuMenu className="w-[18px] h-[18px]" strokeWidth={2} />
@@ -191,14 +191,14 @@ const Navbar = ({ isChatOpen = false, setIsChatOpen = () => {} }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSidebarState(false)}
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm sm:hidden"
+              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm md:hidden"
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
-              className="fixed top-0 right-0 z-50 w-72 h-screen bg-white/95 dark:bg-[#070810]/95 border-l dark:border-[#1E2245]/30 backdrop-blur-md shadow-2xl p-8 flex flex-col sm:hidden"
+              className="fixed top-0 right-0 z-50 w-72 h-screen bg-white/95 dark:bg-[#070810]/95 border-l dark:border-[#1E2245]/30 backdrop-blur-md shadow-2xl p-8 flex flex-col md:hidden"
             >
               <div>
                 <div className="flex justify-between items-center mb-10">
@@ -227,14 +227,16 @@ const Navbar = ({ isChatOpen = false, setIsChatOpen = () => {} }) => {
                     </a>
                   ))}
 
-                  <a
-                    href="#contact"
-                    onClick={() => setSidebarState(false)}
-                    className="rounded-xl w-full mt-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center gap-1.5 shadow-md shadow-indigo-500/20 hover:opacity-95 active:scale-[0.98] transition-all"
+                  <button
+                    onClick={() => {
+                      setSidebarState(false);
+                      setIsChatOpen(true);
+                    }}
+                    className="rounded-xl w-full mt-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center gap-1.5 shadow-md shadow-indigo-500/20 hover:opacity-95 active:scale-[0.98] transition-all cursor-pointer"
                   >
-                    <span>Let's Connect</span>
-                    <LuArrowRight size={16} />
-                  </a>
+                    <span>Ask AI</span>
+                    <LuBot size={16} />
+                  </button>
                 </div>
               </div>
             </motion.div>
