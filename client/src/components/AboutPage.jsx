@@ -64,17 +64,14 @@ const AboutPage = () => {
     >
       <div className="absolute inset-0 bg-[radial-gradient(#c7d2fe_1.2px,transparent_1.2px)] dark:bg-[radial-gradient(#312e81_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 dark:opacity-30 pointer-events-none z-0"></div>
 
-      {/* Background Decorative Orbits */}
       <div className="absolute top-12 left-[-150px] w-[500px] h-[500px] rounded-full border border-indigo-200/20 dark:border-indigo-500/10 pointer-events-none z-0"></div>
       <div className="absolute top-24 left-[-100px] w-[400px] h-[400px] rounded-full border border-dashed border-indigo-200/25 dark:border-indigo-500/15 pointer-events-none z-0 animate-[spin_80s_linear_infinite]"></div>
       <div className="absolute bottom-24 right-[-200px] w-[600px] h-[600px] rounded-full border border-indigo-200/15 dark:border-indigo-500/5 pointer-events-none z-0"></div>
       <div className="absolute bottom-36 right-[-150px] w-[500px] h-[500px] rounded-full border border-dashed border-indigo-200/20 dark:border-indigo-500/10 pointer-events-none z-0 animate-[spin_60s_linear_infinite]"></div>
 
-      {/* Background Accent Grid Lines */}
       <div className="absolute left-[6%] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-slate-200/40 dark:via-indigo-950/20 to-transparent pointer-events-none z-0 hidden xl:block"></div>
       <div className="absolute right-[6%] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-slate-200/40 dark:via-indigo-950/20 to-transparent pointer-events-none z-0 hidden xl:block"></div>
 
-      {/* Dashed Wave Paths */}
       <div className="absolute top-[35%] left-[2%] w-32 h-64 pointer-events-none opacity-20 dark:opacity-10 z-0 hidden lg:block">
         <svg className="w-full h-full text-indigo-500" viewBox="0 0 100 200" fill="none">
           <path d="M-30,0 C40,50 -10,100 50,150 C80,180 90,190 120,200" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" />
@@ -273,8 +270,6 @@ const AboutPage = () => {
             </motion.div>
           </div>
         </div>
-
-
 
         <div className="mt-28">
           <motion.div

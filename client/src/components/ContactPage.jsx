@@ -77,10 +77,9 @@ const ContactPage = ({ onOpenChat }) => {
       id="contact"
       className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-50/15 via-white to-purple-50/15 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 transition-colors duration-300 pt-20 pb-24 px-6 sm:px-12 lg:px-24"
     >
-      {/* Background Dot Grid Pattern (matches Hero and About) */}
+      
       <div className="absolute inset-0 bg-[radial-gradient(#c7d2fe_1.2px,transparent_1.2px)] dark:bg-[radial-gradient(#312e81_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 dark:opacity-30 pointer-events-none z-0"></div>
 
-      {/* Background Decorative Curves & Waves */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <svg className="w-full h-full opacity-20 dark:opacity-[0.1]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
           <path 
@@ -100,7 +99,6 @@ const ContactPage = ({ onOpenChat }) => {
         </svg>
       </div>
 
-      {/* Floating Sparkles & Spheres (matches image) */}
       <div className="absolute top-[12%] left-[10%] text-indigo-400/40 animate-pulse pointer-events-none z-0">
         <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
           <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
@@ -115,7 +113,6 @@ const ContactPage = ({ onOpenChat }) => {
 
       <div className="w-full max-w-6xl mx-auto relative z-10">
 
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +120,7 @@ const ContactPage = ({ onOpenChat }) => {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-2 text-center mb-16 relative"
         >
-          {/* Top Connect Badge */}
+          
           <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/20 dark:border-indigo-500/30 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/8 dark:to-purple-500/8 w-fit select-none hover:border-indigo-500/40 hover:shadow-[0_2px_12px_rgba(99,102,241,0.15)] transition-all duration-300">
             <span className="text-indigo-500 dark:text-indigo-400 animate-pulse">
               <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
@@ -284,13 +281,11 @@ const ContactPage = ({ onOpenChat }) => {
 
           </div>
 
-          {/* Right Side: Contact Form */}
           <div className="flex-1 flex flex-col justify-center px-2 py-4 md:px-6">
             <form onSubmit={handleSubmit} className="space-y-6 w-full">
-              
-              {/* Name & Email inputs (2 columns on md/lg screens) */}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {/* Name */}
+                
                 <div className="flex flex-col gap-2">
                   <label className="text-[11.5px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-650 font-mono flex items-center gap-1.5">
                     <LuUser className="w-3.5 h-3.5 text-indigo-500" /> Your Name
@@ -306,7 +301,6 @@ const ContactPage = ({ onOpenChat }) => {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="flex flex-col gap-2">
                   <label className="text-[11.5px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-655 font-mono flex items-center gap-1.5">
                     <LuMail className="w-3.5 h-3.5 text-indigo-500" /> Your Email
@@ -323,7 +317,6 @@ const ContactPage = ({ onOpenChat }) => {
                 </div>
               </div>
 
-              {/* Subject */}
               <div className="flex flex-col gap-2">
                 <label className="text-[11.5px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-650 font-mono flex items-center gap-1.5">
                   <LuFileText className="w-3.5 h-3.5 text-indigo-500" /> Subject
@@ -337,7 +330,6 @@ const ContactPage = ({ onOpenChat }) => {
                 />
               </div>
 
-              {/* Message */}
               <div className="flex flex-col gap-2 relative">
                 <label className="text-[11.5px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-655 font-mono flex items-center gap-1.5">
                   <LuPenTool className="w-3.5 h-3.5 text-indigo-500" /> Message
@@ -351,14 +343,12 @@ const ContactPage = ({ onOpenChat }) => {
                   placeholder="Write your message here..."
                   className="w-full px-4 py-3.5 rounded-xl border border-slate-200 dark:border-white/[0.07] bg-slate-50/40 dark:bg-white/[0.02] text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 hover:border-slate-355 dark:hover:border-white/10 transition-all resize-none font-manrope text-[13px] font-semibold"
                 ></textarea>
-                
-                {/* Character Counter */}
+
                 <div className="text-[10px] font-bold text-slate-400 dark:text-slate-600 font-mono text-right mt-1.5">
                   {charCount} / 500
                 </div>
               </div>
 
-              {/* Submission Alerts */}
               {status === "success" && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -390,7 +380,6 @@ const ContactPage = ({ onOpenChat }) => {
                 </motion.div>
               )}
 
-              {/* Submit Button */}
               <div className="pt-2 flex flex-col gap-4">
                 <button
                   type="submit"
@@ -401,7 +390,6 @@ const ContactPage = ({ onOpenChat }) => {
                   {status === "loading" ? "Sending..." : "Send Message"}
                 </button>
 
-                {/* Safe info disclaimer */}
                 <div className="flex items-center justify-center gap-1.5 text-[10px] font-bold text-slate-400 dark:text-slate-600 font-mono select-none">
                   <LuLock className="w-3 h-3 text-indigo-500" />
                   <span>Your information is safe and will never be shared.</span>

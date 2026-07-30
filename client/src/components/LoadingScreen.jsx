@@ -7,7 +7,7 @@ import loadingJson from "../assets/videos/loading_screen_man.json";
 
 const TypingText = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
-  const [stage, setStage] = useState("typing"); // typing, deleting
+  const [stage, setStage] = useState("typing"); 
 
   useEffect(() => {
     let timer;
@@ -21,9 +21,9 @@ const TypingText = ({ text }) => {
           clearInterval(timer);
           setTimeout(() => {
             setStage("deleting");
-          }, 500); // 500ms pause when fully typed
+          }, 500); 
         }
-      }, 45); // Slower typing rate, matching the typewriter in Hero
+      }, 45); 
     } else if (stage === "deleting") {
       let index = text.length;
       timer = setInterval(() => {
@@ -33,9 +33,9 @@ const TypingText = ({ text }) => {
           clearInterval(timer);
           setTimeout(() => {
             setStage("typing");
-          }, 300); // 300ms pause when fully erased
+          }, 300); 
         }
-      }, 25); // Fast backspacing speed
+      }, 25); 
     }
 
     return () => {
@@ -63,13 +63,13 @@ const TerminalCard = ({ text, isDark, position }) => {
           : "border-slate-200/80 bg-white/70 shadow-[0_10px_25px_rgba(99,102,241,0.04)]"
       }`}
     >
-      {/* macOS Dots */}
+      
       <div className="flex items-center gap-1.5 mb-2.5">
         <div className="w-1.5 h-1.5 rounded-full bg-[#FF5F56]"></div>
         <div className="w-1.5 h-1.5 rounded-full bg-[#FFBD2E]"></div>
         <div className="w-1.5 h-1.5 rounded-full bg-[#27C93F]"></div>
       </div>
-      {/* Content */}
+      
       <div className={`flex items-start gap-1.5 font-mono text-[11px] leading-normal font-semibold ${
         isDark ? "text-slate-200" : "text-slate-700"
       }`}>
@@ -96,7 +96,7 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           return 100;
         }
       });
-    }, 30); // 30ms * 100 = 3000ms (3s progress total)
+    }, 30); 
 
     return () => clearInterval(interval);
   }, [setIsLoading]);
@@ -114,10 +114,9 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
     <div className={`fixed inset-0 w-screen h-[100dvh] flex flex-col items-center justify-between pt-8 pb-16 md:pt-12 md:pb-24 px-6 md:px-12 z-50 select-none overflow-hidden transition-colors duration-300 ${
       isDark ? "bg-[#030308] text-white" : "bg-[#FAFBFD] text-slate-900"
     }`}>
-      {/* Dotted Grid Background */}
+      
       <div className="absolute inset-0 z-0 pointer-events-none opacity-80" style={bgGridStyle}></div>
 
-      {/* Ambient Glow Mesh Blobs */}
       <div className={`absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full blur-3xl pointer-events-none z-0 animate-pulse ${
         isDark ? "bg-indigo-500/10" : "bg-indigo-500/8"
       }`}></div>
@@ -125,7 +124,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         isDark ? "bg-purple-500/10" : "bg-purple-500/8"
       }`}></div>
 
-      {/* Interlacing Dotted curves wave background */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <svg className={`w-full h-full ${isDark ? "opacity-[0.18]" : "opacity-35"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
           <defs>
@@ -140,7 +138,7 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
               <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
             </linearGradient>
           </defs>
-          {/* Main Lower Dotted Wave */}
+          
           <path 
             d="M-100 500 C 200 600, 500 200, 800 550 C 1100 800, 1300 400, 1600 450" 
             fill="none" 
@@ -148,7 +146,7 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
             strokeWidth="2" 
             strokeDasharray="6 6" 
           />
-          {/* Secondary Upper Dotted Wave */}
+          
           <path 
             d="M-50 300 C 300 100, 600 700, 900 350 C 1200 100, 1400 600, 1650 550" 
             fill="none" 
@@ -159,7 +157,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </svg>
       </div>
 
-      {/* Dotted path node indicators (circles/sparkles) */}
       <div className="absolute left-[28%] top-[48%] hidden md:block z-10 animate-pulse">
         <div className="w-2.5 h-2.5 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.6)]"></div>
       </div>
@@ -167,8 +164,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         <div className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.6)]"></div>
       </div>
 
-      {/* Floating 3D SVGs spaced out to the far edges to avoid clashing with Terminal Cards */}
-      {/* 3D Crystal (Top-Left Corner) */}
       <div className="absolute top-[10%] left-[8%] xl:left-[12%] z-5 pointer-events-none select-none animate-float-slow hidden xl:block">
         <svg className="w-16 h-16 overflow-visible filter drop-shadow-[0_10px_15px_rgba(192,132,252,0.2)]" viewBox="0 0 100 100">
           <defs>
@@ -193,7 +188,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </svg>
       </div>
 
-      {/* 3D Torus/Ring (Middle-Right edge) */}
       <div className="absolute top-[45%] right-[6%] xl:right-[10%] z-5 pointer-events-none select-none animate-float-delayed hidden xl:block">
         <svg className="w-16 h-16 overflow-visible" viewBox="0 0 100 100" transform="rotate(25)">
           <defs>
@@ -207,7 +201,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </svg>
       </div>
 
-      {/* 3D Code Block (Bottom-Left Corner) */}
       <div className="absolute bottom-[10%] left-[10%] xl:left-[15%] z-5 pointer-events-none select-none animate-float-delayed hidden xl:block">
         <svg className="w-16 h-16 overflow-visible" viewBox="0 0 100 100">
           <defs>
@@ -228,7 +221,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </svg>
       </div>
 
-      {/* 3D Folder (Bottom-Right Corner) */}
       <div className="absolute bottom-[10%] right-[10%] xl:right-[15%] z-5 pointer-events-none select-none animate-float-slow hidden xl:block">
         <svg className="w-16 h-16 overflow-visible filter drop-shadow-[0_12px_20px_rgba(99,102,241,0.2)]" viewBox="0 0 100 100">
           <defs>
@@ -247,7 +239,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </svg>
       </div>
 
-      {/* Background dashed orbits */}
       <div className="absolute top-[28%] left-[22%] hidden md:block z-0 animate-[spin_40s_linear_infinite] opacity-35">
         <svg className={`w-12 h-12 ${isDark ? "text-indigo-400" : "text-indigo-600"}`} viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" fill="none" />
@@ -259,7 +250,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </svg>
       </div>
 
-      {/* Floating Sparkles (Little stars) */}
       <div className="absolute bottom-[35%] left-[8%] z-5 pointer-events-none select-none animate-float-slow hidden xl:block">
         <svg className="w-8 h-8 text-yellow-400 fill-current filter drop-shadow(0 0 8px rgba(250,204,21,0.4))" viewBox="0 0 24 24">
           <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
@@ -271,7 +261,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </svg>
       </div>
 
-      {/* Header Logo - Developer style font */}
       <div className="flex flex-col items-center gap-1.5 text-center relative z-10">
         <div className="flex items-center gap-2 font-mono text-xs md:text-sm font-semibold select-none">
           <span className="text-indigo-500 font-bold">{`{`}</span>
@@ -281,7 +270,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </div>
       </div>
 
-      {/* Headline & Subtitle - Enhanced styling & bottom-padding to prevent clipping */}
       <div className="flex flex-col items-center text-center max-w-2xl px-6 relative z-10 gap-2.5 mt-2">
         <h1 className="font-outfit text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.2] pb-0.5">
           <span className={isDark ? "text-white" : "text-[#0f172a]"}>Building Experiences,</span>
@@ -296,7 +284,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </p>
       </div>
 
-      {/* 4 Enhanced Terminal Cards - Type independently on larger screens, Hidden on Mobile */}
       <TerminalCard
         text="Initializing core portfolio systems..."
         isDark={isDark}
@@ -318,14 +305,12 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         position="bottom-[32%] right-[6%] xl:right-[10%]"
       />
 
-      {/* Central Lottie Developer Area - Fully Responsive Sizing with Expanded Size on Desktop */}
       <div className="relative flex items-center justify-center w-full max-w-xs md:max-w-md lg:max-w-xl aspect-square max-h-[220px] sm:max-h-[280px] md:max-h-[360px] lg:max-h-[420px] z-10 select-none px-4">
-        {/* Pulsing circular glow background */}
+        
         <div className={`absolute w-[140px] h-[140px] md:w-[240px] md:h-[240px] lg:w-[300px] lg:h-[300px] rounded-full blur-3xl animate-pulse pointer-events-none ${
           isDark ? "bg-indigo-500/10" : "bg-indigo-500/8"
         }`}></div>
 
-        {/* Lottie Player (Optimized size: 360px on desktop lg, 300px on tablet md, 200px on mobile) */}
         <Player
           autoplay
           loop
@@ -334,8 +319,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           className="w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] lg:w-[360px] lg:h-[360px] z-10 select-none pointer-events-none"
         />
 
-        {/* Floating Tech stack badges - Constrained inside bounds on mobile, expanded wide on desktop */}
-        {/* React Badge */}
         <div className="absolute top-[30%] left-1 md:top-[32%] md:left-[-12%] lg:left-[-18%] z-20 animate-float-slow hover:scale-115 transition-transform duration-300">
           <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-md border ${
             isDark ? "bg-[#08091A]/90 border-indigo-950/40 shadow-black/60" : "bg-white border-slate-100 shadow-slate-200/50"
@@ -344,7 +327,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           </div>
         </div>
 
-        {/* JS Badge */}
         <div className="absolute top-[33%] right-1 md:top-[35%] md:right-[-12%] lg:right-[-18%] z-20 animate-float-delayed hover:scale-115 transition-transform duration-300">
           <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-md border ${
             isDark ? "bg-[#08091A]/90 border-indigo-950/40 shadow-black/60" : "bg-white border-slate-100 shadow-slate-200/50"
@@ -353,7 +335,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           </div>
         </div>
 
-        {/* NodeJS Badge */}
         <div className="absolute bottom-[20%] left-1.5 md:bottom-[22%] md:left-[-8%] lg:left-[-14%] z-20 animate-float-delayed hover:scale-115 transition-transform duration-300">
           <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-md border ${
             isDark ? "bg-[#08091A]/90 border-indigo-950/40 shadow-black/60" : "bg-white border-slate-100 shadow-slate-200/50"
@@ -362,7 +343,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           </div>
         </div>
 
-        {/* MongoDB Badge */}
         <div className="absolute bottom-[20%] right-1.5 md:bottom-[22%] md:right-[-8%] lg:right-[-14%] z-20 animate-float-slow hover:scale-115 transition-transform duration-300">
           <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-md border ${
             isDark ? "bg-[#08091A]/90 border-indigo-950/40 shadow-black/60" : "bg-white border-slate-100 shadow-slate-200/50"
@@ -371,14 +351,12 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           </div>
         </div>
 
-        {/* Soft 3D Cloud SVG */}
         <div className="absolute top-[14%] right-[22%] lg:right-[18%] z-5 opacity-65 pointer-events-none animate-float-slow">
           <svg className={`w-9 h-6 ${isDark ? "text-indigo-400/25" : "text-indigo-300/40"}`} viewBox="0 0 100 60" fill="currentColor">
             <path d="M20 35a15 15 0 0 1 12-14.7 18 18 0 0 1 34.4-4.6 15 15 0 0 1 13.6 19.3 12 12 0 0 1-4 23H24a12 12 0 0 1-4-23z" />
           </svg>
         </div>
 
-        {/* Coffee Mug - positioned on the outer desk edge */}
         <div className="absolute bottom-[8%] left-[18%] md:left-[15%] lg:left-[12%] z-20 animate-float-slow">
           <div className={`w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center shadow-sm relative ${
             isDark ? "bg-[#0c0d24] border border-indigo-950/60" : "bg-slate-800 border border-slate-700"
@@ -390,7 +368,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
           </div>
         </div>
 
-        {/* Potted Plant - positioned on the outer desk edge */}
         <div className="absolute bottom-[8%] right-[18%] md:right-[15%] lg:right-[12%] z-20 animate-float-delayed flex flex-col items-center">
           <div className="flex gap-0.5 justify-center mb-[-2px]">
             <div className="w-1 h-2.5 md:w-1.5 md:h-3 rounded-full bg-green-500 transform -rotate-45 origin-bottom"></div>
@@ -401,7 +378,6 @@ const LoadingScreen = ({ theme, setIsLoading }) => {
         </div>
       </div>
 
-      {/* Progress bar container (Bottom) - wider and premium spacing */}
       <div className="w-[90%] md:w-[85%] max-w-lg md:max-w-xl relative z-10 flex flex-col gap-2.5 mb-2 px-1">
         <div className="flex justify-between items-center text-[10px] font-bold tracking-widest uppercase font-mono leading-none text-indigo-500/80">
           <span>Building Something Amazing...</span>

@@ -139,11 +139,10 @@ const Skills = () => {
       id="skills"
       className="relative w-full overflow-hidden bg-[#FAFBFD] dark:bg-[#030308] transition-colors duration-300 pt-20 pb-24 px-6 sm:px-12 lg:px-24"
     >
-      {/* Glowing Background Mesh Blobs */}
+      
       <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] bg-indigo-500/10 dark:bg-indigo-950/5 rounded-full blur-3xl pointer-events-none z-0 animate-pulse"></div>
       <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] bg-purple-500/10 dark:bg-purple-950/5 rounded-full blur-3xl pointer-events-none z-0 animate-pulse delay-1000"></div>
 
-      {/* Intersecting Gradient Curves Wave Background */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <svg className="w-full h-full opacity-35 dark:opacity-[0.18]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
           <defs>
@@ -164,8 +163,6 @@ const Skills = () => {
         </svg>
       </div>
 
-      {/* Floating Shape Elements */}
-      {/* Glowing Purple 3D Sphere */}
       <div className="absolute top-[18%] left-[10%] z-0 pointer-events-none select-none animate-float-slow hidden xl:block">
         <svg className="w-16 h-16 overflow-visible" viewBox="0 0 100 100">
           <defs>
@@ -179,7 +176,6 @@ const Skills = () => {
         </svg>
       </div>
 
-      {/* Glowing 3D Glass Torus (Donut) */}
       <div className="absolute top-[42%] right-[10%] z-0 pointer-events-none select-none animate-float-delayed hidden xl:block">
         <svg className="w-20 h-20 overflow-visible" viewBox="0 0 100 100" transform="rotate(25)">
           <defs>
@@ -193,14 +189,12 @@ const Skills = () => {
         </svg>
       </div>
 
-      {/* Glowing 4-Pointed Sparkle Star */}
       <div className="absolute bottom-[35%] left-[8%] z-0 pointer-events-none select-none animate-float-slow hidden xl:block">
         <svg className="w-10 h-10 text-yellow-400 fill-current filter drop-shadow(0 0 10px rgba(250,204,21,0.5))" viewBox="0 0 24 24">
           <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
         </svg>
       </div>
 
-      {/* 3D Glass Cylinder (Capsule) */}
       <div className="absolute bottom-[16%] right-[18%] z-0 pointer-events-none select-none animate-float-delayed hidden xl:block">
         <svg className="w-16 h-20 overflow-visible" viewBox="0 0 60 90" transform="rotate(-30)">
           <defs>
@@ -215,7 +209,6 @@ const Skills = () => {
       </div>
 
       <div className="w-full max-w-7xl mx-auto relative z-10">
-
 
         <motion.div
           initial={{ opacity: 0, y: 25 }}

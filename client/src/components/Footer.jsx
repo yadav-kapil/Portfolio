@@ -85,10 +85,8 @@ const Footer = () => {
         theme="light"
       />
 
-      {/* Background Dot Grid Pattern (matches other pages) */}
       <div className="absolute inset-0 bg-[radial-gradient(#c7d2fe_1.2px,transparent_1.2px)] dark:bg-[radial-gradient(#312e81_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-45 dark:opacity-30 pointer-events-none z-0"></div>
 
-      {/* Decorative Orbits & Sparkles */}
       <div className="absolute top-[30%] left-[-150px] w-[450px] h-[450px] rounded-full border border-indigo-200/20 dark:border-indigo-500/10 pointer-events-none z-0"></div>
       <div className="absolute top-[35%] left-[-100px] w-[350px] h-[350px] rounded-full border border-dashed border-indigo-200/25 dark:border-indigo-500/15 pointer-events-none z-0 animate-[spin_100s_linear_infinite]"></div>
 
@@ -100,14 +98,11 @@ const Footer = () => {
 
       <div className="w-full max-w-6xl mx-auto relative z-10">
 
-        {/* 🚀 Stay Connected CTA Card */}
         <div className="relative bg-white/70 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.08] backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 mb-20 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
-          
-          {/* Ambient Glowing Spheres inside CTA (matches design image) */}
+
           <div className="absolute right-[-5%] top-[10%] w-[120px] h-[120px] rounded-full bg-gradient-to-br from-indigo-500 to-purple-650 blur-sm opacity-60 dark:opacity-40 animate-bounce pointer-events-none" />
           <div className="absolute left-[-2%] top-[40%] w-[45px] h-[45px] rounded-full bg-gradient-to-br from-pink-500 to-purple-500 blur-sm opacity-50 dark:opacity-30 pointer-events-none animate-pulse" />
 
-          {/* Dotted curves wave background inside CTA */}
           <div className="absolute inset-0 pointer-events-none z-0 opacity-15 dark:opacity-10">
             <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
               <path d="M0 150 C 300 200, 700 80, 1000 150" fill="none" stroke="#6366F1" strokeWidth="1.5" strokeDasharray="5 5" />
@@ -115,10 +110,9 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 relative z-10">
-            
-            {/* Left Column info */}
+
             <div className="max-w-xl relative">
-              {/* Connect Badge */}
+              
               <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/20 dark:border-indigo-500/30 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/8 dark:to-purple-500/8 w-fit select-none hover:border-indigo-500/40 hover:shadow-[0_2px_12px_rgba(99,102,241,0.15)] transition-all duration-300 mb-4">
                 <span className="text-indigo-500 dark:text-indigo-400 animate-pulse">
                   <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
@@ -376,7 +370,6 @@ const Footer = () => {
               <LuArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </a>
 
-            {/* Flying paper plane trajectories underneath */}
             <div className="w-[120px] h-[55px] text-indigo-550/30 select-none pointer-events-none mt-2 relative mx-auto hidden lg:block">
               <svg className="w-full h-full" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 40 C 25 35, 30 15, 60 25 C 70 30, 80 20, 85 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="3 3" />
@@ -387,19 +380,15 @@ const Footer = () => {
 
         </div>
 
-        {/* 📋 Bottom Copyright Bar */}
         <div className="border-t border-slate-200/60 dark:border-white/[0.08] mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono font-bold text-slate-400 dark:text-slate-600 select-none max-w-6xl mx-auto z-10 relative">
-          
-          {/* Copyright text */}
+
           <p>© {new Date().getFullYear()} Kapil Yadav. All rights reserved.</p>
 
-          {/* Center Badge */}
           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-indigo-200/25 dark:border-white/[0.04] bg-white/40 dark:bg-white/[0.01] shadow-sm">
             <LuHeart className="w-3 h-3 text-red-500 animate-pulse" />
             <span>Made with passion & JavaScript</span>
           </div>
 
-          {/* Scroll Back to Top */}
           <button
             onClick={scrollToTop}
             className="flex items-center gap-1.5 hover:text-indigo-650 dark:hover:text-indigo-400 hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold uppercase tracking-wider"

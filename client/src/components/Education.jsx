@@ -3,8 +3,6 @@ import { motion } from "motion/react";
 import { FaGraduationCap, FaCalendarAlt } from "react-icons/fa";
 import { HiAcademicCap } from "react-icons/hi2";
 
-/* ─── Shared sub-components ───────────────────────────────────────────── */
-
 const TimelineNode = () => (
   <div className="w-5 h-5 rounded-full bg-[#FAFBFD] dark:bg-[#030308] border-2 border-indigo-500 dark:border-indigo-400 flex items-center justify-center shadow-md shrink-0">
     <div className="w-2 h-2 rounded-full bg-indigo-500 dark:bg-indigo-400 animate-pulse" />
@@ -31,7 +29,7 @@ const Card = ({ milestone, animX }) => (
     viewport={{ once: true, amount: 0.3 }}
     className="flex flex-col p-7 rounded-[2rem] border border-white/60 dark:border-indigo-500/15 bg-white/40 dark:bg-[#090A1A]/70 backdrop-blur-md shadow-lg shadow-indigo-950/5 dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden group hover:border-indigo-500/35 dark:hover:border-indigo-500/45 dark:hover:shadow-[0_20px_50px_rgba(99,102,241,0.08)] transition-colors duration-500 select-none text-left w-full"
   >
-    {/* Mobile-only date badge */}
+    
     <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100/50 dark:border-indigo-550/15 bg-indigo-50/20 dark:bg-indigo-950/10 text-indigo-500 dark:text-indigo-400 font-mono text-[9px] font-bold shadow-sm w-fit mb-4 lg:hidden">
       <FaCalendarAlt className="w-3 h-3" />
       <span>{milestone.date}</span>
@@ -74,8 +72,6 @@ const Card = ({ milestone, animX }) => (
   </motion.div>
 );
 
-/* ─── Main component ──────────────────────────────────────────────────── */
-
 const Education = () => {
   const milestones = [
     {
@@ -115,7 +111,7 @@ const Education = () => {
       id="education"
       className="relative w-full overflow-hidden bg-[#F7F8FC] dark:bg-[#030308] transition-colors duration-300 pt-20 pb-24 px-6 sm:px-12 lg:px-24"
     >
-      {/* ── LAYER 1: Fine dot-grid mesh ───────────────────────────────── */}
+      
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.35] dark:opacity-[0.18]"
         style={{
@@ -124,7 +120,6 @@ const Education = () => {
         }}
       />
 
-      {/* ── LAYER 2: Radial vignette that fades the grid at edges ─────── */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
@@ -140,7 +135,6 @@ const Education = () => {
         }}
       />
 
-      {/* ── LAYER 3: Aurora / prismatic gradient bands ────────────────── */}
       <div
         className="absolute left-[-20%] top-[-5%] w-[80%] h-[55%] z-0 pointer-events-none rounded-full blur-[120px]"
         style={{
@@ -158,7 +152,6 @@ const Education = () => {
         }}
       />
 
-      {/* ── LAYER 4: Large soft radial glow orbs ─────────────────────── */}
       <div
         className="absolute top-[-8%] left-[-8%] w-[520px] h-[520px] rounded-full z-0 pointer-events-none blur-[90px]"
         style={{
@@ -184,7 +177,6 @@ const Education = () => {
         }}
       />
 
-      {/* ── LAYER 5: Noise / grain texture overlay ────────────────────── */}
       <svg
         className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-[0.045] dark:opacity-[0.07]"
         xmlns="http://www.w3.org/2000/svg"
@@ -201,29 +193,26 @@ const Education = () => {
         <rect width="100%" height="100%" filter="url(#edu-noise)" />
       </svg>
 
-      {/* ── LAYER 6: Floating geometric micro-particles ───────────────── */}
-      {/* Diamond top-right */}
       <div
         className="hidden lg:block absolute top-[18%] right-[12%] w-3 h-3 z-0 pointer-events-none rotate-45 rounded-sm border border-indigo-400/40 dark:border-indigo-500/40 bg-indigo-400/10 dark:bg-indigo-500/10"
         style={{ animation: "particle-a 9s ease-in-out infinite" }}
       />
-      {/* Circle bottom-left */}
+      
       <div
         className="hidden lg:block absolute bottom-[28%] left-[10%] w-4 h-4 z-0 pointer-events-none rounded-full border border-purple-400/35 dark:border-purple-500/35 bg-purple-400/10 dark:bg-purple-500/10"
         style={{ animation: "particle-b 13s ease-in-out infinite 2s" }}
       />
-      {/* Small dot mid-left */}
+      
       <div
         className="hidden lg:block absolute top-[55%] left-[6%] w-2 h-2 z-0 pointer-events-none rounded-full bg-indigo-500/30 dark:bg-indigo-400/25 blur-[1px]"
         style={{ animation: "particle-a 11s ease-in-out infinite 5s" }}
       />
-      {/* Small dot mid-right */}
+      
       <div
         className="hidden lg:block absolute top-[70%] right-[8%] w-2.5 h-2.5 z-0 pointer-events-none rotate-45 border border-pink-400/30 dark:border-pink-500/30"
         style={{ animation: "particle-b 15s ease-in-out infinite 3s" }}
       />
 
-      {/* ── LAYER 7: Spinning wire-frame accent shapes ────────────────── */}
       <div className="absolute top-[15%] left-[5%] z-0 pointer-events-none select-none animate-[spin_40s_linear_infinite] opacity-25 dark:opacity-15 hidden lg:block">
         <svg className="w-16 h-16 text-indigo-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
           <polygon points="50,8 92,32 92,68 50,92 8,68 8,32" />
@@ -241,12 +230,11 @@ const Education = () => {
         </svg>
       </div>
 
-      {/* ── LAYER 8: Top + bottom edge fade-out masks ─────────────────── */}
       <div className="absolute top-0 left-0 right-0 h-24 z-0 pointer-events-none bg-gradient-to-b from-[#F7F8FC] dark:from-[#030308] to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-24 z-0 pointer-events-none bg-gradient-to-t from-[#F7F8FC] dark:from-[#030308] to-transparent" />
 
       <div className="w-full max-w-6xl mx-auto relative z-10">
-        {/* Title Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -280,44 +268,29 @@ const Education = () => {
           </p>
         </motion.div>
 
-        {/* ── Two-panel timeline ───────────────────────────────────────
-            Desktop: [Date panel (260px)] | [Bar line + circles] | [Card panel (flex-1)]
-            Mobile:  single column, bar on the far left edge
-        ──────────────────────────────────────────────────────────────── */}
         <div className="relative">
 
-          {/* ── Continuous vertical bar ── */}
-          {/* Desktop: sits at the right edge of the 260px date panel */}
           <div
             className="hidden lg:block absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-slate-300/70 dark:via-indigo-600/25 to-transparent pointer-events-none z-0"
             style={{ left: "260px" }}
           />
-          {/* Mobile: hugs the left edge */}
+          
           <div className="lg:hidden absolute left-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-slate-300/70 dark:via-indigo-600/25 to-transparent pointer-events-none z-0" />
 
-          {/* ── Grid rows: each milestone = 1 grid row ── */}
           <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr]">
             {milestones.map((milestone, index) => (
               <Fragment key={index}>
 
-                {/* LEFT PANEL — date badge (desktop only) */}
-                {/*
-                  - Takes full cell height (grid stretches it to match card height)
-                  - Flex centers the date badge vertically
-                  - Circle is absolutely positioned at the right edge of this cell,
-                    centered vertically → always aligned with the card's vertical midpoint
-                */}
                 <div className="hidden lg:flex items-center justify-end pr-10 py-10 relative">
                   <DateBadge date={milestone.date} />
-                  {/* Circle node — centered on the bar line */}
+                  
                   <div className="absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 z-10">
                     <TimelineNode />
                   </div>
                 </div>
 
-                {/* RIGHT PANEL — content card */}
                 <div className="relative flex items-center py-8 pl-12 lg:pl-10">
-                  {/* Mobile circle node — centered on the left bar */}
+                  
                   <div className="lg:hidden absolute left-4 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10">
                     <TimelineNode />
                   </div>

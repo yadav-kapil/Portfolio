@@ -5,7 +5,6 @@ import { HiOutlineInformationCircle } from "react-icons/hi2";
 import learnify from "../assets/learnify.png";
 import queueCure from "../assets/queue-cure-project.png";
 
-/* ─── Project data ────────────────────────────────────────────────────── */
 const projects = [
   {
     title: "Queue Cure",
@@ -16,7 +15,7 @@ const projects = [
     tags: ["React", "Express", "MongoDB", "Socket.IO"],
     github: "https://github.com/yadav-kapil/queue-cure-26",
     live: "https://queue-cure-yadavkapil.duckdns.org/",
-    // ── Popup detail fields ──────────────────────────────────────────────
+    
     fullDescription:
       "Queue Cure transforms traditional clinic queue management into a transparent, connected, and real-time system. Instead of relying on paper tokens, verbal announcements, and manual display updates, Queue Cure provides live queue tracking, dynamic wait-time estimation, and instant synchronization across doctor, receptionist, and patient dashboards using Socket.IO. Building Queue Cure was more than just a full-stack project—it gave me hands-on experience with real-time systems using WebSockets and Socket.IO, synchronizing state across users, and building scalable, production-ready apps with modern DevOps practices, including CI/CD pipelines, containerization, and cloud deployment.",
     highlights: [
@@ -45,7 +44,7 @@ const projects = [
     tags: ["React", "Framer Motion", "Node.js", "Gemini"],
     github: "https://github.com/yadav-kapil/Learnify_Hacksprint",
     live: "https://learnify-hacksprint.vercel.app/",
-    // ── Popup detail fields ──────────────────────────────────────────────
+    
     fullDescription:
       "Learnify is a full-stack AI learning assistant built during a hackathon. It lets students type or speak any question and receive clear, structured explanations powered by the Gemini API. The platform adapts to the user's learning level, tracks session history, and suggests follow-up questions to deepen understanding.",
     highlights: [
@@ -65,23 +64,20 @@ const projects = [
   }
 ];
 
-/* ─── Tag pill ────────────────────────────────────────────────────────── */
 const TagPill = ({ tag }) => (
   <span className="px-2.5 py-[3px] rounded border border-indigo-100/60 dark:border-indigo-900/50 bg-indigo-50/30 dark:bg-indigo-950/15 text-[9px] font-bold text-indigo-500/90 dark:text-indigo-400/80 uppercase font-mono tracking-wider">
     {tag}
   </span>
 );
 
-/* ─── Details dialog ──────────────────────────────────────────────────── */
 const ProjectDialog = ({ project, dialogRef }) => {
-  // Light-dismiss: native closedby="any" + Safari fallback
+  
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    if ("closedBy" in HTMLDialogElement.prototype) return; // native support
+    if ("closedBy" in HTMLDialogElement.prototype) return; 
 
-    // Safari fallback: close when clicking the backdrop
     const handleClick = (e) => {
       if (e.target !== dialog) return;
       const r = dialog.getBoundingClientRect();
@@ -95,32 +91,31 @@ const ProjectDialog = ({ project, dialogRef }) => {
   }, [dialogRef]);
 
   return (
-    /* Native <dialog> — top-layer, focus-trapped, Esc closes automatically */
+    
     <dialog
       ref={dialogRef}
-      // eslint-disable-next-line react/no-unknown-property
+      
       closedby="any"
       aria-labelledby="dialog-title"
       className={[
-        /* layout */
+        
         "w-[min(92vw,560px)] max-h-[85vh] overflow-y-auto rounded-2xl p-0",
-        /* colours */
+        
         "bg-white dark:bg-[#07081A]",
         "border border-slate-200/80 dark:border-white/[0.08]",
         "shadow-[0_32px_80px_rgba(0,0,0,0.18)] dark:shadow-[0_32px_80px_rgba(0,0,0,0.7)]",
-        /* reset browser defaults */
+        
         "outline-none",
-        /* backdrop via CSS below */
+        
       ].join(" ")}
       style={{
-        /* center it using margin: auto (Baseline-safe, no JS needed) */
+        
         margin: "auto",
       }}
     >
-      {/* Top accent bar */}
+      
       <div className="h-[3px] w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
 
-      {/* Header */}
       <div className="flex items-start justify-between gap-4 px-7 pt-6 pb-0">
         <div>
           <h2 id="dialog-title" className="text-xl font-black font-outfit tracking-tight text-slate-900 dark:text-white leading-snug">
@@ -139,10 +134,8 @@ const ProjectDialog = ({ project, dialogRef }) => {
         </button>
       </div>
 
-      {/* Divider */}
       <div className="mx-7 mt-4 h-px bg-slate-100 dark:bg-white/[0.06]" />
 
-      {/* Project Cover Image / Full Logo */}
       <div className="mx-7 mt-4 rounded-xl overflow-hidden bg-slate-50 dark:bg-[#0d0e24] h-44 border border-slate-100 dark:border-white/[0.05]">
         <img
           src={project.image}
@@ -151,10 +144,8 @@ const ProjectDialog = ({ project, dialogRef }) => {
         />
       </div>
 
-      {/* Body */}
       <div className="px-7 py-5 flex flex-col gap-5">
 
-        {/* Meta chips */}
         <div className="flex flex-wrap gap-2">
           {[
             { label: "Role", value: project.role },
@@ -168,7 +159,6 @@ const ProjectDialog = ({ project, dialogRef }) => {
           ))}
         </div>
 
-        {/* Full description */}
         <div>
           <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 font-mono mb-2">Overview</h3>
           <p className="text-[12.5px] text-slate-600 dark:text-slate-300 font-inter leading-relaxed">
@@ -176,7 +166,6 @@ const ProjectDialog = ({ project, dialogRef }) => {
           </p>
         </div>
 
-        {/* Highlights */}
         <div>
           <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 font-mono mb-3">Key Highlights</h3>
           <ul className="flex flex-col gap-2">
@@ -193,7 +182,6 @@ const ProjectDialog = ({ project, dialogRef }) => {
           </ul>
         </div>
 
-        {/* Tech stack */}
         <div>
           <h3 className="text-[11px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 font-mono mb-3">Tech Stack</h3>
           {project.techStackDetail ? (
@@ -217,7 +205,6 @@ const ProjectDialog = ({ project, dialogRef }) => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="flex items-center justify-between gap-3 px-7 py-5 border-t border-slate-100 dark:border-white/[0.05]">
         {project.live && (
           <a
@@ -242,7 +229,6 @@ const ProjectDialog = ({ project, dialogRef }) => {
   );
 };
 
-/* ─── Project card ────────────────────────────────────────────────────── */
 const ProjectCard = ({ project, index }) => {
   const dialogRef = useRef(null);
   const openDialog = useCallback(() => dialogRef.current?.showModal(), []);
@@ -256,10 +242,9 @@ const ProjectCard = ({ project, index }) => {
         viewport={{ once: true, amount: 0.15 }}
         className="group relative flex flex-col w-full sm:w-[370px] rounded-2xl overflow-hidden border border-slate-200/70 dark:border-white/[0.07] bg-white dark:bg-[#07081A] shadow-[0_2px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.55)] hover:shadow-[0_8px_40px_rgba(99,102,241,0.12)] dark:hover:shadow-[0_12px_50px_rgba(99,102,241,0.15)] hover:-translate-y-1.5 transition-all duration-400"
       >
-        {/* Top accent bar */}
+        
         <div className="h-[3px] w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shrink-0" />
 
-        {/* Image - Full Thumbnail using Cover */}
         <div className="relative overflow-hidden bg-slate-50 dark:bg-[#0c0d24] h-48 shrink-0 border-b border-slate-100 dark:border-white/[0.04]">
           <img
             src={project.image}
@@ -268,10 +253,8 @@ const ProjectCard = ({ project, index }) => {
           />
         </div>
 
-        {/* Body */}
         <div className="flex flex-col flex-1 px-7 pt-5 pb-6">
 
-          {/* Title row + Details button */}
           <div className="flex items-start justify-between gap-3">
             <div>
               <h3 className="text-lg font-black font-outfit tracking-tight text-slate-900 dark:text-white leading-snug">
@@ -282,7 +265,6 @@ const ProjectCard = ({ project, index }) => {
               </p>
             </div>
 
-            {/* Details button */}
             <button
               onClick={openDialog}
               aria-label={`View details for ${project.title}`}
@@ -293,20 +275,16 @@ const ProjectCard = ({ project, index }) => {
             </button>
           </div>
 
-          {/* Thin rule */}
           <div className="w-full h-px bg-slate-100 dark:bg-white/[0.05] my-4" />
 
-          {/* Short description */}
           <p className="text-[12.5px] text-slate-500 dark:text-slate-400 font-inter leading-relaxed flex-1">
             {project.description}
           </p>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-1.5 mt-5">
             {project.tags.map((tag, i) => <TagPill key={i} tag={tag} />)}
           </div>
 
-          {/* Footer actions */}
           <div className="flex items-center justify-between mt-6 pt-4 border-t border-slate-100 dark:border-white/[0.05]">
             {project.live ? (
               <a
@@ -333,32 +311,27 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </motion.article>
 
-      {/* Native dialog — rendered outside the card so it escapes overflow:hidden */}
       <ProjectDialog project={project} dialogRef={dialogRef} />
     </>
   );
 };
 
-/* ─── Main section ────────────────────────────────────────────────────── */
 const Projects = () => (
   <div
     id="projects"
     className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-50/15 via-white to-purple-50/15 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 transition-colors duration-300 pt-20 pb-24 px-6 sm:px-12 lg:px-24"
   >
-    {/* Background Dot Grid Pattern (matches Hero and About) */}
+    
     <div className="absolute inset-0 bg-[radial-gradient(#c7d2fe_1.2px,transparent_1.2px)] dark:bg-[radial-gradient(#312e81_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 dark:opacity-30 pointer-events-none z-0"></div>
 
-    {/* Decorative Orbits in Background (matches Hero) */}
     <div className="absolute top-[10%] left-[-150px] w-[500px] h-[500px] rounded-full border border-indigo-200/20 dark:border-indigo-500/10 pointer-events-none z-0"></div>
     <div className="absolute top-[15%] left-[-100px] w-[400px] h-[400px] rounded-full border border-dashed border-indigo-200/25 dark:border-indigo-500/15 pointer-events-none z-0 animate-[spin_100s_linear_infinite]"></div>
     <div className="absolute bottom-[10%] right-[-200px] w-[600px] h-[600px] rounded-full border border-indigo-200/15 dark:border-indigo-500/5 pointer-events-none z-0"></div>
     <div className="absolute bottom-[15%] right-[-150px] w-[500px] h-[500px] rounded-full border border-dashed border-indigo-200/20 dark:border-indigo-500/10 pointer-events-none z-0 animate-[spin_80s_linear_infinite]"></div>
 
-    {/* Ambient Glow Mesh Blobs (same as loading screen) */}
     <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full blur-3xl pointer-events-none z-0 animate-pulse bg-indigo-500/10 dark:bg-indigo-500/8" />
     <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] rounded-full blur-3xl pointer-events-none z-0 animate-pulse delay-1000 bg-purple-500/10 dark:bg-purple-500/8" />
 
-    {/* Spinning Dashed background orbits (curves floating around) */}
     <div className="absolute top-[28%] left-[22%] hidden md:block z-0 animate-[spin_45s_linear_infinite] opacity-35 dark:opacity-20 pointer-events-none">
       <svg className="w-12 h-12 text-indigo-500" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" fill="none" />
@@ -370,7 +343,6 @@ const Projects = () => (
       </svg>
     </div>
 
-    {/* Floating 3D Crystal (Top-Left) */}
     <div className="absolute top-[12%] left-[6%] xl:left-[10%] z-5 pointer-events-none select-none animate-float-slow hidden xl:block">
       <svg className="w-14 h-14 overflow-visible filter drop-shadow-[0_10px_15px_rgba(192,132,252,0.2)]" viewBox="0 0 100 100">
         <defs>
@@ -394,7 +366,6 @@ const Projects = () => (
       </svg>
     </div>
 
-    {/* Floating 3D Torus/Ring (Middle-Right) */}
     <div className="absolute top-[40%] right-[5%] xl:right-[8%] z-5 pointer-events-none select-none animate-float-delayed hidden xl:block">
       <svg className="w-14 h-14 overflow-visible animate-pulse" viewBox="0 0 100 100" transform="rotate(25)">
         <defs>
@@ -408,7 +379,6 @@ const Projects = () => (
       </svg>
     </div>
 
-    {/* Floating 3D Code Block (Bottom-Left) */}
     <div className="absolute bottom-[15%] left-[5%] xl:left-[8%] z-5 pointer-events-none select-none animate-float-delayed hidden xl:block">
       <svg className="w-14 h-14 overflow-visible" viewBox="0 0 100 100">
         <defs>
@@ -428,7 +398,6 @@ const Projects = () => (
       </svg>
     </div>
 
-    {/* Decorative Sparkles / Stars (matches loading screen / Hero) */}
     <div className="absolute top-[15%] right-[12%] text-indigo-400/50 dark:text-indigo-500/30 animate-pulse z-0">
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
         <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
@@ -440,7 +409,6 @@ const Projects = () => (
       </svg>
     </div>
 
-    {/* Interlacing Dotted curves wave background (same as loading screen) */}
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
       <svg className="w-full h-full opacity-25 dark:opacity-[0.12]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
         <defs>
@@ -474,7 +442,6 @@ const Projects = () => (
 
     <div className="w-full max-w-6xl mx-auto relative z-10">
 
-      {/* Section header */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -511,16 +478,12 @@ const Projects = () => (
         </p>
       </motion.div>
 
-      {/* Flex Wrap Cards Layout - Fits as many cards per row as possible */}
       <div className="flex flex-wrap justify-center gap-8 w-full max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <ProjectCard key={project.title} project={project} index={index} />
         ))}
       </div>
 
-
-
-      {/* GitHub CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

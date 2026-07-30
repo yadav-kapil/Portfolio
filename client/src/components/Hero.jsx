@@ -75,16 +75,14 @@ const Hero = () => {
       className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-24 sm:pt-28 pb-16 px-6 sm:px-12 lg:px-24 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${bgHero})` }}
     >
-      {/* Light/Dark Mode Color Blend Overlay */}
+      
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white/50 to-purple-50/50 dark:from-[#030308]/96 dark:via-[#090B19]/96 dark:to-[#020205]/98 pointer-events-none z-0"></div>
-      {/* Background Dot Grid Pattern */}
+      
       <div className="absolute inset-0 bg-[radial-gradient(#c7d2fe_1.2px,transparent_1.2px)] dark:bg-[radial-gradient(#312e81_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-40 dark:opacity-30 pointer-events-none z-0"></div>
 
-      {/* Decorative Orbits in Background */}
       <div className="absolute top-[20%] right-[-10%] w-[450px] sm:w-[600px] h-[450px] sm:h-[600px] rounded-full border border-indigo-400/20 dark:border-indigo-500/10 pointer-events-none z-0 [transform:rotateX(65deg)_rotateY(-15deg)]"></div>
       <div className="absolute top-[35%] right-[5%] w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] rounded-full border border-purple-400/25 dark:border-purple-500/10 pointer-events-none z-0 [transform:rotateX(70deg)_rotateY(10deg)]"></div>
 
-      {/* Decorative Sparkles (4-pointed stars) */}
       <div className="absolute top-[22%] left-[10%] text-indigo-400/50 dark:text-indigo-500/30 animate-pulse z-0">
         <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
           <path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" />
@@ -106,13 +104,10 @@ const Hero = () => {
         </svg>
       </div>
 
-      {/* Main Grid Content */}
       <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center z-10 relative">
-        
-        {/* Left Column (Details) */}
+
         <div className="lg:col-span-6 flex flex-col gap-6 text-left items-start mt-6 sm:mt-10 lg:mt-16">
-          
-          {/* Hello Badge with Border-Overlay Sparkle */}
+
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,7 +115,7 @@ const Hero = () => {
             className="relative px-6 py-2 rounded-xl border border-indigo-250/70 dark:border-[#5B21B6]/40 bg-white/40 dark:bg-[#1A0B2E]/40 text-[12px] font-bold tracking-[0.25em] text-indigo-600 dark:text-purple-300 font-mono w-fit select-none dark:shadow-[0_0_15px_rgba(124,58,237,0.05)]"
           >
             HELLO
-            {/* Sparkle overlaying the right border */}
+            
             <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#F4F6FF] dark:bg-[#030308] flex items-center justify-center border border-transparent z-10">
               <span className="text-indigo-500/80 animate-pulse">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -130,7 +125,6 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Name Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -152,7 +146,6 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          {/* Subtitle & Typing Effect */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

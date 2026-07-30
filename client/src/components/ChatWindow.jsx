@@ -1,38 +1,33 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import chatbotAnim from "../assets/videos/chatbot.json";
+import { useChatbot } from "../hooks/useChatbot";
 import {
   LuSend,
   LuX,
-  LuBot,
-  LuUser,
   LuFolder,
   LuDownload,
   LuCalendar,
-  LuPaperclip,
-  LuFileText,
+  LuRotateCcw,
+  LuUser,
   LuCpu,
-  LuLayers,
-  LuCode,
-  LuDatabase,
-  LuArrowRight,
+  LuGraduationCap,
+  LuMonitor,
+  LuMail,
 } from "react-icons/lu";
-import { FaReact, FaNodeJs, FaJs, FaLinkedinIn } from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
 
 export default function ChatWindow({ onClose }) {
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      sender: "bot",
-      text: "Hi there! 👋 I'm Kapil Bot. How can I help you today?",
-      time: "10:30 AM",
-      type: "text",
-    },
-  ]);
-  const [input, setInput] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  const {
+    messages,
+    input,
+    setInput,
+    isTyping,
+    handleSend,
+    handleFormSubmit,
+    handleReset,
+  } = useChatbot();
+
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -42,83 +37,6 @@ export default function ChatWindow({ onClose }) {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
-
-  const handleSend = (textToSend) => {
-    const text = textToSend || input;
-    if (!text.trim()) return;
-
-    const userMessage = {
-      id: Date.now(),
-      sender: "user",
-      text: text.trim(),
-      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-      type: "text",
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
-    if (!textToSend) setInput("");
-    setIsTyping(true);
-
-    const apiUri = import.meta.env.VITE_SERVER_URI || "http://localhost:3001";
-
-    fetch(`${apiUri}/api/chat`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: text.trim() }),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to contact chat API");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const botMessage = {
-          id: Date.now() + 1,
-          sender: "bot",
-          text: data.text || "Sorry, I received an empty response from the server.",
-          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-          type: "text",
-        };
-        setMessages((prev) => [...prev, botMessage]);
-        setIsTyping(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        const errorMessage = {
-          id: Date.now() + 1,
-          sender: "bot",
-          text: "Oops! ⚠️ Connection error. Please verify the backend is running and try again.",
-          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-          type: "text",
-        };
-        setMessages((prev) => [...prev, errorMessage]);
-        setIsTyping(false);
-      });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    handleSend();
-  };
-
-  const handleReset = () => {
-    setMessages([
-      {
-        id: 1,
-        sender: "bot",
-        text: "Hi there! 👋 I'm Kapil Bot. How can I help you today?",
-        time: new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-        type: "text",
-      },
-    ]);
-    setIsTyping(false);
-  };
 
   return (
     <motion.div
@@ -156,7 +74,14 @@ export default function ChatWindow({ onClose }) {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-1 text-slate-400 dark:text-slate-500">
+        <div className="flex items-center gap-1.5 text-slate-400 dark:text-slate-500">
+          <button
+            onClick={handleReset}
+            title="Reset Chat"
+            className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-50 dark:hover:bg-white/[0.04] transition-all cursor-pointer text-slate-550 dark:text-slate-400"
+          >
+            <LuRotateCcw className="w-4.5 h-4.5" />
+          </button>
           <button
             onClick={onClose}
             className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-50 dark:hover:bg-white/[0.04] transition-all cursor-pointer text-slate-550 dark:text-slate-400"
@@ -166,9 +91,8 @@ export default function ChatWindow({ onClose }) {
         </div>
       </div>
 
-      {/* Message List Area */}
+      {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/20 dark:bg-[#030308]/10 relative">
-        {/* Soft background sparkles */}
         <div className="absolute top-[25%] right-[15%] text-indigo-400/10 dark:text-indigo-400/5 select-none pointer-events-none">
           <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
             <path d="M12 0l3.09 8.91L24 12l-8.91 3.09L12 24l-3.09-8.91L0 12l8.91-3.09z" />
@@ -206,160 +130,7 @@ export default function ChatWindow({ onClose }) {
                     : "bg-white dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.02] text-slate-800 dark:text-slate-200 rounded-tl-none mr-auto"
                 }`}
               >
-                {/* Standard text message */}
-                {msg.text}
-
-                {/* Structured Tech Skills response (matches mockup exactly) */}
-                {msg.type === "skills" && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 mt-4 pt-3.5 border-t border-slate-100 dark:border-white/[0.04]">
-                    {/* Frontend */}
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0">
-                        <FaReact className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-                          Frontend
-                        </div>
-                        <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 leading-none">
-                          React, JS, Tailwind
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Tools */}
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500 shrink-0">
-                        <LuCpu className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-                          Tools
-                        </div>
-                        <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 leading-none">
-                          Git, Docker, AWS
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Backend */}
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 shrink-0">
-                        <FaNodeJs className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-                          Backend
-                        </div>
-                        <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 leading-none">
-                          Node, Express, Spring
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Languages */}
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-600 shrink-0">
-                        <FaJs className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-                          Languages
-                        </div>
-                        <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 leading-none">
-                          JS, Java, SQL
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Database */}
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-650 shrink-0">
-                        <LuDatabase className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-                          Database
-                        </div>
-                        <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 leading-none">
-                          MongoDB, MySQL
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Other */}
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-550 shrink-0">
-                        <LuLayers className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-                          Other
-                        </div>
-                        <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 leading-none">
-                          REST APIs, JWT, Postman
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Structured Projects response */}
-                {msg.type === "projects" && (
-                  <div className="flex flex-col gap-3 mt-4 pt-3.5 border-t border-slate-100 dark:border-white/[0.04]">
-                    {msg.projects.map((proj, idx) => (
-                      <a
-                        key={idx}
-                        href={proj.link}
-                        className="flex flex-col gap-1.5 p-3 rounded-2xl bg-slate-50/50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.03] hover:border-indigo-500/30 transition-all block text-left"
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="text-[11.5px] font-extrabold text-indigo-650 dark:text-indigo-400 flex items-center gap-1.5">
-                            <LuCode className="w-3.5 h-3.5" /> {proj.name}
-                          </span>
-                          <span className="text-[9px] font-bold text-slate-400 dark:text-slate-600 font-mono">
-                            View
-                          </span>
-                        </div>
-                        <p className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold">
-                          {proj.desc}
-                        </p>
-                        <span className="text-[8px] font-bold text-slate-400 dark:text-slate-550 font-mono tracking-wider">
-                          {proj.tech}
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                )}
-
-                {/* Download resume CTA */}
-                {msg.type === "resume" && (
-                  <div className="mt-3.5 pt-3.5 border-t border-slate-100 dark:border-white/[0.04]">
-                    <a
-                      href="https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-95 text-white font-bold text-[10px] font-mono uppercase tracking-wider shadow-sm transition-all"
-                    >
-                      <LuDownload className="w-3.5 h-3.5" /> Download Resume
-                    </a>
-                  </div>
-                )}
-
-                {/* Contact / Work with me response with LinkedIn Redirect button */}
-                {msg.type === "contact" && (
-                  <div className="mt-3.5 pt-3.5 border-t border-slate-100 dark:border-white/[0.04] w-full">
-                    <a
-                      href="https://www.linkedin.com/in/kapilyadav9560/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:opacity-95 text-white font-bold text-[10px] font-mono uppercase tracking-wider shadow-sm hover:scale-[1.01] transition-all w-full text-center"
-                    >
-                      <FaLinkedinIn className="w-3.5 h-3.5" /> Let's Connect on
-                      LinkedIn
-                    </a>
-                  </div>
-                )}
+                {msg.component || msg.text}
               </div>
               <span
                 className={`text-[8px] font-mono font-bold text-slate-400 dark:text-slate-655 flex items-center gap-1.5 ${
@@ -398,15 +169,51 @@ export default function ChatWindow({ onClose }) {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Actions Action Pills (matches mockup) */}
+      {/* Quick Actions Action Pills */}
       <div className="px-3.5 py-2.5 flex items-center gap-2 overflow-x-auto shrink-0 bg-white/70 dark:bg-[#07081A]/70 border-t border-slate-200/40 dark:border-white/[0.04] select-none scrollbar-none">
-        {/* Project Pill */}
+        {/* About Pill */}
         <button
-          onClick={() => handleSend("Tell me about your projects")}
+          onClick={() => handleSend("Who is Kapil?")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
         >
-          <LuFolder className="w-3.5 h-3.5" />
-          <span>Tell me about your projects</span>
+          <LuUser size={13} />
+          <span>Who is Kapil?</span>
+        </button>
+
+        {/* Skills Pill */}
+        <button
+          onClick={() => handleSend("What are your skills?")}
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
+        >
+          <LuCpu size={13} />
+          <span>What are your skills?</span>
+        </button>
+
+        {/* Projects Pill */}
+        <button
+          onClick={() => handleSend("Show me your projects")}
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
+        >
+          <LuFolder size={13} />
+          <span>Show me your projects</span>
+        </button>
+
+        {/* Education Pill */}
+        <button
+          onClick={() => handleSend("Where did you study?")}
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
+        >
+          <LuGraduationCap size={13} />
+          <span>Where did you study?</span>
+        </button>
+
+        {/* Services Pill */}
+        <button
+          onClick={() => handleSend("What services do you provide?")}
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
+        >
+          <LuMonitor size={13} />
+          <span>What services do you provide?</span>
         </button>
 
         {/* Resume Pill */}
@@ -414,17 +221,17 @@ export default function ChatWindow({ onClose }) {
           onClick={() => handleSend("Download Resume")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
         >
-          <LuDownload className="w-3.5 h-3.5" />
+          <LuDownload size={13} />
           <span>Download Resume</span>
         </button>
 
-        {/* Work with me Pill */}
+        {/* Contact Pill */}
         <button
-          onClick={() => handleSend("Work with me")}
+          onClick={() => handleSend("How can I hire you?")}
           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-indigo-500/30 text-[10px] font-bold text-indigo-650 dark:text-indigo-400 shrink-0 shadow-sm cursor-pointer hover:bg-slate-50 transition-all font-manrope"
         >
-          <LuCalendar className="w-3.5 h-3.5" />
-          <span>Work with me</span>
+          <LuMail size={13} />
+          <span>How can I hire you?</span>
         </button>
       </div>
 
@@ -451,7 +258,7 @@ export default function ChatWindow({ onClose }) {
           </button>
         </form>
 
-        {/* Small footer author tag */}
+        {/* Footer author tag */}
         <div className="text-[8.5px] font-bold text-slate-400 dark:text-slate-600 text-center mt-2 font-mono flex items-center justify-center gap-1 select-none">
           <span className="text-indigo-500 font-bold">✦</span>
           <span>Built with 💜 by Kapil Yadav</span>
