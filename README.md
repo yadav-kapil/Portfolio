@@ -1,154 +1,83 @@
-# <div align="center">✨ MERN Stack Developer Portfolio ✨</div>
+<div align="center">
 
-<p align="center">
-  <strong>A premium, modern, and highly interactive portfolio featuring an intelligent AI-powered chatbot assistant.</strong>
+# 👋 Hello, I'm <span style="color:#4F46E5;">Kapil Yadav</span>
+
+### Full Stack Developer • Backend Enthusiast • Problem Solver
+
+<p>
+Building scalable web applications, secure backend systems, and premium digital experiences.
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Badge" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite Badge" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind Badge" />
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express Badge" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Badge" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge" />
-  <img src="https://img.shields.io/badge/Google_Gemini-8E75C2?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini Badge" />
+<br>
+
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=22&duration=3000&pause=1200&color=4F46E5&center=true&vCenter=true&width=650&lines=Building+modern+web+applications;Designing+scalable+backend+systems;Always+learning+new+technologies" />
+
+</div>
+
+---
+
+<h2 align="center">👨‍💻 About Me</h2>
+
+<div align="center">
+
+<table width="90%">
+<tr>
+<td>
+
+<p align="justify">
+
+I'm a passionate <b>Full Stack Developer</b> who enjoys building applications that are not only functional but also thoughtfully engineered. My strongest interest lies in backend development, where I love designing scalable APIs, implementing secure authentication, managing databases, and solving complex engineering challenges.
+
+Beyond writing code, I'm driven by curiosity and continuous learning. I enjoy exploring modern technologies, improving system architecture, and creating software that delivers meaningful user experiences with clean, maintainable code.
+
+I believe the best software is built through simplicity, attention to detail, and a constant desire to improve. Every project I work on is an opportunity to learn something new and become a better engineer.
+
 </p>
 
----
+</td>
+</tr>
+</table>
 
-## 📖 Project Overview
-
-This is a full-stack developer portfolio built using the **MERN (MongoDB, Express, React, Node)** stack. It showcases projects, details technical capabilities, and integrates a state-of-the-art **AI Chatbot Assistant** powered by Google Gemini. The chatbot allows visitors to interact with the profile, ask questions about skills and experience, and receive context-aware responses in real-time.
-
-- **Frontend:** Built with React 19, Tailwind CSS v4, and Vite. Styled with smooth glassmorphism, responsive components, and custom hardware-accelerated animations using Framer Motion (Motion v12).
-- **Backend:** A secure Node/Express API with rate limiting, request validation, and CORS policies, integrated with Gemini AI.
-- **Database:** MongoDB Atlas instance for persistent contact forms and newsletter subscriber tracking.
+</div>
 
 ---
 
-## 🚀 Key Features
+<h2 align="center">🌐 About This Portfolio</h2>
 
-> [!NOTE]
-> Designed to provide a flawless, premium user experience with rich aesthetics, seamless responsiveness, and interactive micro-animations.
+<div align="center">
 
-* **🤖 AI Chatbot Assistant** — Live chatbot powered by Google Gemini to answer visitor questions dynamically.
-* **🎨 Modern Glassmorphism UI** — High-end styling featuring vibrant gradients, dark mode support, and clean typography.
-* **⚡ Fluid Micro-Animations** — Smooth scroll effects, transitions, and hover interactions driven by Framer Motion.
-* **✉️ Contact Form Integration** — Secure backend API endpoint with validation, rate-limiting, and direct database storage.
-* **📰 Newsletter Subscription** — Built-in newsletter registration form for subscribers to stay updated.
-* **🔔 Toast Notifications** — Instant confirmation alerts via React Toastify for form submissions and subscriptions.
-* **🌓 Dynamic Theme Support** — Easily toggles between premium dark and light modes, automatically detecting system preferences.
+<table width="90%">
+<tr>
+<td>
 
----
+<p align="justify">
 
-<details>
-  <summary><strong>🛠️ Click to Expand Tech Stack & Skills</strong></summary>
-  <br />
+This repository contains the source code for my personal developer portfolio—a digital space that represents who I am as a developer and showcases the projects I've built throughout my journey.
 
-  ### 💻 Technology Breakdown
+The portfolio is designed with a strong emphasis on clean design, smooth interactions, and an engaging user experience. It also includes an intelligent AI-powered assistant that helps visitors learn more about my background, technical expertise, and projects through natural conversations.
 
-  | Component | Technologies & Tools |
-  | :--- | :--- |
-  | **Frontend** | ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) ![Motion](https://img.shields.io/badge/Motion-black?style=flat-square&logo=framer&logoColor=white) ![Lottie](https://img.shields.io/badge/Lottie-00D2FF?style=flat-square&logo=lottiefiles&logoColor=white) |
-  | **Backend** | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) ![Google Gemini API](https://img.shields.io/badge/Gemini_AI-8E75C2?style=flat-square&logo=googlegemini&logoColor=white) |
-  | **Database** | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white) |
-  | **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) ![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white) |
+More than just a collection of projects, this portfolio reflects my approach to software development—building reliable, scalable, and user-focused applications with attention to both engineering quality and design.
 
-  ### Key Client Libraries
-  * `@lottiefiles/react-lottie-player` (Vector animation renderings)
-  * `motion` (Framer Motion v12 animation library)
-  * `react-router` (Unified app routing)
-  * `react-toastify` (Rich alert notifications)
-  * `react-icons` (Icon framework)
+</p>
 
-  ### Key Server Packages
-  * `@google/genai` (Official Google Gemini API)
-  * `express-rate-limit` (DDoS and abuse prevention)
-  * `express-validator` (Sanitization and schema enforcement)
-  * `dotenv` (Secure environment variables)
-  * `cors` (Cross-origin configuration)
+</td>
+</tr>
+</table>
 
-</details>
+</div>
 
 ---
 
-## 📂 Project Structure
+<div align="center">
 
-```directory
-Portfolio/
-├── client/                  # React Frontend Application
-│   ├── src/
-│   │   ├── components/      # Modular layout parts (Hero, About, Chat, Skills, Projects)
-│   │   ├── assets/          # Lottie animations and media files
-│   │   ├── store/           # Global context stores (Theme, states)
-│   │   └── App.jsx          # Main application page router
-│   └── package.json
-└── server/                  # Express Backend Service
-    ├── config/              # Database connection setups
-    ├── models/              # Mongoose DB schema definitions
-    ├── index.js             # API entrypoint, routes, and AI handling
-    └── package.json
-```
+### 💡 *"Code with purpose. Build with passion. Never stop learning."*
 
----
+<br>
 
-## ⚙️ Installation & Setup
+Thanks for visiting my portfolio!
 
-### 1. Clone the repository
+I'm always open to connecting, collaborating, and discussing exciting opportunities.
 
-```bash
-git clone https://github.com/yadav-kapil/Portfolio.git
-cd Portfolio
-```
+⭐ If you like my work, feel free to explore my projects and reach out!
 
-### 2. Configure Environment Variables
-
-#### Backend (`/server/.env`)
-Create a `.env` file inside the `server/` directory:
-```env
-MONGO_URI=your_mongodb_atlas_connection_string
-PORT=3001
-FRONTEND_ORIGIN=http://localhost:5173
-GEMINI_API_KEY=your_google_gemini_api_key
-```
-
-#### Frontend (`/client/.env`)
-Create a `.env` file inside the `client/` directory:
-```env
-VITE_SERVER_URI=http://localhost:3001
-```
-
-### 3. Run Backend Server
-
-```bash
-cd server
-npm install
-npm run dev
-```
-The server will boot on `http://localhost:3001`.
-
-### 4. Run Frontend Development
-
-Open a separate terminal shell:
-```bash
-cd client
-npm install
-npm run dev
-```
-The client app will launch at `http://localhost:5173`.
-
----
-
-## ✉️ Contact Information
-
-For collaboration or inquiries, feel free to reach out:
-
-* **Email:** [ky843622@gmail.com](mailto:ky843622@gmail.com)
-* **LinkedIn:** [Kapil Yadav](https://www.linkedin.com/in/kapilyadav9560/)
-* **GitHub:** [yadav-kapil](https://github.com/yadav-kapil)
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+</div>
