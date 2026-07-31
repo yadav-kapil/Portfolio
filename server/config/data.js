@@ -32,7 +32,7 @@ const portfolioData = {
       "techStack": ["React", "Vite", "React Router", "Tailwind", "Framer Motion", "Node.js", "Express.js", "MongoDB", "Mongoose", "Cloudinary", "REST APIs", "JWT", "Docker", "Compose", "AWS EC2", "Nginx", "GitHub Actions"],
       "features": ["Guest wishlists & booking history", "Host listing dashboard with Cloudinary uploads", "Booking requests Accept/Reject approvals", "Nginx, Docker & AWS deployment"],
       "github": "https://github.com/yadav-kapil/Rentora",
-      "live": "https://github.com/yadav-kapil/Rentora"
+      "live": "https://rentora-yadavkapil.duckdns.org/"
     },
     {
       "name": "Learnify",

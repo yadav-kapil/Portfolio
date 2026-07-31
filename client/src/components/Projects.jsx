@@ -43,7 +43,7 @@ const projects = [
     image: rentora,
     tags: ["React", "Node.js", "MongoDB", "Cloudinary"],
     github: "https://github.com/yadav-kapil/Rentora",
-    live: "https://github.com/yadav-kapil/Rentora",
+    live: "https://rentora-yadavkapil.duckdns.org/",
     fullDescription:
       "Rentora is a peer-to-peer vacation rental marketplace (similar to Airbnb) that connects property hosts and travelers (guests). Guests can search and filter accommodations, view pricing, reserve stays, save favorites, write reviews, and receive status notifications. Hosts utilize a management dashboard to list properties, upload cover/gallery images to Cloudinary, edit listings, and manage booking approvals (Accept/Reject).",
     highlights: [
