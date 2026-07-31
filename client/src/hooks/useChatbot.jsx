@@ -67,7 +67,7 @@ export const useChatbot = () => {
         predefinedText = "Kapil's technical skills include: Programming Languages (Python, JavaScript, C, Java), Frontend (HTML, CSS, React.js, Redux, Bootstrap, Tailwind CSS, Framer Motion), Backend (Node.js, Express.js, REST APIs, Socket.io, JWT, Mongoose, Cloudinary), Databases (MongoDB, MySQL), DevOps/Cloud (Docker, AWS EC2, Nginx, CI/CD, Linux), AI/ML (NumPy, Pandas, Scikit-Learn, Ollama, LLMs).";
       } else if (wordMatch(["resume", "cv"])) {
         responseComponent = <ResumeResponse />;
-        predefinedText = "You can download Kapil's resume using this Google Drive link: https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing";
+        predefinedText = "You can download Kapil's resume using this Google Drive link: https://drive.google.com/file/d/1UnXPRgETb4L85TAyKut17dse7LmGutqI/view?usp=drive_link";
       } else if (wordMatch(["contact", "hire", "email", "social", "socials", "linkedin", "github"])) {
         responseComponent = <ContactResponse />;
         predefinedText = "You can reach out or connect with Kapil via: Email (ky843622@gmail.com), Phone ((+91) 9560340701), LinkedIn (https://www.linkedin.com/in/kapilyadav9560/), and GitHub (https://github.com/yadav-kapil).";

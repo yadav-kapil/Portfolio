@@ -338,7 +338,7 @@ const Footer = () => {
             </h3>
             <ul className="flex flex-col gap-2.5">
               {[
-                { label: "Resume", href: "https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing" },
+                { label: "Resume", href: "https://drive.google.com/file/d/1UnXPRgETb4L85TAyKut17dse7LmGutqI/view?usp=drive_link" },
                 { label: "Hire Me", href: "https://www.linkedin.com/in/kapilyadav9560/" },
                 { label: "Blog", href: "#" }
               ].map((item) => (

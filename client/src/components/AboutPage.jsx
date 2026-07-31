@@ -143,7 +143,7 @@ const AboutPage = () => {
                 <LuArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="https://drive.google.com/file/d/1QGK9XuHoT_tlNwpXFXTBgfFbzr1gg2fI/view?usp=sharing"
+                href="https://drive.google.com/file/d/1UnXPRgETb4L85TAyKut17dse7LmGutqI/view?usp=drive_link"
                 target="_blank"
                 className="rounded-xl border border-slate-200 dark:border-indigo-500/25 bg-white/70 dark:bg-[#070814]/75 hover:bg-slate-50 dark:hover:bg-indigo-950/30 dark:hover:border-indigo-400/45 text-slate-800 dark:text-indigo-200 font-bold text-[13px] px-6 py-2.5 flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer w-full sm:w-auto font-outfit"
               >
