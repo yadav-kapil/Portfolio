@@ -53,7 +53,6 @@ export const BotIntroResponse = () => (
   </div>
 );
 
-// 2. About Kapil Profile Card
 export const AboutKapilResponse = () => (
   <div className="flex flex-col gap-3 font-inter">
     <div className="flex items-center gap-3">
@@ -66,37 +65,36 @@ export const AboutKapilResponse = () => (
         </h4>
         <p className="text-[9.5px] font-bold text-indigo-500 dark:text-indigo-400 mt-0.5 flex items-center gap-1 leading-none">
           <LuUser size={10} />
-          <span>Full Stack Developer</span>
+          <span>Full Stack Developer & AI Engineer</span>
         </p>
         <p className="text-[8px] font-semibold text-slate-400 dark:text-slate-550 mt-0.5 flex items-center gap-0.5 leading-none">
           <LuMapPin size={9} className="text-slate-450" />
-          <span>Delhi, India</span>
+          <span>India</span>
         </p>
       </div>
     </div>
     <div className="pt-2 border-t border-slate-100 dark:border-white/[0.04] text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed font-semibold flex flex-col gap-2">
       <p>
-        I am a passionate Full Stack Software Engineer dedicated to crafting clean, scalable, and user-centric web applications. I love solving complex backend problems, building beautiful responsive layouts, and exploring cloud architectures.
+        I am a passionate Full Stack Developer and AI Engineer dedicated to crafting clean, scalable web applications, intelligent AI integrations, and production cloud systems.
       </p>
       <div className="flex flex-col gap-1 mt-1 bg-slate-50/50 dark:bg-white/[0.01] border border-slate-100/50 dark:border-white/[0.02] p-2 rounded-xl text-[9px]">
         <div className="flex justify-between items-center">
           <span className="text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Education</span>
-          <span className="text-slate-800 dark:text-slate-200">B.Tech in CSE (2026)</span>
+          <span className="text-slate-800 dark:text-slate-200">B.Tech CST, IIEST Shibpur</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Core Focus</span>
-          <span className="text-slate-800 dark:text-slate-200">MERN Stack, API Design</span>
+          <span className="text-slate-800 dark:text-slate-200">Web Systems, AI Engineering, FastAPI</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Interest</span>
-          <span className="text-slate-800 dark:text-slate-200">System Architecture, DevOps</span>
+          <span className="text-slate-800 dark:text-slate-200">Distributed Systems, Cloud & AI</span>
         </div>
       </div>
     </div>
   </div>
 );
 
-// 3. Education Timeline Card
 export const EducationResponse = () => (
   <div className="flex flex-col gap-2 font-inter">
     <span>My academic details:</span>
@@ -131,11 +129,38 @@ export const EducationResponse = () => (
   </div>
 );
 
-// 4. Skills & Tech Stack Grid
 export const SkillsResponse = () => (
   <div className="flex flex-col gap-2 font-inter">
     <span>Here are my technical skills:</span>
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mt-2 pt-3 border-t border-slate-100 dark:border-white/[0.04] w-full">
+      <div className="flex items-center gap-2">
+        <div className="w-7 h-7 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
+          <LuCpu className="w-4 h-4" />
+        </div>
+        <div>
+          <div className="text-[9px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
+            AI & Machine Learning
+          </div>
+          <div className="text-[8px] font-bold text-slate-450 dark:text-slate-500 leading-none">
+            PyTorch, Hugging Face, T5, Fine-Tuning, LLMs
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <div className="w-7 h-7 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+          <FaNodeJs className="w-4 h-4" />
+        </div>
+        <div>
+          <div className="text-[9px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
+            Backend APIs
+          </div>
+          <div className="text-[8px] font-bold text-slate-455 dark:text-slate-500 leading-none">
+            FastAPI, Node.js, Express, Socket.IO, JWT
+          </div>
+        </div>
+      </div>
+
       <div className="flex items-center gap-2">
         <div className="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0">
           <FaReact className="w-4 h-4" />
@@ -145,35 +170,21 @@ export const SkillsResponse = () => (
             Frontend
           </div>
           <div className="text-[8px] font-bold text-slate-450 dark:text-slate-500 leading-none">
-            React.js, Javascript, TailwindCSS
+            React.js, Vite, Redux, Tailwind, Framer Motion
           </div>
         </div>
       </div>
 
       <div className="flex items-center gap-2">
-        <div className="w-7 h-7 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500 shrink-0">
-          <LuCpu className="w-4 h-4" />
+        <div className="w-7 h-7 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
+          <LuLayers className="w-4 h-4" />
         </div>
         <div>
           <div className="text-[9px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-            Tools & DevOps
+            DevOps & Cloud
           </div>
           <div className="text-[8px] font-bold text-slate-455 dark:text-slate-500 leading-none">
-            Git, GitHub, Docker, AWS (EC2/S3)
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <div className="w-7 h-7 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500 shrink-0">
-          <FaNodeJs className="w-4 h-4" />
-        </div>
-        <div>
-          <div className="text-[9px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-            Backend APIs
-          </div>
-          <div className="text-[8px] font-bold text-slate-455 dark:text-slate-500 leading-none">
-            Node.js, Express.js, Spring Boot
+            Docker, AWS EC2, Nginx, CI/CD, Git LFS
           </div>
         </div>
       </div>
@@ -187,7 +198,7 @@ export const SkillsResponse = () => (
             Languages
           </div>
           <div className="text-[8px] font-bold text-slate-455 dark:text-slate-500 leading-none">
-            JavaScript, Java, SQL, HTML/CSS
+            Python, JavaScript, Java, C, SQL
           </div>
         </div>
       </div>
@@ -198,24 +209,10 @@ export const SkillsResponse = () => (
         </div>
         <div>
           <div className="text-[9px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-            Database
+            Databases
           </div>
           <div className="text-[8px] font-bold text-slate-455 dark:text-slate-500 leading-none">
-            MongoDB, MySQL (indexing, queries)
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <div className="w-7 h-7 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-550 shrink-0">
-          <LuLayers className="w-4 h-4" />
-        </div>
-        <div>
-          <div className="text-[9px] font-bold text-slate-800 dark:text-slate-200 leading-none mb-0.5">
-            Architectures
-          </div>
-          <div className="text-[8px] font-bold text-slate-455 dark:text-slate-500 leading-none">
-            RESTful APIs, JWT Auth, Microservices
+            MongoDB, MySQL, Cloudinary
           </div>
         </div>
       </div>
@@ -223,26 +220,37 @@ export const SkillsResponse = () => (
   </div>
 );
 
-// 5. Featured Projects list
 export const ProjectsResponse = () => {
   const featuredProjects = [
     {
+      name: "Fine-Tuned T5 Summarizer",
+      desc: "Seq2Seq dialogue summarizer fine-tuned on 14,732 SAMSum conversations, deployed with FastAPI, Docker & EC2.",
+      tech: "PyTorch, Transformers, FastAPI, Docker, EC2",
+      link: "https://fine-tunned-t5transformer-summarizer.duckdns.org",
+    },
+    {
       name: "Queue Cure",
-      desc: "Healthcare appointment scheduling and queue management system. Solved queue congestion using real-time polling.",
-      tech: "React.js, Node.js, Express.js, MongoDB",
-      link: "https://github.com/yadav-kapil",
+      desc: "Real-time clinic queue management system eliminating wait times with live Socket.IO sync and doctor/patient dashboards.",
+      tech: "React, Socket.IO, Node.js, Express, Docker",
+      link: "https://queue-cure-yadavkapil.duckdns.org/",
+    },
+    {
+      name: "Rentora",
+      desc: "Peer-to-peer vacation rental marketplace with role-based guest & host dashboards and Cloudinary media.",
+      tech: "React, Node.js, MongoDB, Cloudinary, AWS",
+      link: "https://rentora-yadavkapil.duckdns.org/",
+    },
+    {
+      name: "Lumora AI",
+      desc: "Generative AI media studio with Fal.ai neural models for text-to-image synthesis, upscaling, and background removal.",
+      tech: "React 19, Fal.ai API, Node.js, Express, MongoDB",
+      link: "https://github.com/yadav-kapil/Lumora-ai",
     },
     {
       name: "Learnify",
-      desc: "Interactive educational platform for students and instructors. Implemented course catalog and tracking.",
-      tech: "React.js, TailwindCSS, Spring Boot",
-      link: "https://github.com/yadav-kapil",
-    },
-    {
-      name: "Developer Portfolio",
-      desc: "This responsive glassmorphic portfolio featuring custom router configurations and an interactive chatbot hook.",
-      tech: "React.js, Vite, TailwindCSS, Lucide",
-      link: "https://github.com/yadav-kapil",
+      desc: "Interactive AI doubt-solving assistant with Gemini API intelligence and Web Speech API voice support.",
+      tech: "React, Gemini API, Node.js, Express",
+      link: "https://learnify-hacksprint.vercel.app/",
     },
   ];
 
@@ -279,7 +287,6 @@ export const ProjectsResponse = () => {
   );
 };
 
-// 6. Services Overview
 export const ServicesResponse = () => (
   <div className="flex flex-col gap-2 font-inter">
     <span>Services Kapil provides:</span>
@@ -301,9 +308,9 @@ export const ServicesResponse = () => (
           <LuCpu size={12} />
         </div>
         <div>
-          <h5 className="font-bold text-slate-800 dark:text-white leading-tight">Backend & API Systems</h5>
+          <h5 className="font-bold text-slate-800 dark:text-white leading-tight">AI & Machine Learning</h5>
           <p className="text-[8.5px] text-slate-500 dark:text-slate-400 mt-0.5 leading-normal">
-            Designing secure, RESTful microservices and custom routing endpoints in Node.js and Express.
+            Developing intelligent AI integrations, machine learning models, and high-performance FastAPI microservices.
           </p>
         </div>
       </div>
@@ -313,9 +320,9 @@ export const ServicesResponse = () => (
           <LuDatabase size={12} />
         </div>
         <div>
-          <h5 className="font-bold text-slate-800 dark:text-white leading-tight">Database Administration</h5>
+          <h5 className="font-bold text-slate-800 dark:text-white leading-tight">Backend & Database Systems</h5>
           <p className="text-[8.5px] text-slate-500 dark:text-slate-400 mt-0.5 leading-normal">
-            Structuring schemas and queries in MongoDB/MySQL for lightning-fast fetch queries.
+            Structuring scalable schemas and REST/WebSocket APIs in FastAPI, Node.js, Express, and MongoDB.
           </p>
         </div>
       </div>
@@ -385,7 +392,6 @@ export const ContactResponse = () => (
   </div>
 );
 
-// 10. Fallback / Unrecognized question Card
 export const FallbackResponse = () => (
   <div className="flex flex-col gap-1 font-inter">
     <p>Sorry, I didn't get that. 🤖</p>

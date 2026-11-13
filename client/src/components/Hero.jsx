@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { MdOutlineCloudDownload } from "react-icons/md";
-import { LuArrowRight, LuFolder, LuCode, LuShield, LuCloud } from "react-icons/lu";
+import { LuArrowRight, LuFolder, LuCode, LuShield, LuCloud, LuBrain } from "react-icons/lu";
 import { FaReact, FaNodeJs, FaJs } from "react-icons/fa";
 
 import bgHero from "../assets/bg-hero.jpg";
@@ -10,7 +10,11 @@ import blueGradient from "../assets/blue-gradient.png";
 import kapilYadav from "../assets/kapilYadav.png";
 
 const Hero = () => {
-  const typingWords = ["Full Stack Developer"];
+  const typingWords = [
+    "Full Stack Developer",
+    "AI Engineer",
+    "Software Developer"
+  ];
   const typingRef = useRef(null);
 
   useEffect(() => {
@@ -58,17 +62,17 @@ const Hero = () => {
       barColor: "from-indigo-500 via-indigo-400 to-purple-600"
     },
     {
-      icon: <LuShield className="w-5 h-5" />,
+      icon: <LuBrain className="w-5 h-5" />,
       value: "Engineering",
-      label: "Secure APIs",
+      label: "Intelligent AI Systems",
       progress: "100%",
-      colorClass: "text-emerald-600 dark:text-emerald-450 bg-emerald-500/10 dark:bg-emerald-500/8 border-emerald-500/20 dark:border-emerald-500/15",
-      barColor: "from-emerald-500 via-emerald-400 to-teal-600"
+      colorClass: "text-purple-600 dark:text-purple-400 bg-purple-500/10 dark:bg-purple-500/8 border-purple-500/20 dark:border-purple-500/15",
+      barColor: "from-purple-500 via-pink-500 to-indigo-600"
     },
     {
       icon: <LuCloud className="w-5 h-5" />,
       value: "Deploying",
-      label: "Cloud Infrastructure at scale",
+      label: "Cloud Systems & CI/CD",
       progress: "100%",
       colorClass: "text-sky-600 dark:text-sky-400 bg-sky-500/10 dark:bg-sky-500/8 border-sky-500/20 dark:border-sky-500/15",
       barColor: "from-sky-500 via-sky-400 to-indigo-600"

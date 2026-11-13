@@ -2,15 +2,15 @@
 
 # 👋 Hello, I'm <span style="color:#4F46E5;">Kapil Yadav</span>
 
-### Full Stack Developer • Backend Enthusiast • Problem Solver
+### Full Stack Developer • AI Engineer • Problem Solver
 
 <p>
-Building scalable web applications, secure backend systems, and premium digital experiences.
+Building scalable web applications, intelligent AI systems, and robust backend architectures.
 </p>
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=22&duration=3000&pause=1200&color=4F46E5&center=true&vCenter=true&width=650&lines=Building+modern+web+applications;Designing+scalable+backend+systems;Always+learning+new+technologies" />
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=22&duration=3000&pause=1200&color=4F46E5&center=true&vCenter=true&width=650&lines=Building+modern+web+applications;Engineering+intelligent+AI+systems;Designing+scalable+backend+systems;Always+learning+new+technologies" />
 
 </div>
 

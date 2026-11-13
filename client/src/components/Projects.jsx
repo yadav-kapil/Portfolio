@@ -2,11 +2,40 @@ import { useRef, useEffect, useCallback } from "react";
 import { motion } from "motion/react";
 import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import { HiOutlineInformationCircle } from "react-icons/hi2";
+import t5Summarizer from "../assets/t5-summarizer-project.png";
 import learnify from "../assets/learnify.png";
 import queueCure from "../assets/queue-cure-project.png";
 import rentora from "../assets/rentora-project.png";
 
 const projects = [
+  {
+    title: "Fine-Tuned T5 Dialogue Summarizer",
+    subtitle: "Conversational AI Summarizer",
+    description:
+      "End-to-end Machine Learning project fine-tuning Google's T5-Small transformer on 14,732 conversational dialogues for abstractive multi-speaker summarization with 4-beam search decoding.",
+    image: t5Summarizer,
+    tags: ["PyTorch", "FastAPI", "Docker", "AWS EC2"],
+    github: "https://github.com/yadav-kapil/Fine-Tunned-T5-Transformer-Based-Text-Summarizer-",
+    live: "https://fine-tunned-t5transformer-summarizer.duckdns.org",
+    fullDescription:
+      "Fine-tuned Google's Seq2Seq T5-Small model on 14,732 conversational dialogues (SAMSum corpus) for abstractive summarization, resolving multi-speaker context tracking and coreference resolution. Achieved a 0.315 validation loss with 4-beam search decoding; deployed a production-grade FastAPI inference service containerized with CPU-optimized Docker on AWS EC2 behind an Nginx reverse proxy with automated self-hosted GitHub Actions CI/CD and Let's Encrypt SSL.",
+    highlights: [
+      "Fine-tuned Google's T5-Small on 14,732 dialogue-summary pairs (SAMSum corpus)",
+      "Multi-speaker conversational NLP overcoming inverted-pyramid extractive bias",
+      "Beam search decoding (num_beams=4) achieving 0.315 validation loss and high abstractive coherence",
+      "FastAPI inference microservice with Swagger documentation and sub-2s CPU latency",
+      "Production AWS EC2 deployment with Docker containerization, Let's Encrypt SSL, and Nginx reverse proxy",
+      "Automated self-hosted GitHub Actions CI/CD pipeline with Git LFS weight tracking"
+    ],
+    techStackDetail: {
+      "AI & ML": ["Python 3.11", "PyTorch 2.x", "Hugging Face Transformers", "Google T5-Small", "SentencePiece", "SAMSum Corpus", "Beam Search"],
+      "backend": ["FastAPI", "Uvicorn", "RESTful API", "Interactive Swagger Docs"],
+      "infrastructure": ["AWS EC2 (Ubuntu)", "Docker", "Nginx Reverse Proxy", "Let's Encrypt SSL", "GitHub Actions (CI/CD)", "Git LFS"]
+    },
+    role: "AI Engineer",
+    duration: "November 2026",
+    status: "Live",
+  },
   {
     title: "Queue Cure",
     subtitle: "Smart Queue. Better Care.",

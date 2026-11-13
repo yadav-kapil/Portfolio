@@ -46,7 +46,10 @@ import {
   SiOllama,
   SiIntellijidea,
   SiJupyter,
-  SiPostman
+  SiPostman,
+  SiFastapi,
+  SiPytorch,
+  SiHuggingface
 } from "react-icons/si";
 import { TbBrandFramerMotion, TbBrandVscode } from "react-icons/tb";
 
@@ -78,10 +81,27 @@ const skillCategories = [
     ]
   },
   {
+    title: "AI & Machine Learning",
+    icon: <LuBrain className="w-5.5 h-5.5" />,
+    description: "Machine learning frameworks, neural models, NLP, data analysis, and intelligent system integrations.",
+    skills: [
+      { name: "PyTorch", icon: <SiPytorch className="w-5.5 h-5.5 text-[#EE4C2C]" /> },
+      { name: "Hugging Face", icon: <SiHuggingface className="w-5.5 h-5.5 text-[#FFD21E]" /> },
+      { name: "Transformers", icon: <LuBrain className="w-5.5 h-5.5 text-[#818CF8]" /> },
+      { name: "Fine-Tuning", icon: <span className="font-mono font-bold text-[10px] text-purple-500 dark:text-purple-400">T5/NLP</span> },
+      { name: "LLMs & APIs", icon: <SiOpenai className="w-5 h-5 text-emerald-500" /> },
+      { name: "Scikit-Learn", icon: <SiScikitlearn className="w-5.5 h-5.5 text-[#F7931E]" /> },
+      { name: "NumPy", icon: <SiNumpy className="w-5 h-5 text-[#013243]" /> },
+      { name: "Pandas", icon: <SiPandas className="w-5 h-5 text-[#150458]" /> },
+      { name: "Ollama", icon: <SiOllama className="w-5 h-5 text-black dark:text-white" /> }
+    ]
+  },
+  {
     title: "Backend Development",
     icon: <LuServer className="w-5.5 h-5.5" />,
     description: "Developing secure server architectures, API routing, database schema design, and integrations.",
     skills: [
+      { name: "FastAPI", icon: <SiFastapi className="w-5.5 h-5.5 text-[#009688]" /> },
       { name: "Node.js", icon: <FaNodeJs className="w-5.5 h-5.5 text-[#339933]" /> },
       { name: "Express.js", icon: <SiExpress className="w-5.5 h-5.5 text-black dark:text-white" /> },
       { name: "MongoDB", icon: <SiMongodb className="w-5.5 h-5.5 text-[#47A248]" /> },
@@ -102,20 +122,8 @@ const skillCategories = [
       { name: "AWS EC2", icon: <FaAws className="w-5.5 h-5.5 text-[#FF9900]" /> },
       { name: "Nginx", icon: <SiNginx className="w-5.5 h-5.5 text-[#009639]" /> },
       { name: "CI/CD", icon: <SiGithubactions className="w-5 h-5 text-[#2088FF]" /> },
+      { name: "Git LFS", icon: <FaGitAlt className="w-5.5 h-5.5 text-[#F05032]" /> },
       { name: "Linux", icon: <FaLinux className="w-5.5 h-5.5 text-[#FCC624]" /> }
-    ]
-  },
-  {
-    title: "AI & Machine Learning",
-    icon: <LuBrain className="w-5.5 h-5.5" />,
-    description: "Integrating intelligent agents, modeling, and deep learning engineering.",
-    skills: [
-      { name: "NumPy", icon: <SiNumpy className="w-5 h-5 text-[#013243]" /> },
-      { name: "Pandas", icon: <SiPandas className="w-5 h-5 text-[#150458]" /> },
-      { name: "Scikit-Learn", icon: <SiScikitlearn className="w-5.5 h-5.5 text-[#F7931E]" /> },
-      { name: "Flask", icon: <SiFlask className="w-5 h-5 text-black dark:text-white" /> },
-      { name: "LLMs", icon: <LuBrain className="w-5.5 h-5.5 text-[#818CF8]" /> },
-      { name: "Ollama", icon: <SiOllama className="w-5 h-5 text-black dark:text-white" /> }
     ]
   },
   {

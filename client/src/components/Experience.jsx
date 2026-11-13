@@ -1,32 +1,55 @@
 import { motion } from "motion/react";
 import { FaCalendarAlt, FaAward } from "react-icons/fa";
-import { LuBot, LuArrowRight } from "react-icons/lu";
+import { LuBot, LuArrowRight, LuZap, LuCode } from "react-icons/lu";
 
 const cards = [
   {
-    windowTitle: "HackSprint '25",
-    title: "Learnify - AI Study Doubts Solver",
-    subtitle: "SR Technologies Hackathon",
+    windowTitle: "Devlympics '26",
+    title: "Devlympics Hackathon (SHUNYA 2026)",
+    subtitle: "GDG NSUT",
     badge: "Participant",
     badgeColor:
-      "bg-purple-500/10 text-purple-600 border-purple-500/20 dark:bg-purple-500/8 dark:text-purple-400 dark:border-purple-500/10",
-    date: "Nov 2025",
+      "bg-blue-500/10 text-blue-600 border-blue-500/20 dark:bg-blue-500/8 dark:text-blue-400 dark:border-blue-500/10",
+    date: "Oct 2026",
     description:
-      "Designed and developed Learnify during a 48-hour sprint. It connects students with an AI doubt-solving assistant using the Gemini API, enabling voice support via Web Speech API and doubt tracking capabilities.",
+      "Competed at the Devlympics (SHUNYA 2026) hackathon organized by GDG NSUT, designing high-performance web solutions with modern front-end architectures, Motion, GSAP, and reactive state management.",
     techStack: [
-      "React",
-      "Gemini API",
-      "Node.js",
-      "Express.js",
+      "React 19",
+      "GSAP",
+      "ScrollTrigger",
+      "Motion",
       "Tailwind CSS",
-      "Framer Motion",
+      "Vite",
     ],
     certificate:
-      "https://drive.google.com/file/d/1Qn9tGWFUXGKNCqMacp_zaTbaFZZJ8m5a/view",
-    logoColor: "from-purple-600 to-indigo-500",
+      "https://www.linkedin.com/in/kapilyadav9560/",
+    logoColor: "from-blue-600 to-indigo-600",
     tagColor:
-      "bg-purple-500/5 text-purple-600 border-purple-500/15 dark:bg-purple-500/5 dark:text-purple-400 dark:border-purple-500/10",
-    icon: <LuBot className="w-8 h-8" />,
+      "bg-blue-500/5 text-blue-600 border-blue-500/15 dark:bg-blue-500/5 dark:text-blue-400 dark:border-blue-500/10",
+    icon: <LuCode className="w-8 h-8" />,
+  },
+  {
+    windowTitle: "TechTrix '26",
+    title: "TechTrix'26 National Summit",
+    subtitle: "E-CELL ITSEC & Navrachna Foundation",
+    badge: "Participant",
+    badgeColor:
+      "bg-amber-500/10 text-amber-600 border-amber-500/20 dark:bg-amber-500/8 dark:text-amber-400 dark:border-amber-500/10",
+    date: "Oct 2026",
+    description:
+      "Participated in the TechTrix'26 summit presenting innovative technical solutions, system architecture strategies, and scalable cloud deployments.",
+    techStack: [
+      "System Design",
+      "Cloud Architecture",
+      "Full Stack Dev",
+      "AI Solutions",
+    ],
+    certificate:
+      "https://www.linkedin.com/in/kapilyadav9560/",
+    logoColor: "from-amber-500 to-orange-500",
+    tagColor:
+      "bg-amber-500/5 text-amber-600 border-amber-500/15 dark:bg-amber-500/5 dark:text-amber-400 dark:border-amber-500/10",
+    icon: <LuZap className="w-8 h-8" />,
   },
   {
     windowTitle: "Queue Cure '26",
@@ -57,6 +80,31 @@ const cards = [
         <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8.5 8c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm7 5c0 1.2-1 2-2.5 2s-2.5-.8-2.5-2h5zm0-2c-.83 0-1.5-.67-1.5-1.5S14.67 8 15.5 8s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
       </svg>
     ),
+  },
+  {
+    windowTitle: "HackSprint '25",
+    title: "Learnify - AI Study Doubts Solver",
+    subtitle: "SR Technologies Hackathon",
+    badge: "Participant",
+    badgeColor:
+      "bg-purple-500/10 text-purple-600 border-purple-500/20 dark:bg-purple-500/8 dark:text-purple-400 dark:border-purple-500/10",
+    date: "Nov 2025",
+    description:
+      "Designed and developed Learnify during a 48-hour sprint. It connects students with an AI doubt-solving assistant using the Gemini API, enabling voice support via Web Speech API and doubt tracking capabilities.",
+    techStack: [
+      "React",
+      "Gemini API",
+      "Node.js",
+      "Express.js",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    certificate:
+      "https://drive.google.com/file/d/1Qn9tGWFUXGKNCqMacp_zaTbaFZZJ8m5a/view",
+    logoColor: "from-purple-600 to-indigo-500",
+    tagColor:
+      "bg-purple-500/5 text-purple-600 border-purple-500/15 dark:bg-purple-500/5 dark:text-purple-400 dark:border-purple-500/10",
+    icon: <LuBot className="w-8 h-8" />,
   },
 ];
 

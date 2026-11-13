@@ -1,23 +1,51 @@
 const portfolioData = {
   "personal": {
     "name": "Kapil Yadav",
-    "title": "Full Stack Developer",
-    "tagline": "Building scalable web apps & premium digital experiences."
+    "title": "Full Stack Developer & AI Engineer",
+    "tagline": "Building scalable web apps, intelligent AI systems & high-performance backend architectures."
   },
   "about": {
-    "summary": "Full Stack Developer focused on clean, scalable, fast, and reliable web apps.",
+    "summary": "Full Stack Developer and AI Engineer focused on clean, scalable web apps, intelligent AI integrations, and production cloud systems.",
     "location": "India",
     "education": "B.Tech CST, IIEST Shibpur (2025-Present)",
-    "interests": ["Web Dev", "Real-Time Systems", "AI/ML", "DevOps/Cloud"]
+    "interests": ["Full Stack Web Dev", "AI & Machine Learning", "Backend Engineering", "DevOps & Cloud"]
   },
   "skills": {
+    "ai_ml": ["PyTorch", "Hugging Face", "Transformers", "Fine-Tuning", "Seq2Seq", "NLP", "LLMs", "Prompt Engineering", "Scikit-Learn", "NumPy", "Pandas", "Ollama", "Fal.ai"],
+    "backend": ["FastAPI", "Node.js", "Express.js", "REST APIs", "Socket.IO", "JWT", "Mongoose", "Cloudinary"],
     "frontend": ["HTML", "CSS", "React.js", "Vite", "Redux", "Bootstrap", "Tailwind", "Framer Motion"],
-    "backend": ["Node.js", "Express.js", "REST APIs", "Socket.IO", "JWT", "Mongoose", "Cloudinary"],
     "database": ["MongoDB", "MySQL"],
-    "cloud": ["Docker", "Compose", "AWS EC2", "Nginx", "GitHub Actions (CI/CD)", "Linux"],
-    "tools": ["Git", "GitHub", "VS Code", "IntelliJ", "Jupyter", "Postman"]
+    "cloud": ["Docker", "Compose", "AWS EC2", "Nginx", "GitHub Actions (CI/CD)", "Git LFS", "Linux"],
+    "tools": ["Git", "GitHub", "VS Code", "Jupyter", "IntelliJ", "Postman"]
   },
   "projects": [
+    {
+      "name": "Fine-Tuned T5 Transformer Dialogue Summarizer",
+      "description": "End-to-end Machine Learning project fine-tuning Google's T5-Small Seq2Seq transformer on 14,732 conversational dialogues (SAMSum corpus) for abstractive summarization. Deployed on AWS EC2 with FastAPI, Docker, and CI/CD.",
+      "techStack": ["Python", "PyTorch", "Hugging Face Transformers", "Google T5-Small", "SentencePiece", "FastAPI", "Docker", "AWS EC2", "Nginx", "GitHub Actions", "Git LFS"],
+      "features": [
+        "Domain-specific fine-tuning on 14,732 SAMSum multi-turn dialogues",
+        "Resolves multi-speaker coreference tracking & non-linear turn context",
+        "4-beam search decoding achieving 0.315 validation loss",
+        "FastAPI inference microservice with Swagger documentation and sub-2s CPU inference",
+        "Production AWS EC2 deployment with Docker, Nginx reverse proxy, SSL, and GitHub Actions CI/CD"
+      ],
+      "github": "https://github.com/yadav-kapil/Fine-Tunned-T5-Transformer-Based-Text-Summarizer-",
+      "live": "https://fine-tunned-t5transformer-summarizer.duckdns.org"
+    },
+    {
+      "name": "Lumora AI",
+      "description": "Full-stack Generative AI creative suite powered by Fal.ai neural models for text-to-image synthesis, image-to-image styling, super-resolution upscaling, and background removal.",
+      "techStack": ["React 19", "Tailwind CSS v4", "Motion", "Lenis", "Node.js", "Express.js", "Fal.ai API", "MongoDB", "Cloudinary", "Docker"],
+      "features": [
+        "Text-to-Image & Image-to-Image generation powered by Fal.ai models",
+        "AI background removal and super-resolution image upscaling",
+        "Cloudinary cloud asset library and credit-based rate limiter",
+        "Modern interface built with React 19, Tailwind CSS v4, Motion, and Lenis smooth scrolling"
+      ],
+      "github": "https://github.com/yadav-kapil/Lumora-ai",
+      "live": ""
+    },
     {
       "name": "Queue Cure",
       "description": "Real-time clinic queue management system eliminating wait times. Built during Queue Cure '26 Hackathon.",
@@ -46,6 +74,18 @@ const portfolioData = {
   "experience": [
     {
       "role": "Participant",
+      "company": "Devlympics Hackathon (SHUNYA 2026) – GDG NSUT",
+      "duration": "October 2026",
+      "details": "Engineered high-performance web solutions with advanced animation architectures, React 19, and scalable frontend systems."
+    },
+    {
+      "role": "Participant",
+      "company": "TechTrix'26 Summit – E-CELL ITSEC & Navrachna Foundation",
+      "duration": "October 2026",
+      "details": "Presented technical engineering and cloud architecture solutions in competitive project showcases."
+    },
+    {
+      "role": "Participant",
       "company": "Wooble Hackathon (Queue Cure '26)",
       "duration": "July 2026",
       "details": "Developed a real-time clinic queue management system (Queue Cure) with live updates, role-based dashboards, and smart wait-time estimation."
@@ -62,7 +102,7 @@ const portfolioData = {
       "degree": "B.Tech CST",
       "institution": "IIEST Shibpur",
       "duration": "2025-Present",
-      "details": "Focusing on DSA, DBMS, and software engineering."
+      "details": "Focusing on DSA, DBMS, AI/ML, and software engineering."
     },
     {
       "degree": "XII (CBSE)",
@@ -79,6 +119,18 @@ const portfolioData = {
   ],
   "achievements": [],
   "certifications": [
+    {
+      "name": "Devlympics Hackathon (SHUNYA 2026)",
+      "issuer": "GDG NSUT",
+      "date": "October 2026",
+      "credential": "https://www.linkedin.com/in/kapilyadav9560/"
+    },
+    {
+      "name": "TechTrix'26 Summit",
+      "issuer": "E-CELL ITSEC & Navrachna Foundation",
+      "date": "October 2026",
+      "credential": "https://www.linkedin.com/in/kapilyadav9560/"
+    },
     {
       "name": "Queue Cure '26 Hackathon",
       "issuer": "Wooble",
@@ -102,15 +154,15 @@ const portfolioData = {
   "faq": [
     {
       "question": "Who is Kapil?",
-      "answer": "Kapil Yadav is a Full Stack Developer studying Computer Science & Technology at IIEST Shibpur, building fast web apps and AI/Cloud integrations."
+      "answer": "Kapil Yadav is a Full Stack Developer & AI Engineer studying Computer Science & Technology at IIEST Shibpur, building scalable web systems, intelligent AI applications, and robust cloud infrastructure."
     },
     {
       "question": "What technologies does Kapil use?",
-      "answer": "React, Node, Express, MongoDB, MySQL, Python, Java, Docker, AWS (EC2), and Nginx."
+      "answer": "PyTorch, Hugging Face Transformers, T5, FastAPI, React, Node.js, Express.js, MongoDB, MySQL, Docker, AWS EC2, Nginx, and GitHub Actions."
     },
     {
       "question": "What are some of Kapil's key projects?",
-      "answer": "Queue Cure (Socket.IO queue sync), Rentora (hotel booking engine), and Learnify (AI study helper)."
+      "answer": "Fine-Tuned T5 Transformer Dialogue Summarizer (Seq2Seq NLP on SAMSum), Queue Cure (real-time clinic queues with Socket.IO), Rentora (vacation rental platform), Lumora AI (generative media platform with Fal.ai), and Learnify (AI doubt solver)."
     }
   ]
 };

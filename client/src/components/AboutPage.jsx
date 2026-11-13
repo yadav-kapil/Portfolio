@@ -42,10 +42,10 @@ const services = [
     tags: ["AWS", "Docker", "CI/CD"]
   },
   {
-    title: "AI Enabled Sites",
+    title: "AI & Machine Learning",
     icon: <LuCpu className="w-5.5 h-5.5" />,
-    description: "Integrating smart AI capabilities, chatbots, and machine learning models to power automation.",
-    tags: ["AI", "Chatbots", "ML"]
+    description: "Architecting intelligent solutions, generative workflows, neural integrations, and high-performance inference APIs.",
+    tags: ["AI Solutions", "FastAPI", "Python"]
   }
 ];
 
@@ -125,7 +125,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               className="text-base leading-relaxed text-slate-650 dark:text-slate-200 font-inter"
             >
-              I'm <span className="font-bold text-indigo-650 dark:text-indigo-400">Kapil Yadav</span>, a passionate Full Stack Developer who builds clean, scalable, and user-friendly web applications.
+              I'm <span className="font-bold text-indigo-650 dark:text-indigo-400">Kapil Yadav</span>, a passionate Full Stack Developer & AI Engineer who builds clean, scalable, fast, and intelligent software solutions.
             </motion.p>
 
             <motion.div
@@ -272,7 +272,6 @@ const AboutPage = () => {
         </div>
 
         <div className="mt-28 relative">
-          {/* Left Margin Floating Background Elements */}
           <div className="absolute -left-16 xl:-left-36 top-0 z-0 hidden lg:flex flex-col gap-6 items-center pointer-events-none select-none opacity-60">
             <div className="w-32 h-32 rounded-full bg-indigo-500/10 dark:bg-indigo-500/5 blur-2xl animate-pulse" />
             <motion.div
@@ -296,7 +295,6 @@ const AboutPage = () => {
             </motion.div>
           </div>
 
-          {/* Right Margin Floating Background Elements */}
           <div className="absolute -right-16 xl:-right-36 top-0 z-0 hidden lg:flex flex-col gap-6 items-center pointer-events-none select-none opacity-60">
             <div className="w-32 h-32 rounded-full bg-purple-500/10 dark:bg-purple-500/5 blur-2xl animate-pulse" />
             <motion.div
