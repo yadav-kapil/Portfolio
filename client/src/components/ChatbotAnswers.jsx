@@ -229,6 +229,12 @@ export const ProjectsResponse = () => {
       link: "https://fine-tunned-t5transformer-summarizer.duckdns.org",
     },
     {
+      name: "Flappy Bird DQN Agent",
+      desc: "Autonomous Deep Q-Network RL agent navigating 80+ pipes with 180-ray LiDAR perception, trained with PyTorch & Gymnasium.",
+      tech: "Python, PyTorch, DQN, Gymnasium, Apple MPS",
+      link: "https://github.com/yadav-kapil/flappybird-dqn-agent",
+    },
+    {
       name: "Queue Cure",
       desc: "Real-time clinic queue management system eliminating wait times with live Socket.IO sync and doctor/patient dashboards.",
       tech: "React, Socket.IO, Node.js, Express, Docker",

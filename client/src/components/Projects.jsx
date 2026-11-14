@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import { HiOutlineInformationCircle } from "react-icons/hi2";
 import t5Summarizer from "../assets/t5-summarizer-project.png";
+import flappyBird from "../assets/flappy-bird-project.png";
 import learnify from "../assets/learnify.png";
 import queueCure from "../assets/queue-cure-project.png";
 import rentora from "../assets/rentora-project.png";
@@ -35,6 +36,35 @@ const projects = [
     role: "AI Engineer",
     duration: "November 2026",
     status: "Live",
+  },
+  {
+    title: "Deep Q-Network Flappy Bird Agent",
+    subtitle: "Autonomous Reinforcement Learning",
+    description:
+      "Autonomous Reinforcement Learning agent mastering Flappy Bird from scratch via Deep Q-Networks (DQN) and PyTorch, achieving flawless 80+ pipe navigation with 180-ray LiDAR perception.",
+    image: flappyBird,
+    tags: ["PyTorch", "Reinforcement Learning", "DQN", "Gymnasium"],
+    github: "https://github.com/yadav-kapil/flappybird-dqn-agent",
+    live: "https://github.com/yadav-kapil/flappybird-dqn-agent/raw/main/assets/agent_demo.mp4",
+    liveText: "Demo Video",
+    fullDescription:
+      "An end-to-end Reinforcement Learning system training an autonomous agent to navigate Flappy Bird obstacles from scratch using Deep Q-Networks (DQN) in PyTorch and Farama's Gymnasium. Overcame the game's steep physics and gravity asymmetry by engineering a flap-biased epsilon-greedy exploration prior (0.20 flap probability), stabilizing temporal difference learning with a 30,000-transition circular replay buffer and target network freezing (C = 300 steps). The converged 3-layer MLP policy independently discovered optimal glide-to-flap economy (reducing flapping to just 13.6%) and achieves endless obstacle traversal with a peak episode reward of +87.90 and 80+ consecutive pipes cleared at 2,350 FPS on Apple Silicon MPS.",
+    highlights: [
+      "Autonomous policy learning via Deep Q-Networks (DQN) with zero hardcoded environmental rules",
+      "Solved gravity asymmetry problem via flap-biased ε-greedy exploration prior (0.20 vs 0.50 naive)",
+      "Stabilized TD learning using a 30,000-experience replay buffer and frozen target network (sync rate C=300)",
+      "High-throughput headless simulation benchmarking reaching 2,350 FPS on Apple Silicon Metal Performance Shaders",
+      "Achieved +87.90 peak episode reward with 80+ consecutive pipes cleared and optimal 13.6% flap economy",
+      "Real-time evaluation visualizer featuring 180-ray LiDAR perception raycasting and Pygame HUD"
+    ],
+    techStackDetail: {
+      "RL & Deep Learning": ["Python 3.10+", "PyTorch 2.x", "Deep Q-Networks (DQN)", "Markov Decision Process (MDP)", "Experience Replay", "Target Network Freezing", "Epsilon-Greedy Decay"],
+      "simulation & env": ["Farama Gymnasium", "flappy-bird-gymnasium", "Pygame", "12D Kinematic Vector", "180-Ray LiDAR Perception"],
+      "performance & tools": ["Apple Silicon MPS (Metal)", "PyYAML", "Atomic Checkpointing", "Matplotlib"]
+    },
+    role: "AI / RL Engineer",
+    duration: "November 2026",
+    status: "Completed",
   },
   {
     title: "Queue Cure",
@@ -269,7 +299,7 @@ const ProjectDialog = ({ project, dialogRef }) => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-[11px] font-bold font-mono tracking-wide hover:opacity-90 transition-opacity duration-200 shadow-sm shadow-indigo-500/30"
           >
-            Live Demo <FaExternalLinkAlt className="w-2.5 h-2.5" />
+            {project.liveText || "Live Demo"} <FaExternalLinkAlt className="w-2.5 h-2.5" />
           </a>
         )}
         <a
@@ -349,7 +379,7 @@ const ProjectCard = ({ project, index }) => {
                 rel="noopener noreferrer"
                 className="group/link inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-[11px] font-bold font-mono tracking-wide hover:opacity-90 transition-opacity duration-200 shadow-sm shadow-indigo-500/30"
               >
-                Live Demo
+                {project.liveText || "Live Demo"}
                 <FaExternalLinkAlt className="w-2.5 h-2.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
               </a>
             ) : (

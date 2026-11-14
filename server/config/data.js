@@ -11,7 +11,7 @@ const portfolioData = {
     "interests": ["Full Stack Web Dev", "AI & Machine Learning", "Backend Engineering", "DevOps & Cloud"]
   },
   "skills": {
-    "ai_ml": ["PyTorch", "Hugging Face", "Transformers", "Fine-Tuning", "Seq2Seq", "NLP", "LLMs", "Prompt Engineering", "Scikit-Learn", "NumPy", "Pandas", "Ollama", "Fal.ai"],
+    "ai_ml": ["PyTorch", "Hugging Face", "Transformers", "Fine-Tuning", "Seq2Seq", "NLP", "LLMs", "Reinforcement Learning", "DQN", "Prompt Engineering", "Scikit-Learn", "NumPy", "Pandas", "Ollama", "Fal.ai"],
     "backend": ["FastAPI", "Node.js", "Express.js", "REST APIs", "Socket.IO", "JWT", "Mongoose", "Cloudinary"],
     "frontend": ["HTML", "CSS", "React.js", "Vite", "Redux", "Bootstrap", "Tailwind", "Framer Motion"],
     "database": ["MongoDB", "MySQL"],
@@ -32,6 +32,20 @@ const portfolioData = {
       ],
       "github": "https://github.com/yadav-kapil/Fine-Tunned-T5-Transformer-Based-Text-Summarizer-",
       "live": "https://fine-tunned-t5transformer-summarizer.duckdns.org"
+    },
+    {
+      "name": "Deep Q-Network (DQN) Flappy Bird Agent",
+      "description": "Autonomous Reinforcement Learning agent trained from scratch using PyTorch and Gymnasium. Solved the gravity asymmetry problem with flap-biased exploration and stabilized learning with replay memory and target network freezing, achieving 80+ pipes cleared and +87.90 reward.",
+      "techStack": ["Python", "PyTorch", "Reinforcement Learning", "Deep Q-Networks (DQN)", "Gymnasium", "Pygame", "Apple MPS"],
+      "features": [
+        "End-to-end DQN policy learning with zero environmental rules or prior domain knowledge",
+        "Flap-biased ε-greedy exploration prior overcoming gravity and physical asymmetry",
+        "Experience replay buffer (30,000 capacity) and frozen target network (C = 300 steps)",
+        "Peak reward of +87.90 with 80+ consecutive pipes cleared and optimal 13.6% flap economy",
+        "Headless simulation benchmarking reaching 2,350 FPS on Apple Silicon Metal Performance Shaders"
+      ],
+      "github": "https://github.com/yadav-kapil/flappybird-dqn-agent",
+      "live": "https://github.com/yadav-kapil/flappybird-dqn-agent/raw/main/assets/agent_demo.mp4"
     },
     {
       "name": "Lumora AI",
@@ -158,11 +172,11 @@ const portfolioData = {
     },
     {
       "question": "What technologies does Kapil use?",
-      "answer": "PyTorch, Hugging Face Transformers, T5, FastAPI, React, Node.js, Express.js, MongoDB, MySQL, Docker, AWS EC2, Nginx, and GitHub Actions."
+      "answer": "PyTorch, Hugging Face Transformers, T5, Deep Q-Networks (DQN), FastAPI, React, Node.js, Express.js, MongoDB, MySQL, Docker, AWS EC2, Nginx, and GitHub Actions."
     },
     {
       "question": "What are some of Kapil's key projects?",
-      "answer": "Fine-Tuned T5 Transformer Dialogue Summarizer (Seq2Seq NLP on SAMSum), Queue Cure (real-time clinic queues with Socket.IO), Rentora (vacation rental platform), Lumora AI (generative media platform with Fal.ai), and Learnify (AI doubt solver)."
+      "answer": "Fine-Tuned T5 Transformer Dialogue Summarizer (Seq2Seq NLP on SAMSum), Deep Q-Network Flappy Bird Agent (autonomous RL with PyTorch & Gymnasium), Queue Cure (real-time clinic queues with Socket.IO), Rentora (vacation rental platform), Lumora AI (generative media platform with Fal.ai), and Learnify (AI doubt solver)."
     }
   ]
 };
