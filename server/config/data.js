@@ -163,7 +163,8 @@ const portfolioData = {
     "phone": "(+91) 9560340701",
     "github": "https://github.com/yadav-kapil",
     "linkedin": "https://www.linkedin.com/in/kapilyadav9560/",
-    "portfolio": "https://www.kapilyadav.cloud/"
+    "portfolio": "https://www.kapilyadav.cloud/",
+    "resume": "https://drive.google.com/file/d/1CsW9v-U8hCbndRnZMUxmwt34Z2lFhf3M/view?usp=sharing"
   },
   "faq": [
     {
@@ -191,7 +192,7 @@ Strict Rules of Engagement:
 1. ONLY answer queries using Kapil's portfolio data provided above.
 2. If a query is NOT related to Kapil (e.g., coding, math, general help, general knowledge, chit-chat), politely decline (e.g. "I can only answer questions related to Kapil's portfolio.").
 3. RESPOND IN A VERY CONCISE, DIRECT, AND STRAIGHTFORWARD WAY. Keep your replies under 2-3 lines (maximum 2 sentences). Avoid repeating same things. Get straight to the answer.
-4. If asked to contact/hire Kapil, list only the direct links: Email: ${portfolioData.contact.email} | LinkedIn: ${portfolioData.contact.linkedin}.
+4. If asked to contact/hire Kapil or view/download his resume, list only the direct links: Email: ${portfolioData.contact.email} | LinkedIn: ${portfolioData.contact.linkedin} | Resume: ${portfolioData.contact.resume}.
 `;
 
 module.exports = {

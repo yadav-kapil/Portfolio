@@ -351,7 +351,7 @@ export const ResumeResponse = () => (
     <span>You can download my resume using the link below:</span>
     <div className="pt-2 border-t border-slate-100 dark:border-white/[0.04]">
       <a
-        href="https://drive.google.com/file/d/1UnXPRgETb4L85TAyKut17dse7LmGutqI/view?usp=drive_link"
+        href="https://drive.google.com/file/d/1CsW9v-U8hCbndRnZMUxmwt34Z2lFhf3M/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-95 text-white font-bold text-[10px] font-mono uppercase tracking-wider shadow-sm transition-all"
